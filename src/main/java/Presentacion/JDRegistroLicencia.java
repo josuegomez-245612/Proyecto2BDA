@@ -9,7 +9,8 @@ package Presentacion;
  * @author RAUL EDUARDO GOMEZ
  */
 public class JDRegistroLicencia extends javax.swing.JDialog {
-
+JDRenovarLicencia rl;
+JDClienteLicencia clienteLicencia;
     /**
      * Creates new form JDRegistroLicencia
      */
@@ -34,7 +35,7 @@ renovarLicenciabtn.setContentAreaFilled(false);
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        imagen = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -49,13 +50,15 @@ renovarLicenciabtn.setContentAreaFilled(false);
         jTextField9 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         renovarLicenciabtn = new javax.swing.JButton();
+        CancelarBtn = new javax.swing.JButton();
+        AceptarBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(815, 474));
+        setPreferredSize(new java.awt.Dimension(815, 550));
 
         jPanel1.setBackground(new java.awt.Color(227, 227, 217));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\RAUL EDUARDO GOMEZ\\Documents\\NetBeansProjects\\Proyecto2BDA\\Proyecto2BDA\\Proyecto2BDA\\src\\main\\java\\Utilerias\\marcoPantallaPrincipal.png")); // NOI18N
+        imagen.setIcon(new javax.swing.ImageIcon("C:\\Users\\RAUL EDUARDO GOMEZ\\Documents\\NetBeansProjects\\Proyecto2BDA\\Proyecto2BDA\\Proyecto2BDA\\src\\main\\java\\Utilerias\\marcoPantallaPrincipal.png")); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("Registro para solicitud de licencia");
@@ -79,13 +82,32 @@ renovarLicenciabtn.setContentAreaFilled(false);
 
         renovarLicenciabtn.setForeground(new java.awt.Color(51, 102, 255));
         renovarLicenciabtn.setText("Renovar licencia");
+        renovarLicenciabtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                renovarLicenciabtnActionPerformed(evt);
+            }
+        });
+
+        CancelarBtn.setText("Cancelar");
+        CancelarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelarBtnActionPerformed(evt);
+            }
+        });
+
+        AceptarBtn.setText("Aceptar");
+        AceptarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AceptarBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1)
+                .addComponent(imagen)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,11 +149,17 @@ renovarLicenciabtn.setContentAreaFilled(false);
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(renovarLicenciabtn)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(CancelarBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(AceptarBtn)
+                .addGap(22, 22, 22))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -140,7 +168,7 @@ renovarLicenciabtn.setContentAreaFilled(false);
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -160,7 +188,11 @@ renovarLicenciabtn.setContentAreaFilled(false);
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(renovarLicenciabtn))
-                .addGap(80, 80, 80))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CancelarBtn)
+                    .addComponent(AceptarBtn))
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -177,6 +209,22 @@ renovarLicenciabtn.setContentAreaFilled(false);
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CancelarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarBtnActionPerformed
+        dispose();
+    }//GEN-LAST:event_CancelarBtnActionPerformed
+
+    private void AceptarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarBtnActionPerformed
+        dispose();
+        rl = new JDRenovarLicencia(null,true);
+        rl.setVisible(true);
+    }//GEN-LAST:event_AceptarBtnActionPerformed
+
+    private void renovarLicenciabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_renovarLicenciabtnActionPerformed
+        dispose();
+        clienteLicencia = new JDClienteLicencia(null,true);
+        clienteLicencia.setVisible(true);
+    }//GEN-LAST:event_renovarLicenciabtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,7 +269,9 @@ renovarLicenciabtn.setContentAreaFilled(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton AceptarBtn;
+    private javax.swing.JButton CancelarBtn;
+    private javax.swing.JLabel imagen;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
