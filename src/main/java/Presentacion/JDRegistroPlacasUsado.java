@@ -9,7 +9,7 @@ package Presentacion;
  * @author RAUL EDUARDO GOMEZ
  */
 public class JDRegistroPlacasUsado extends javax.swing.JDialog {
-
+JDSeleccionPlacas sp;
     /**
      * Creates new form JDRegistroPlacasUsado
      */
@@ -230,10 +230,11 @@ public class JDRegistroPlacasUsado extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CancelarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarBtnActionPerformed
+
         dispose();
-        dispose();
-        registroLicencia = new JDRegistroLicencia(null,true);
-        registroLicencia.setVisible(true);
+        sp = new JDSeleccionPlacas(null,true);
+        sp.setVisible(true);
+       
     }//GEN-LAST:event_CancelarBtnActionPerformed
 
     private void AceptarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarBtnActionPerformed

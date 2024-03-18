@@ -136,9 +136,6 @@ public class JDSeleccionPlacas extends javax.swing.JDialog {
 
     private void CancelarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarBtnActionPerformed
         dispose();
-        dispose();
-        registroLicencia = new JDRegistroLicencia(null,true);
-        registroLicencia.setVisible(true);
     }//GEN-LAST:event_CancelarBtnActionPerformed
 
     /**
