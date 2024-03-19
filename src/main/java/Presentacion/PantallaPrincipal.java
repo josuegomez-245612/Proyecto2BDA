@@ -104,9 +104,19 @@ JDRegistroLicencia rl;
         menuConsultas.setText("Consultas");
 
         menuItemPlacas.setText("Placas");
+        menuItemPlacas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemPlacasActionPerformed(evt);
+            }
+        });
         menuConsultas.add(menuItemPlacas);
 
         menuItemLicencia.setText("Licencias");
+        menuItemLicencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemLicenciaActionPerformed(evt);
+            }
+        });
         menuConsultas.add(menuItemLicencia);
 
         jMenu3.add(menuConsultas);
@@ -133,7 +143,7 @@ JDRegistroLicencia rl;
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,6 +178,18 @@ JDRegistroLicencia rl;
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
        
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void menuItemPlacasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemPlacasActionPerformed
+        this.dispose();
+        ConsultarPlacas consultarPlacas = new ConsultarPlacas();
+        consultarPlacas.setVisible(true);
+    }//GEN-LAST:event_menuItemPlacasActionPerformed
+
+    private void menuItemLicenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemLicenciaActionPerformed
+        this.dispose();
+        ConsultarLicencias consultarLicencias = new ConsultarLicencias();
+        consultarLicencias.setVisible(true);
+    }//GEN-LAST:event_menuItemLicenciaActionPerformed
 
     /**
      * @param args the command line arguments

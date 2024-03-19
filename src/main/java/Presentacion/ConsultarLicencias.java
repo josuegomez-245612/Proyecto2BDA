@@ -8,12 +8,12 @@ package Presentacion;
  *
  * @author Ryzen 5
  */
-public class ConsultarPlacas extends javax.swing.JFrame {
+public class ConsultarLicencias extends javax.swing.JFrame {
 
     /**
      * Creates new form ConsultarPlacas
      */
-    public ConsultarPlacas() {
+    public ConsultarLicencias() {
         initComponents();
     }
 
@@ -43,7 +43,6 @@ public class ConsultarPlacas extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(815, 900));
         setResizable(false);
         setSize(new java.awt.Dimension(815, 900));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -57,9 +56,7 @@ public class ConsultarPlacas extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(imagen)
-                .addGap(0, 13, Short.MAX_VALUE))
+            .addComponent(imagen, javax.swing.GroupLayout.DEFAULT_SIZE, 813, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -73,7 +70,7 @@ public class ConsultarPlacas extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(227, 227, 217));
 
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel1.setText("Seleccione a la persona a la cual se quiere consultar el historial de placas");
+        jLabel1.setText("Seleccione a la persona a la cual se quiere consultar el historial de licencias");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -216,20 +213,21 @@ public class ConsultarPlacas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ConsultarPlacas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultarLicencias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ConsultarPlacas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultarLicencias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ConsultarPlacas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultarLicencias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ConsultarPlacas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultarLicencias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ConsultarPlacas().setVisible(true);
+                new ConsultarLicencias().setVisible(true);
             }
         });
     }
