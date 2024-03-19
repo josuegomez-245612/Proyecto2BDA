@@ -43,9 +43,9 @@ public class ConsultarPlacas extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(815, 900));
+        setPreferredSize(new java.awt.Dimension(800, 900));
         setResizable(false);
-        setSize(new java.awt.Dimension(815, 900));
+        setSize(new java.awt.Dimension(800, 900));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(227, 227, 217));
