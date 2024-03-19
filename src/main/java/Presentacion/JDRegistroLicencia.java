@@ -58,8 +58,6 @@ renovarLicenciabtn.setContentAreaFilled(false);
 
         jPanel1.setBackground(new java.awt.Color(227, 227, 217));
 
-        imagen.setIcon(new javax.swing.ImageIcon("C:\\Users\\RAUL EDUARDO GOMEZ\\Documents\\NetBeansProjects\\Proyecto2BDA\\Proyecto2BDA\\Proyecto2BDA\\src\\main\\java\\Utilerias\\marcoPantallaPrincipal.png")); // NOI18N
-
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("Registro para solicitud de licencia");
 
@@ -173,7 +171,7 @@ renovarLicenciabtn.setContentAreaFilled(false);
                     .addComponent(jLabel2)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)

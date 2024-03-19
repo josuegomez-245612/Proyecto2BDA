@@ -39,6 +39,9 @@ JDRegistroLicencia rl;
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        menuConsultas = new javax.swing.JMenu();
+        menuItemPlacas = new javax.swing.JMenuItem();
+        menuItemLicencia = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
 
@@ -52,8 +55,6 @@ JDRegistroLicencia rl;
         jPanel1.setBackground(new java.awt.Color(227, 227, 217));
         jPanel1.setPreferredSize(new java.awt.Dimension(804, 878));
 
-        imagen.setIcon(new javax.swing.ImageIcon("C:\\Users\\RAUL EDUARDO GOMEZ\\Documents\\NetBeansProjects\\Proyecto2BDA\\Proyecto2BDA\\Proyecto2BDA\\src\\main\\java\\Utilerias\\marcoPantallaPrincipal.png")); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -64,7 +65,7 @@ JDRegistroLicencia rl;
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 738, Short.MAX_VALUE))
+                .addGap(0, 737, Short.MAX_VALUE))
         );
 
         jMenuBar1.setBackground(new java.awt.Color(50, 79, 49));
@@ -99,6 +100,17 @@ JDRegistroLicencia rl;
         jMenuBar1.add(jMenu1);
 
         jMenu3.setText("Operaciones");
+
+        menuConsultas.setText("Consultas");
+
+        menuItemPlacas.setText("Placas");
+        menuConsultas.add(menuItemPlacas);
+
+        menuItemLicencia.setText("Licencias");
+        menuConsultas.add(menuItemLicencia);
+
+        jMenu3.add(menuConsultas);
+
         jMenuBar1.add(jMenu3);
 
         jMenu2.setText("Informacion");
@@ -121,13 +133,13 @@ JDRegistroLicencia rl;
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 857, Short.MAX_VALUE)
                 .addGap(14, 14, 14))
         );
 
@@ -206,5 +218,8 @@ JDRegistroLicencia rl;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu menuConsultas;
+    private javax.swing.JMenuItem menuItemLicencia;
+    private javax.swing.JMenuItem menuItemPlacas;
     // End of variables declaration//GEN-END:variables
 }
