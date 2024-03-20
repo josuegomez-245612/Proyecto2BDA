@@ -191,13 +191,14 @@ JDSeleccionPlacas sp;
                             .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clienteLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(clienteLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(17, 17, 17)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(CancelarBtn)
@@ -227,13 +228,12 @@ JDSeleccionPlacas sp;
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void CancelarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarBtnActionPerformed
 
         dispose();
-        sp = new JDSeleccionPlacas(null,true);
-        sp.setVisible(true);
        
     }//GEN-LAST:event_CancelarBtnActionPerformed
 
@@ -245,47 +245,8 @@ JDSeleccionPlacas sp;
         // TODO add your handling code here:
     }//GEN-LAST:event_AceptarBtn1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JDRegistroPlacasUsado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JDRegistroPlacasUsado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JDRegistroPlacasUsado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JDRegistroPlacasUsado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                JDRegistroPlacasUsado dialog = new JDRegistroPlacasUsado(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
+  
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AceptarBtn;
