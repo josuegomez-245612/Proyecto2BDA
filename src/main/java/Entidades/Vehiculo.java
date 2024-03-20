@@ -50,7 +50,7 @@ public class Vehiculo implements Serializable {
     private boolean nuevo;
 
     @OneToMany(mappedBy = "vehiculo", cascade = {CascadeType.PERSIST})
-   private List<Placa> placas;
+    private List<Placa> placas;
     
     public Vehiculo(Long id, String modelo, String tipoVehiculo, String color, String numSerie, String linea, String marca, boolean nuevo) {
         this.id = id;

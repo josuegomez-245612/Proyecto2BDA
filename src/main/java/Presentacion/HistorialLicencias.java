@@ -8,21 +8,22 @@ package Presentacion;
  *
  * @author Ryzen 5
  */
-public class HistorialPlacas extends javax.swing.JFrame {
+public class HistorialLicencias extends javax.swing.JFrame {
 
-    ConsultarPlacas consultarPlacas;
+    ConsultarLicencias consultarLicencias;
+    
+    
+    public HistorialLicencias() {
+        initComponents();
+    }
     /**
      * Creates new form HistorialPlacas
+     * @param frame
      */
-    public HistorialPlacas() {
+    public HistorialLicencias(ConsultarLicencias frame) {
         initComponents();
+        consultarLicencias = frame;
     }
-    
-    public HistorialPlacas(ConsultarPlacas frame) {
-        initComponents();
-        consultarPlacas = frame;
-    }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,26 +54,26 @@ public class HistorialPlacas extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel2.setText("Historial de Placas de la Persona:");
+        jLabel2.setText("Historial de Licencias de la Persona:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         jLabel3.setText("Jorge Eduardo Elias Cazarez");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, 20));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, 20));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 760, 30));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"G5H7LN", "Sentra", "Nissan", "2008", "07/08/2012", null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {"3 años", "$700", "Si", "2008"},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Numero de Placas", "Linea  Vehiculo", "Marca Vehiculo", "Modelo Vehiculo", "Fecha Expedicion", "Fecha Recepcion"
+                "Vigencia", "Costo", "Discapacitado", "Fecha Expedicion"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -107,7 +108,7 @@ public class HistorialPlacas extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();
-        consultarPlacas.setVisible(true);
+        consultarLicencias.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -127,20 +128,21 @@ public class HistorialPlacas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HistorialPlacas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HistorialLicencias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HistorialPlacas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HistorialLicencias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HistorialPlacas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HistorialLicencias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HistorialPlacas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HistorialLicencias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HistorialPlacas().setVisible(true);
+                new HistorialLicencias().setVisible(true);
             }
         });
     }

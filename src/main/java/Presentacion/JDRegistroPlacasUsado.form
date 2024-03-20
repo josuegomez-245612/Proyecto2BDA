@@ -88,12 +88,17 @@
                                               <Component id="jTextField8" min="-2" pref="221" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="147" pref="147" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jLabel3" min="-2" pref="106" max="-2" attributes="0"/>
-                                          <Component id="clienteLbl" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="147" pref="147" max="-2" attributes="0"/>
+                                              <Component id="jLabel3" min="-2" pref="106" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
+                                              <Component id="clienteLbl" min="-2" pref="106" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="983" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="964" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -165,19 +170,17 @@
                       <Component id="jLabel3" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="clienteLbl" alignment="1" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField8" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="jLabel9" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTextField8" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="jLabel9" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="clienteLbl" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel8" alignment="1" min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="jTextField10" min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="8" max="32767" attributes="0"/>
                   <Component id="CancelarBtn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               </Group>
@@ -195,7 +198,7 @@
         <Component class="javax.swing.JLabel" name="imagen">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Utilerias\marcoPantallaPrincipal.png"/>
+              <Image iconType="3" name="/Imagenes/marcoPantallaPrincipal.png"/>
             </Property>
           </Properties>
         </Component>
@@ -292,19 +295,17 @@
               <Color blue="0" green="ff" red="cc" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Utilerias\clipart-people-symbol-5 (1).png"/>
+              <Image iconType="3" name="/Imagenes/clipart-people-symbol-5 (1).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel3"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder/>
-              </Border>
+              <Border info="null"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="clienteLbl">
           <Properties>
-            <Property name="text" type="java.lang.String" value="t"/>
+            <Property name="text" type="java.lang.String" value="Jorge Elias"/>
           </Properties>
         </Component>
       </SubComponents>
