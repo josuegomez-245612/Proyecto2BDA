@@ -1,4 +1,5 @@
 Entidades\Persona.class
+Presentacion\HistorialPlacas$1.class
 Presentacion\ConsultarLicencias$1.class
 Entidades\TramitePlacas.class
 Presentacion\JDRegistroPlacasUsado.class
@@ -17,6 +18,7 @@ Presentacion\JDRegistroPlacasUsado$2.class
 Presentacion\ConsultarLicencias.class
 Presentacion\JDRegistroPlacasNuevo$2.class
 Entidades\Vehiculo.class
+Presentacion\HistorialPlacas.class
 Presentacion\JDRenovarLicencia.class
 Presentacion\JDSeleccionPlacas$1.class
 Presentacion\PantallaPrincipal$6.class
