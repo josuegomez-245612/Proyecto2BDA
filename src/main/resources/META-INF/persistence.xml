@@ -7,6 +7,8 @@
     <class>Entidades.TramitePlacas</class>
     <class>Entidades.Tramite</class>
     <class>Entidades.Persona</class>
+    <class>Entidades.Licencia</class>
+    <class>Entidades.TramiteLicencia</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/servicioLicenciasPlacas?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

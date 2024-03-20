@@ -25,7 +25,6 @@ import javax.persistence.TemporalType;
  */
 /**
  * Esta entidad representa placas con sus respectivos atributos.
- * @author 233133_233259
  */
 @Entity
 @Table(name = "placas")

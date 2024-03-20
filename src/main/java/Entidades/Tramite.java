@@ -24,7 +24,6 @@ import javax.persistence.TemporalType;
  */
 /**
  * Esta entidad representa trámites con sus respectivos atributos.
- * @author 233133_233259
  */
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)

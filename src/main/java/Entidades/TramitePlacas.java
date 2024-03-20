@@ -21,7 +21,6 @@ import javax.persistence.Table;
 
 /**
  * Esta entidad representa trámites de placas con sus respectivos atributos.
- * @author 233133_233259
  */
 @Entity
 @Table(name="TramitePlacas")
