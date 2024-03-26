@@ -10,6 +10,7 @@ import Interfaces.IConexionBD;
  *
  * @author JOSUE GOMEZ
  */
-public class ConexionBD extends IConexionBD{
+public class ConexionBD extends IConexionBD
+{
     
 }

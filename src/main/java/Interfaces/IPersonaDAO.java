@@ -1,13 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Interfaces;
+
+import Entidades.Persona;
+import Persistencia.PersistenciaException;
+import java.util.List;
 
 /**
  *
  * @author JOSUE GOMEZ
  */
-public interface IPersonaDAO {
-    
+public interface IPersonaDAO 
+{
+    public List<Persona> getAllPersonas() throws PersistenciaException;
+    public Persona getPersonaByNombre(String nombre) throws PersistenciaException;
+    public void addPersona(Persona persona) throws PersistenciaException;
+    public void updatePersona(Persona persona) throws PersistenciaException;
+    public void deletePersona(int personaID) throws PersistenciaException;
 }
