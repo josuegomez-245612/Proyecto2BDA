@@ -6,7 +6,7 @@ package Persistencia;
 
 /**
  *
- * @author RAUL EDUARDO GOMEZ
+ * @author JOSUE GOMEZ
  */
 public class TramiteLicenciasDAO {
     

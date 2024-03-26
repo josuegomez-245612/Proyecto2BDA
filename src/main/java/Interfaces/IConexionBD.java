@@ -4,10 +4,13 @@
  */
 package Interfaces;
 
+import javax.persistence.EntityManager;
+
 /**
  *
- * @author RAUL EDUARDO GOMEZ
+ * @author JOSUE GOMEZ
  */
-public class IConexionBD {
+public interface IConexionBD {
     
+    EntityManager crearConexion();
 }

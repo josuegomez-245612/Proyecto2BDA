@@ -4,10 +4,12 @@
  */
 package Persistencia;
 
+import Interfaces.IConexionBD;
+
 /**
  *
- * @author RAUL EDUARDO GOMEZ
+ * @author JOSUE GOMEZ
  */
-public class ConexionBD {
+public class ConexionBD extends IConexionBD{
     
 }

@@ -6,8 +6,8 @@ package Interfaces;
 
 /**
  *
- * @author RAUL EDUARDO GOMEZ
+ * @author JOSUE GOMEZ
  */
-public class IAutoDAO {
+public interface IAutoDAO {
     
 }

@@ -6,8 +6,8 @@ package Interfaces;
 
 /**
  *
- * @author RAUL EDUARDO GOMEZ
+ * @author JOSUE GOMEZ
  */
-public class IPlacasDAO {
+public interface IPlacasDAO {
     
 }
