@@ -90,6 +90,16 @@ public class Vehiculo implements Serializable {
         this.nuevo = nuevo;
     }
 
+    public Vehiculo(String modelo, String color, String numSerie, String linea, String marca, boolean nuevo) {
+        this.modelo = modelo;
+        this.color = color;
+        this.numSerie = numSerie;
+        this.linea = linea;
+        this.marca = marca;
+        this.nuevo = nuevo;
+    }
+    
+
     public String getModelo() {
         return modelo;
     }

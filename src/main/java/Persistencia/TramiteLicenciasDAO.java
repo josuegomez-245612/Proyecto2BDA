@@ -26,6 +26,10 @@ public class TramiteLicenciasDAO implements ITramiteLicenciasDAO {
     public TramiteLicenciasDAO(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
+
+    public TramiteLicenciasDAO() {
+     this.entityManager = null;
+    }
  
  
     @Override

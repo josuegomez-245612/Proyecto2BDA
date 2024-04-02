@@ -6,9 +6,12 @@ package Negocio;
 
 import Entidades.Placa;
 import Entidades.Vehiculo;
+import Interfaces.IConexionBD;
+import Persistencia.ConexionBD;
 import Persistencia.PlacasDAO;
 import Persistencia.TramitePlacasDAO;
 import interfacesNegocio.IRegistrarPlacas;
+import javax.persistence.EntityManager;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,10 +19,21 @@ import javax.swing.JOptionPane;
  * @author JOSUE GOMEZ
  */
 public class RegistrarPlaca implements IRegistrarPlacas{
+    private final EntityManager entityManager;
+IConexionBD conexion;
+  TramitePlacasDAO placas;
+  PlacasDAO placa;
 
+    public RegistrarPlaca(IConexionBD conexion,EntityManager entityManager) {
+        this.entityManager = entityManager;
+        this.conexion = conexion;
+        placas = new TramitePlacasDAO(conexion.crearConexion());
+        placa = new PlacasDAO(conexion.crearConexion());
+        
+    }
   
     @Override
-    public void RegistrarPlacaNuevo(TramitePlacasDAO placas ,PlacasDAO placa, Placa p,Vehiculo v) {
+    public void RegistrarPlacaNuevo( Placa p,Vehiculo v) {
    if(placa.validarExistenciaPlaca(p.getSeriePlacas())== true){
      JOptionPane.showMessageDialog(null, "ERROR: Este auto ya está registrado en la base de datos", "Error", JOptionPane.ERROR_MESSAGE);
    }else if(placa.validarExistenciaPlaca(p.getSeriePlacas())== false){

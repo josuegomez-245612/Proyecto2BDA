@@ -4,19 +4,22 @@
  */
 package Presentacion;
 
+import Interfaces.IConexionBD;
+
 /**
  *
- * @author RAUL EDUARDO GOMEZ
+ * @author JOSUE GOMEZ
  */
 public class JDSeleccionPlacas extends javax.swing.JDialog {
 JDRegistroPlacasNuevo rpn;
 JDRegistroPlacasUsado rpu;
-
+IConexionBD conexion;
     /**
      * Creates new form JDSeleccionPlacas
      */
-    public JDSeleccionPlacas(java.awt.Frame parent, boolean modal) {
+    public JDSeleccionPlacas(IConexionBD conexion,java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        this.conexion = conexion;
         initComponents();
     }
 
@@ -137,7 +140,7 @@ JDRegistroPlacasUsado rpu;
        String opcion = (String) estadoVechiculoCB.getSelectedItem();
        
        if(opcion == "Nuevo"){
-           rpn = new JDRegistroPlacasNuevo(null,true);
+           rpn = new JDRegistroPlacasNuevo(conexion,null,true);
            rpn.setVisible(true);
        }else if(opcion == "Usado"){
            rpu = new JDRegistroPlacasUsado(null, true);

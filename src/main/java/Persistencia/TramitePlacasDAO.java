@@ -28,6 +28,10 @@ public class TramitePlacasDAO implements ITramitePlacasDAO {
         this.entityManager = entityManager;
     }
 
+    public TramitePlacasDAO() {
+        this.entityManager = null;
+    }
+
     @Override
     public void nuevoTramite(Placa placa) {
         entityManager.getTransaction().begin();

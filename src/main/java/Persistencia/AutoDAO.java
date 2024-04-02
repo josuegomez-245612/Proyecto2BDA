@@ -24,6 +24,10 @@ public class AutoDAO implements IAutoDAO {
         this.entityManager = entityManager;
     }
 
+    public AutoDAO() {
+        this.entityManager = null;
+    }
+
    
     @Override
     public List<VehiculosPlacasDTO> cargarTodosLosVehiculos() {

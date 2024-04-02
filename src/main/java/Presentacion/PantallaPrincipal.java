@@ -4,6 +4,7 @@
  */
 package Presentacion;
 
+import Interfaces.IConexionBD;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,11 +15,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     JDRenovarLicencia renovarLicencia;
 JDRegistroLicencia rl;
 JDSeleccionPlacas sp;
+IConexionBD conexion;
     /**
      * Creates new form PantallaPrincipal
      */
-    public PantallaPrincipal() {
+    public PantallaPrincipal(IConexionBD conexion) {
         initComponents();
+        this.conexion = conexion;
     }
 
     /**
@@ -190,7 +193,7 @@ JDSeleccionPlacas sp;
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-       sp = new JDSeleccionPlacas(this,true);
+       sp = new JDSeleccionPlacas(conexion,this,true);
        sp.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 

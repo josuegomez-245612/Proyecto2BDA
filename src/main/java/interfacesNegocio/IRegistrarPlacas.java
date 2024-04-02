@@ -16,7 +16,7 @@ import Persistencia.TramitePlacasDAO;
 public interface IRegistrarPlacas {
     
     
-    public void RegistrarPlacaNuevo(TramitePlacasDAO placas,PlacasDAO placa,Placa p, Vehiculo v);
+    public void RegistrarPlacaNuevo(Placa p, Vehiculo v);
     
     
 }

@@ -83,6 +83,12 @@ public class Placa implements Serializable {
         this.vehiculo = vehiculo;
     }
 
+    public Placa(Calendar fechaRecepcion, String seriePlacas, Vehiculo vehiculo) {
+        this.fechaRecepcion = fechaRecepcion;
+        this.seriePlacas = seriePlacas;
+        this.vehiculo = vehiculo;
+    }
+
     /**
      * Este constructor crea las placas e inicializa sus atributos a los valores
      * recibidos en los parámetros.

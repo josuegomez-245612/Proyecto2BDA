@@ -22,6 +22,10 @@ public PlacasDAO(EntityManager entityManager){
     this.entityManager = entityManager;
 }
 
+    public PlacasDAO() {
+    this.entityManager = null;
+    }
+
 
     @Override
     public boolean validarExistenciaPlaca(String seriePlacas) {

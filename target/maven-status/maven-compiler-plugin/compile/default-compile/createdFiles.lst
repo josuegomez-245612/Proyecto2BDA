@@ -35,6 +35,7 @@ Presentacion\ConsultarPlacas.class
 Entidades\TramiteLicencia.class
 Interfaces\IPlacasDAO.class
 Presentacion\JDRegistroPlacasUsado$1.class
+Presentacion\JDRegistroPlacasNuevo$3.class
 Presentacion\HistorialPlacas$1.class
 Presentacion\ConsultarLicencias$1.class
 Persistencia\TramiteLicenciasDAO.class
@@ -55,6 +56,7 @@ Entidades\Licencia.class
 Presentacion\ConsultarPlacas$1.class
 Presentacion\JDRegistroPlacasUsado$3.class
 Presentacion\PantallaPrincipal$8.class
+Entidades\Pruebas.class
 Persistencia\TramitePlacasDAO.class
 Presentacion\PantallaPrincipal$5.class
 Presentacion\JDRegistroLicencia$2.class
@@ -62,3 +64,4 @@ Presentacion\PantallaPrincipal$2.class
 Persistencia\AutoDAO.class
 Interfaces\IConexionBD.class
 Presentacion\Proyecto2BDA.class
+Utilidades\GeneradorPlacas.class

@@ -72,8 +72,8 @@ public class ConsultarLicencias extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(227, 227, 217));
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel1.setText("Seleccione a la persona a la cual se quiere consultar el historial de licencias");
+        jLabel1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -114,17 +114,17 @@ public class ConsultarLicencias extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel2.setText("CURP");
+        jLabel2.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel3.setText("Nombre");
+        jLabel3.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel4.setText("Fecha de Nacimiento");
+        jLabel4.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel5.setText("Buscar por: ");
+        jLabel5.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
 
         jButton1.setText("Buscar");
 

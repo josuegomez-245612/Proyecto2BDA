@@ -13,14 +13,22 @@ import javax.persistence.TypedQuery;
  *
  * @author JOSUE GOMEZ
  */
-public class PersonaDAO implements IPersonaDAO
-{
+public class PersonaDAO implements IPersonaDAO{
+
+    
+    
     
     private final EntityManager entityManager;
 
     public PersonaDAO(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
+
+    public PersonaDAO() {
+        this.entityManager = null;
+    }
+
+    
     
     @Override
     public List<Persona> getAllPersonas() throws PersistenciaException
