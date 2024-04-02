@@ -49,16 +49,21 @@ public class GenerarReporte extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(227, 227, 217));
 
-        jLabel2.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel2.setText("Tipo de Tramites");
+        jLabel2.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel3.setText("Solicitante de Tramites");
+        jLabel3.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel4.setText("Periodo de Tramites");
+        jLabel4.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Placa", "Licencia" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Placa", "Licencia", "Todos" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jTextField2.setText("Jorge Elias");
 
@@ -171,6 +176,10 @@ public class GenerarReporte extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     
 

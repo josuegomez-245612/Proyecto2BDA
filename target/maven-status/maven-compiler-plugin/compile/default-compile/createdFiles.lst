@@ -13,12 +13,14 @@ Persistencia\PersonaDAO.class
 Utilidades\ParametrosConsultaTramites.class
 Presentacion\JDRegistroPlacasUsado$2.class
 Utilidades\TramitesDTO.class
+interfacesNegocio\IRegistrarPlacas.class
 Persistencia\ConexionBD.class
 Presentacion\JDRegistroPlacasNuevo$2.class
 Entidades\Vehiculo.class
 Presentacion\JDRegistroLicencia$3.class
 Presentacion\PantallaPrincipal$1.class
 Interfaces\ITramiteLicenciasDAO.class
+Presentacion\GenerarReporte$2.class
 Presentacion\JDRenovarLicencia$3.class
 Utilidades\VehiculosPlacasDTO.class
 Entidades\Placa.class
@@ -42,6 +44,7 @@ Presentacion\JDRenovarLicencia$1.class
 Presentacion\JDRegistroLicencia$1.class
 Interfaces\IAutoDAO.class
 Presentacion\ConsultarLicencias.class
+Negocio\RegistrarPlaca.class
 Presentacion\HistorialPlacas.class
 Presentacion\JDRenovarLicencia.class
 Presentacion\JDSeleccionPlacas$1.class

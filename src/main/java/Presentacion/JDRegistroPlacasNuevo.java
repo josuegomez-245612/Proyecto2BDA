@@ -182,7 +182,7 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
     }//GEN-LAST:event_CancelarBtnActionPerformed
 
     private void AceptarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarBtnActionPerformed
-        dispose();
+       
     }//GEN-LAST:event_AceptarBtnActionPerformed
 
  

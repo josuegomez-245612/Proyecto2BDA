@@ -1,6 +1,7 @@
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Entidades\TramiteLicencia.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Interfaces\ITramitePlacasDAO.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Interfaces\IPersonaDAO.java
+C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Negocio\RegistrarPlaca.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Entidades\Tramite.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Interfaces\IAutoDAO.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Interfaces\IPlacasDAO.java
@@ -8,6 +9,7 @@ C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Persistencia\PlacasDAO.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\HistorialPlacas.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\HistorialLicencias.java
+C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\interfacesNegocio\IRegistrarPlacas.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\ConsultarLicencias.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\JDSeleccionPlacas.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Entidades\TramitePlacas.java

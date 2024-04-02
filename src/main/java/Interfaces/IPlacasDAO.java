@@ -4,10 +4,18 @@
  */
 package Interfaces;
 
+import Entidades.Placa;
+
 /**
  *
  * @author JOSUE GOMEZ
  */
 public interface IPlacasDAO {
+   
+    boolean validarExistenciaPlaca(String seriePlacas);
     
+    void DeshabilitarPlacaAuto(Placa placa);
+    
+   
+    Placa obtenerPlaca(String seriePlacas);
 }
