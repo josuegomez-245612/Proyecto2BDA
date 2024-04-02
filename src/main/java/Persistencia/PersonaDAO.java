@@ -1,10 +1,9 @@
 package Persistencia;
 
 import Entidades.Persona;
-import Entidades.Vehiculo;
 import Interfaces.IPersonaDAO;
-import Utilidades.VehiculosPlacasDTO;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -34,16 +33,15 @@ public class PersonaDAO implements IPersonaDAO{
     public List<Persona> getAllPersonas() throws PersistenciaException
     {
         List<Persona> personas = new ArrayList<>();
-        String jpql = "SELECT p.discapacitado, a FROM TramitePlacas tp "
-                + "INNER JOIN tp.placa p "
-                + "INNER JOIN p.automovil a "
-                + "WHERE p.fechaRecepcion IS NULL";
+        //0 - dsicapacitado  1 - fechaNacimiento  2 - telefono  3 - rfc  4 - nombres  5 - apellidoPaterno  6 - apellidoMaterno  7 - curp
+        String jpql = "SELECT p.discapacitado, tl.fecha_nacimiento, p.telefono, p.rfc, p.nombres, p.apellidoPaterno, p.apellidoMaterno, p.curp, FROM Persona p ";
 
         TypedQuery<Object[]> query = entityManager.createQuery(jpql, Object[].class);
         List<Object[]> resultList = query.getResultList();
         for (Object[] objects : resultList) 
         {
-//            persona.add(new Persona((String)objects[0], (Vehiculo)objects[1]));
+            personas.add(new Persona((boolean)objects[0], (Calendar)objects[1], (String)objects[2], (String)objects[3],
+                    (String)objects[4], (String)objects[5], (String)objects[1], (String)objects[1]));
         }
         return personas;
     }
