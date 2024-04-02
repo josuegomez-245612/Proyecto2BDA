@@ -11,8 +11,8 @@ import java.util.List;
 public interface IPersonaDAO 
 {
     public List<Persona> getAllPersonas() throws PersistenciaException;
-    public Persona getPersonaByNombre(String nombre) throws PersistenciaException;
-    public void addPersona(Persona persona) throws PersistenciaException;
-    public void updatePersona(Persona persona) throws PersistenciaException;
-    public void deletePersona(int personaID) throws PersistenciaException;
+    public Persona getPersonaByCurp(String nombre) throws PersistenciaException;
+//    public void addPersona(Persona persona) throws PersistenciaException;
+//    public void updatePersona(Persona persona) throws PersistenciaException;
+//    public void deletePersona(int personaID) throws PersistenciaException;
 }

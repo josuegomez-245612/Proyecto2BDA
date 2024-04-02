@@ -85,7 +85,7 @@ public class Persona implements Serializable {
     private String apellido_materno;
     
     @Column(name = "curp", nullable = false, length = 18) // Supongo que la longitud de CURP es de 18 caracteres
-private String curp;
+    private String curp;
 
     /**
      * Este atributo representa los trámites que ha realizado una persona.
