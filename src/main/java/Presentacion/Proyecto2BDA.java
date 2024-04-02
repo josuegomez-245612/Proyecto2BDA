@@ -9,7 +9,7 @@ import Persistencia.ConexionBD;
 
 /**
  *
- * @author RAUL EDUARDO GOMEZ
+ * @author JOSUE GOMEZ
  */
 public class Proyecto2BDA {
 

@@ -36,6 +36,7 @@ Presentacion\JDRegistroPlacasUsado$1.class
 Presentacion\HistorialPlacas$1.class
 Presentacion\ConsultarLicencias$1.class
 Persistencia\TramiteLicenciasDAO.class
+Persistencia\PersistenciaException.class
 Presentacion\JDSeleccionPlacas.class
 Presentacion\JDRenovarLicencia$1.class
 Presentacion\JDRegistroLicencia$1.class

@@ -39,7 +39,7 @@ public class Persona implements Serializable {
     private Long id;
 
     /**
-     * Este atributo representa el estado de discapacidad de una persona.
+     * Este atributo re presenta el estado de discapacidad de una persona.
      */
     @Column(name = "discapacitado", nullable = false)
     private boolean discapacitado;
@@ -83,6 +83,9 @@ public class Persona implements Serializable {
     @Convert(converter = EncriptadorAESConverter.class)
     @Column(name = "apellido_materno", nullable = false, length = 128)
     private String apellido_materno;
+    
+    @Column(name = "curp", nullable = false, length = 18) // Supongo que la longitud de CURP es de 18 caracteres
+private String curp;
 
     /**
      * Este atributo representa los trámites que ha realizado una persona.
@@ -107,15 +110,17 @@ public class Persona implements Serializable {
      * @param apellido_paterno Representa el apellido paterno de una persona.
      * @param apellido_materno Representa el apellido materno de una persona.
      */
-    public Persona(boolean discapacitado, Calendar fecha_nacimiento, String telefono, String rfc, String nombres, String apellido_paterno, String apellido_materno) {
-        this.discapacitado = discapacitado;
-        this.fecha_nacimiento = fecha_nacimiento;
-        this.telefono = telefono;
-        this.rfc = rfc;
-        this.nombres = nombres;
-        this.apellido_paterno = apellido_paterno;
-        this.apellido_materno = apellido_materno;
-    }
+  public Persona(boolean discapacitado, Calendar fecha_nacimiento, String telefono, String rfc, String nombres, String apellido_paterno, String apellido_materno, String curp) {
+    this.discapacitado = discapacitado;
+    this.fecha_nacimiento = fecha_nacimiento;
+    this.telefono = telefono;
+    this.rfc = rfc;
+    this.nombres = nombres;
+    this.apellido_paterno = apellido_paterno;
+    this.apellido_materno = apellido_materno;
+    this.curp = curp;
+}
+
 
     /**
      * Este constructor crea la persona e inicializa sus atributos a los valores
@@ -128,17 +133,19 @@ public class Persona implements Serializable {
      * @param nombres Representa los nombres de una persona.
      * @param apellido_paterno Representa el apellido paterno de una persona.
      * @param apellido_materno Representa el apellido materno de una persona.
+     * @param curp Represante la CURP de una persona.
      */
-    public Persona(Long id, boolean discapacitado, Calendar fecha_nacimiento, String telefono, String rfc, String nombres, String apellido_paterno, String apellido_materno) {
-        this.id = id;
-        this.discapacitado = discapacitado;
-        this.fecha_nacimiento = fecha_nacimiento;
-        this.telefono = telefono;
-        this.rfc = rfc;
-        this.nombres = nombres;
-        this.apellido_paterno = apellido_paterno;
-        this.apellido_materno = apellido_materno;
-    }
+ public Persona(Long id, boolean discapacitado, Calendar fecha_nacimiento, String telefono, String rfc, String nombres, String apellido_paterno, String apellido_materno, String curp) {
+    this.id = id;
+    this.discapacitado = discapacitado;
+    this.fecha_nacimiento = fecha_nacimiento;
+    this.telefono = telefono;
+    this.rfc = rfc;
+    this.nombres = nombres;
+    this.apellido_paterno = apellido_paterno;
+    this.apellido_materno = apellido_materno;
+    this.curp = curp;
+}
 
     /**
      * Este método regresa la llave primaria de la persona.
@@ -283,43 +290,55 @@ public class Persona implements Serializable {
     public void setTramites(List<Tramite> tramites) {
         this.tramites = tramites;
     }
+  
+    public String getCurp() {
+    return curp;
+}
+
+public void setCurp(String curp) {
+    this.curp = curp;
+}
+
     
     /**
      * Este método regresa el hash correspondiente a la entidad a partir del id.
      * @return Regresa el hash correspondiente a la entidad a partir del id.
      */
     @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
+public int hashCode() {
+    int hash = 0;
+    hash += (id != null ? id.hashCode() : 0);
+    hash += (curp != null ? curp.hashCode() : 0);
+    return hash;
+}
 
     /**
      * Este método equals compara dos objetos Persona a partir de su id.
      * @param object Representa el objeto Persona a comparar.
      * @return Regresa true en caso de que sean iguales, false en caso contrario.
      */
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Persona)) {
-            return false;
-        }
-        Persona other = (Persona) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+   @Override
+public boolean equals(Object object) {
+    if (!(object instanceof Persona)) {
+        return false;
     }
+    Persona other = (Persona) object;
+    if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        return false;
+    }
+    if ((this.curp == null && other.curp != null) || (this.curp != null && !this.curp.equals(other.curp))) {
+        return false;
+    }
+    return true;
+}
 
     /**
      * Este método regresa una cadena con los atributos de la persona.
      * @return Regresa una cadena con los atributos de la persona.
      */
-    @Override
-    public String toString() {
-        return "Persona{" + "rfc=" + rfc + ", nombres=" + nombres + ", apellido_paterno=" + apellido_paterno + ", apellido_materno=" + apellido_materno + '}';
-    }
+   @Override
+public String toString() {
+    return "Persona{" + "rfc=" + rfc + ", nombres=" + nombres + ", apellido_paterno=" + apellido_paterno + ", apellido_materno=" + apellido_materno + ", curp=" + curp + '}';
+}
 
 }

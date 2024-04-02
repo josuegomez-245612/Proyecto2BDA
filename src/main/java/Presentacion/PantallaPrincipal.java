@@ -86,7 +86,6 @@ JDSeleccionPlacas sp;
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 520));
 
-        jMenuBar1.setBackground(new java.awt.Color(50, 79, 49));
         jMenuBar1.setBorder(null);
         jMenuBar1.setForeground(new java.awt.Color(51, 102, 0));
 

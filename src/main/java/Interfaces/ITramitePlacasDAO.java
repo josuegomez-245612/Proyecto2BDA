@@ -4,10 +4,25 @@
  */
 package Interfaces;
 
+import Entidades.Placa;
+import Utilidades.ParametrosConsultaTramites;
+import Utilidades.TramitesDTO;
+import java.util.List;
+
 /**
  *
  * @author JOSUE GOMEZ
  */
 public interface ITramitePlacasDAO {
+   
+    void nuevoTramite(Placa placa);
     
+  
+    List<TramitesDTO> cargarTramites(Long idPersona);
+    
+   
+    List<TramitesDTO> cargarTramites(ParametrosConsultaTramites parametros);
+    
+    
+    List<TramitesDTO> cargarTodosTramites();
 }
