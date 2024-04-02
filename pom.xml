@@ -59,6 +59,11 @@
             <version>8.0.30</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+    <groupId>com.github.lgooddatepicker</groupId>
+    <artifactId>lgooddatepicker</artifactId>
+    <version>10.5.1</version>
+</dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

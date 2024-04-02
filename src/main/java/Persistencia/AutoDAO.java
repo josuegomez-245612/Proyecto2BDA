@@ -4,10 +4,63 @@
  */
 package Persistencia;
 
+import Entidades.Vehiculo;
+import Interfaces.IAutoDAO;
+import Utilidades.VehiculosPlacasDTO;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
 /**
  *
  * @author JOSUE GOMEZ
  */
-public class AutoDAO {
+public class AutoDAO implements IAutoDAO {
+ 
+    private final EntityManager entityManager;
+
+    public AutoDAO(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
+   
+    @Override
+    public List<VehiculosPlacasDTO> cargarTodosLosVehiculos() {
+        List<VehiculosPlacasDTO> lista = new ArrayList<>();
+        String jpql = "SELECT p.seriePlacas, a FROM TramitePlacas tp "
+                + "INNER JOIN tp.placa p "
+                + "INNER JOIN p.automovil a "
+                + "WHERE p.fechaRecepcion IS NULL";
+
+        TypedQuery<Object[]> query = entityManager.createQuery(jpql, Object[].class);
+        List<Object[]> resultList = query.getResultList();
+        for (Object[] objects : resultList) {
+            lista.add(new VehiculosPlacasDTO((String)objects[0], (Vehiculo)objects[1]));
+        }
+        return lista;
+    }
+   
+    @Override
+    public List<VehiculosPlacasDTO> cargarVehiculo(String placas) {
+        List<VehiculosPlacasDTO> lista = new ArrayList<>();
+        String jpql = "SELECT p.seriePlacas, a FROM TramitePlacas tp "
+                + "INNER JOIN tp.placa p "
+                + "INNER JOIN p.automovil a "
+                + "WHERE p.fechaRecepcion IS NULL AND p.seriePlacas = :placa";
+        
+        TypedQuery<Object[]> query = entityManager.createQuery(jpql, Object[].class);
+        query.setParameter("placa", placas);
+        query.setMaxResults(1);
+        
+        List<Object[]> resultado = query.getResultList();
+        
+        for (Object[] object : resultado) {
+            lista.add(new VehiculosPlacasDTO((String)object[0], (Vehiculo)object[1]));
+        }
+        
+        return lista;
+    }
+    
     
 }

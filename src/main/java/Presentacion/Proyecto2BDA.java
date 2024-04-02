@@ -4,6 +4,9 @@
 
 package Presentacion;
 
+import Interfaces.IConexionBD;
+import Persistencia.ConexionBD;
+
 /**
  *
  * @author RAUL EDUARDO GOMEZ
@@ -11,6 +14,10 @@ package Presentacion;
 public class Proyecto2BDA {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+       IConexionBD conexion = new ConexionBD("com.mycompany_Proyecto2BDA_jar_1.0-SNAPSHOTPU");
+       
+       PantallaPrincipal pp = new PantallaPrincipal();
+       
+       pp.setVisible(true);
     }
 }
