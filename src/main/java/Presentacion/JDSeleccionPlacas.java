@@ -33,11 +33,11 @@ IConexionBD conexion;
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        imagen = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        headerImgLabel = new javax.swing.JLabel();
+        tituloLabel = new javax.swing.JLabel();
+        estadoVehiculoLabel = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        CancelarBtn = new javax.swing.JButton();
+        volverBtn = new javax.swing.JButton();
         AceptarBtn = new javax.swing.JButton();
         estadoVechiculoCB = new javax.swing.JComboBox<>();
 
@@ -45,18 +45,18 @@ IConexionBD conexion;
 
         jPanel1.setBackground(new java.awt.Color(227, 227, 217));
 
-        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/marcoPantallaPrincipal.png"))); // NOI18N
+        headerImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/marcoPantallaPrincipal.png"))); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setText("Seleccion de placas");
+        tituloLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tituloLabel.setText("Seleccion de placas");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setText("Elija el estado del vehiculo");
+        estadoVehiculoLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        estadoVehiculoLabel.setText("Elija el estado del vehiculo");
 
-        CancelarBtn.setText("Volver");
-        CancelarBtn.addActionListener(new java.awt.event.ActionListener() {
+        volverBtn.setText("Volver");
+        volverBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelarBtnActionPerformed(evt);
+                volverBtnActionPerformed(evt);
             }
         });
 
@@ -74,24 +74,24 @@ IConexionBD conexion;
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(imagen)
+                .addComponent(headerImgLabel)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(CancelarBtn)
+                        .addComponent(volverBtn)
                         .addGap(500, 500, 500)
                         .addComponent(AceptarBtn))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(299, 299, 299)
-                        .addComponent(jLabel4))
+                        .addComponent(tituloLabel))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1734, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(213, 213, 213)
-                        .addComponent(jLabel5)
+                        .addComponent(estadoVehiculoLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(estadoVechiculoCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -99,18 +99,18 @@ IConexionBD conexion;
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(headerImgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
+                .addComponent(tituloLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
+                    .addComponent(estadoVehiculoLabel)
                     .addComponent(estadoVechiculoCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CancelarBtn)
+                    .addComponent(volverBtn)
                     .addComponent(AceptarBtn))
                 .addGap(21, 21, 21))
         );
@@ -149,19 +149,19 @@ IConexionBD conexion;
        
     }//GEN-LAST:event_AceptarBtnActionPerformed
 
-    private void CancelarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarBtnActionPerformed
+    private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         dispose();
-    }//GEN-LAST:event_CancelarBtnActionPerformed
+    }//GEN-LAST:event_volverBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AceptarBtn;
-    private javax.swing.JButton CancelarBtn;
     private javax.swing.JComboBox<String> estadoVechiculoCB;
-    private javax.swing.JLabel imagen;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel estadoVehiculoLabel;
+    private javax.swing.JLabel headerImgLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel tituloLabel;
+    private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }
