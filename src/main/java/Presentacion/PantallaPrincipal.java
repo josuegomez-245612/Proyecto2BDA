@@ -36,23 +36,23 @@ IConexionBD conexion;
         jMenuItem1 = new javax.swing.JMenuItem();
         checkbox1 = new java.awt.Checkbox();
         jPanel1 = new javax.swing.JPanel();
-        imagen = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        headerImgLabel = new javax.swing.JLabel();
+        bienvenidaLabel = new javax.swing.JLabel();
+        insercionMasivaBtn = new javax.swing.JButton();
+        addImgLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        tramitesMenu = new javax.swing.JMenu();
+        licenciaMenu = new javax.swing.JMenu();
+        tramitarLicenciaMenuItem = new javax.swing.JMenuItem();
+        renovarLicenciaMenuItem = new javax.swing.JMenuItem();
+        tramitarPlacasMenuItem = new javax.swing.JMenuItem();
+        operacionesMenu = new javax.swing.JMenu();
         menuConsultas = new javax.swing.JMenu();
-        menuItemPlacas = new javax.swing.JMenuItem();
-        menuItemLicencia = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        consultaPlacasMenuItem = new javax.swing.JMenuItem();
+        consultaLicenciaMenuItem = new javax.swing.JMenuItem();
+        reporteMenuItem = new javax.swing.JMenuItem();
+        informacionMenu = new javax.swing.JMenu();
+        acercaDeMenuItem = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -67,106 +67,106 @@ IConexionBD conexion;
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 520));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/marcoPantallaPrincipal.png"))); // NOI18N
-        jPanel1.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 130));
+        headerImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/marcoPantallaPrincipal.png"))); // NOI18N
+        jPanel1.add(headerImgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 130));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setText("Bienvenido al sistema!");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, -1, -1));
+        bienvenidaLabel.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        bienvenidaLabel.setText("Bienvenido al sistema!");
+        jPanel1.add(bienvenidaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(238, 228, 187));
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jButton1.setText("Insercion Masiva");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        insercionMasivaBtn.setBackground(new java.awt.Color(238, 228, 187));
+        insercionMasivaBtn.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        insercionMasivaBtn.setText("Insercion Masiva");
+        insercionMasivaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                insercionMasivaBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(606, 404, -1, 40));
+        jPanel1.add(insercionMasivaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(606, 404, -1, 40));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/6325028.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(544, 391, -1, 53));
+        addImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/6325028.png"))); // NOI18N
+        jPanel1.add(addImgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(544, 391, -1, 53));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 520));
 
         jMenuBar1.setBorder(null);
         jMenuBar1.setForeground(new java.awt.Color(51, 102, 0));
 
-        jMenu1.setText("Tramites");
+        tramitesMenu.setText("Tramites");
 
-        jMenu4.setText("Licencia");
+        licenciaMenu.setText("Licencia");
 
-        jMenuItem3.setText("Tramitar Licencia");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        tramitarLicenciaMenuItem.setText("Tramitar Licencia");
+        tramitarLicenciaMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                tramitarLicenciaMenuItemActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem3);
+        licenciaMenu.add(tramitarLicenciaMenuItem);
 
-        jMenuItem5.setText("Renovar Licencia");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        renovarLicenciaMenuItem.setText("Renovar Licencia");
+        renovarLicenciaMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                renovarLicenciaMenuItemActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem5);
+        licenciaMenu.add(renovarLicenciaMenuItem);
 
-        jMenu1.add(jMenu4);
+        tramitesMenu.add(licenciaMenu);
 
-        jMenuItem4.setText("Tramitar Placas");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        tramitarPlacasMenuItem.setText("Tramitar Placas");
+        tramitarPlacasMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                tramitarPlacasMenuItemActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem4);
+        tramitesMenu.add(tramitarPlacasMenuItem);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(tramitesMenu);
 
-        jMenu3.setText("Operaciones");
+        operacionesMenu.setText("Operaciones");
 
         menuConsultas.setText("Consultas");
 
-        menuItemPlacas.setText("Placas");
-        menuItemPlacas.addActionListener(new java.awt.event.ActionListener() {
+        consultaPlacasMenuItem.setText("Placas");
+        consultaPlacasMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemPlacasActionPerformed(evt);
+                consultaPlacasMenuItemActionPerformed(evt);
             }
         });
-        menuConsultas.add(menuItemPlacas);
+        menuConsultas.add(consultaPlacasMenuItem);
 
-        menuItemLicencia.setText("Licencias");
-        menuItemLicencia.addActionListener(new java.awt.event.ActionListener() {
+        consultaLicenciaMenuItem.setText("Licencias");
+        consultaLicenciaMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemLicenciaActionPerformed(evt);
+                consultaLicenciaMenuItemActionPerformed(evt);
             }
         });
-        menuConsultas.add(menuItemLicencia);
+        menuConsultas.add(consultaLicenciaMenuItem);
 
-        jMenu3.add(menuConsultas);
+        operacionesMenu.add(menuConsultas);
 
-        jMenuItem6.setText("Reporte");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+        reporteMenuItem.setText("Reporte");
+        reporteMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
+                reporteMenuItemActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem6);
+        operacionesMenu.add(reporteMenuItem);
 
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(operacionesMenu);
 
-        jMenu2.setText("Informacion");
+        informacionMenu.setText("Informacion");
 
-        jMenuItem2.setText("Acerca de...");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        acercaDeMenuItem.setText("Acerca de...");
+        acercaDeMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                acercaDeMenuItemActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        informacionMenu.add(acercaDeMenuItem);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(informacionMenu);
 
         setJMenuBar(jMenuBar1);
 
@@ -174,7 +174,7 @@ IConexionBD conexion;
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void acercaDeMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acercaDeMenuItemActionPerformed
    JOptionPane.showMessageDialog(null, 
     "Programa realizado por:\n" +
     "Josué Gómez Garza\n" +
@@ -185,67 +185,67 @@ IConexionBD conexion;
     "6442586327",
     "Información de contacto",
     JOptionPane.PLAIN_MESSAGE);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_acercaDeMenuItemActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void tramitarLicenciaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tramitarLicenciaMenuItemActionPerformed
         rl = new JDRegistroLicencia(this,true);
         rl.setVisible(true);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_tramitarLicenciaMenuItemActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void tramitarPlacasMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tramitarPlacasMenuItemActionPerformed
        sp = new JDSeleccionPlacas(conexion,this,true);
        sp.setVisible(true);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_tramitarPlacasMenuItemActionPerformed
 
-    private void menuItemPlacasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemPlacasActionPerformed
+    private void consultaPlacasMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaPlacasMenuItemActionPerformed
        
         ConsultarPlacas consultarPlacas = new ConsultarPlacas();
         consultarPlacas.setVisible(true);
-    }//GEN-LAST:event_menuItemPlacasActionPerformed
+    }//GEN-LAST:event_consultaPlacasMenuItemActionPerformed
 
-    private void menuItemLicenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemLicenciaActionPerformed
+    private void consultaLicenciaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaLicenciaMenuItemActionPerformed
 
         ConsultarLicencias consultarLicencias = new ConsultarLicencias();
         consultarLicencias.setVisible(true);
-    }//GEN-LAST:event_menuItemLicenciaActionPerformed
+    }//GEN-LAST:event_consultaLicenciaMenuItemActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void insercionMasivaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insercionMasivaBtnActionPerformed
      JOptionPane.showMessageDialog(null, "Se han agregado los clientes con exito");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_insercionMasivaBtnActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void renovarLicenciaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_renovarLicenciaMenuItemActionPerformed
        renovarLicencia = new JDRenovarLicencia(this,true);
        renovarLicencia.setVisible(true);
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_renovarLicenciaMenuItemActionPerformed
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    private void reporteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteMenuItemActionPerformed
         GenerarReporte generarReporte = new GenerarReporte();
         generarReporte.setVisible(true);
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+    }//GEN-LAST:event_reporteMenuItemActionPerformed
 
   
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem acercaDeMenuItem;
+    private javax.swing.JLabel addImgLabel;
+    private javax.swing.JLabel bienvenidaLabel;
     private java.awt.Checkbox checkbox1;
-    private javax.swing.JLabel imagen;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuItem consultaLicenciaMenuItem;
+    private javax.swing.JMenuItem consultaPlacasMenuItem;
+    private javax.swing.JLabel headerImgLabel;
+    private javax.swing.JMenu informacionMenu;
+    private javax.swing.JButton insercionMasivaBtn;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu licenciaMenu;
     private javax.swing.JMenu menuConsultas;
-    private javax.swing.JMenuItem menuItemLicencia;
-    private javax.swing.JMenuItem menuItemPlacas;
+    private javax.swing.JMenu operacionesMenu;
+    private javax.swing.JMenuItem renovarLicenciaMenuItem;
+    private javax.swing.JMenuItem reporteMenuItem;
+    private javax.swing.JMenuItem tramitarLicenciaMenuItem;
+    private javax.swing.JMenuItem tramitarPlacasMenuItem;
+    private javax.swing.JMenu tramitesMenu;
     // End of variables declaration//GEN-END:variables
 }
