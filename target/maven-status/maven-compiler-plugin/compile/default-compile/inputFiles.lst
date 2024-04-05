@@ -6,12 +6,12 @@ C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Interfaces\IPlacasDAO.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\interfacesNegocio\IValidadoresPersona.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Persistencia\PersonaDAO.java
+C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Utilidades\ConstantesGUI.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Persistencia\PlacasDAO.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Entidades\Pruebas.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\HistorialPlacas.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\HistorialLicencias.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\interfacesNegocio\IRegistrarPlacas.java
-C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\ConsultarLicencias.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\JDSeleccionPlacas.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Entidades\TramitePlacas.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Persistencia\PersistenciaException.java
@@ -19,7 +19,6 @@ C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Utilidades\GeneradorPlacas.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\JDRegistroPlacasUsado.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\interfacesNegocio\IAgregarPersonas.java
-C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\JDRegistroLicencia.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Entidades\Licencia.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Utilidades\TramitesDTO.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\PantallaPrincipal.java
@@ -35,6 +34,7 @@ C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Utilidades\VehiculosPlacasDTO.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\Proyecto2BDA.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Persistencia\ConexionBD.java
+C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\ConsultarPersonas.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Interfaces\ITramiteLicenciasDAO.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\criptografia\EncriptadorAESConverter.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Negocio\ValidadoresPersona.java
