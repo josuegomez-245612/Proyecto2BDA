@@ -75,7 +75,7 @@ public class Placa implements Serializable {
      * recibidos en los parámetros.
      * @param tramitePlacas Representa el trámite al que pertenece esta placa.
      * @param seriePlacas Representa la serie de placas correspondientes.
-     * @param automovil Representa el auto al que pertenecen estas placas.
+     * @param vehiculo Representa el auto al que pertenecen estas placas.
      */
     public Placa(TramitePlacas tramitePlacas, String seriePlacas, Vehiculo vehiculo) {
         this.tramitePlacas = tramitePlacas;
@@ -95,7 +95,7 @@ public class Placa implements Serializable {
      * @param id Representa la llave primaria.
      * @param tramitePlacas Representa el trámite al que pertenece esta placa.
      * @param seriePlacas Representa la serie de placas correspondientes.
-     * @param automovil Representa el auto al que pertenecen estas placas.
+     * @param vehiculo Representa el auto al que pertenecen estas placas.
      */
     public Placa(Long id, TramitePlacas tramitePlacas, String seriePlacas, Vehiculo vehiculo) {
         this.id = id;
@@ -142,7 +142,7 @@ public class Placa implements Serializable {
      * @param tramitePlacas Representa el trámite al que pertenece esta placa.
      * @param fechaRecepcion Representa la fecha en la que dejan de ser válidas las placas.
      * @param seriePlacas Representa la serie de placas correspondientes.
-     * @param automovil Representa el auto al que pertenecen estas placas.
+     * @param vehiculo Representa el auto al que pertenecen estas placas.
      */
     public Placa(TramitePlacas tramitePlacas, Calendar fechaRecepcion, String seriePlacas, Vehiculo vehiculo) {
         this.tramitePlacas = tramitePlacas;

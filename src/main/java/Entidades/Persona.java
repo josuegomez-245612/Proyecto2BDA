@@ -8,6 +8,7 @@ import criptografia.EncriptadorAESConverter;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.Entity;
@@ -21,7 +22,7 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author RAUL EDUARDO GOMEZ
+ * @author JOSUE GOMEZ
  */
 /**
  * Esta entidad representa personas con sus respectivos atributos.
@@ -90,8 +91,8 @@ public class Persona implements Serializable {
     /**
      * Este atributo representa los trámites que ha realizado una persona.
      */
-    @OneToMany(mappedBy = "persona")
-    private List<Tramite> tramites;
+   @OneToMany(mappedBy = "persona", cascade = CascadeType.PERSIST)
+private List<Tramite> tramites;
     
     /**
      * Este método es un constructor por defecto.

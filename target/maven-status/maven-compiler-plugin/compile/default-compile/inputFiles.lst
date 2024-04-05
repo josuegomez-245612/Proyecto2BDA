@@ -1,10 +1,10 @@
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Entidades\TramiteLicencia.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Interfaces\ITramitePlacasDAO.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Interfaces\IPersonaDAO.java
-C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Negocio\RegistrarPlaca.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Entidades\Tramite.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Interfaces\IAutoDAO.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Interfaces\IPlacasDAO.java
+C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\interfacesNegocio\IValidadoresPersona.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Persistencia\PersonaDAO.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Persistencia\PlacasDAO.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Entidades\Pruebas.java
@@ -18,10 +18,12 @@ C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Entidades\Persona.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Utilidades\GeneradorPlacas.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\JDRegistroPlacasUsado.java
+C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\interfacesNegocio\IAgregarPersonas.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\JDRegistroLicencia.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Entidades\Licencia.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Utilidades\TramitesDTO.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\PantallaPrincipal.java
+C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\interfacesNegocio\IBuscarPersonaPorCurp.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Entidades\Placa.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Entidades\Vehiculo.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Persistencia\AutoDAO.java
@@ -35,6 +37,9 @@ C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Persistencia\ConexionBD.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Interfaces\ITramiteLicenciasDAO.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\criptografia\EncriptadorAESConverter.java
+C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Negocio\ValidadoresPersona.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Persistencia\TramiteLicenciasDAO.java
+C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Utilidades\ParametrosBusquedaPersonas.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Presentacion\GenerarReporte.java
 C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Interfaces\IConexionBD.java
+C:\Users\RAUL EDUARDO GOMEZ\Documents\NetBeansProjects\Proyecto2BDA\Proyecto2BDA\Proyecto2BDA\src\main\java\Negocio\ValidadoresPlaca.java

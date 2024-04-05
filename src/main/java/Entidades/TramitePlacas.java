@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author RAUL EDUARDO GOMEZ
+ * @author JOSUE GOMEZ
  */
 
 /**
@@ -74,6 +74,15 @@ public class TramitePlacas extends Tramite implements Serializable {
         super(costo, fechaExpedicion, persona);
         this.placa = placa;
     }
+
+    public Placa getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(Placa placa) {
+        this.placa = placa;
+    }
+    
 
     /**
      * Este método regresa una cadena con los atributos del trámite.

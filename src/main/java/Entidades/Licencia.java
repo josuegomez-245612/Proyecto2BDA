@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author RAUL EDUARDO GOMEZ
+ * @author JOSUE GOMEZ
  */
 /**
  * Esta entidad representa licencias con sus respectivos atributos.

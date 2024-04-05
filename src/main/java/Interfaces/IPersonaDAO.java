@@ -2,6 +2,7 @@ package Interfaces;
 
 import Entidades.Persona;
 import Persistencia.PersistenciaException;
+import Utilidades.ParametrosBusquedaPersonas;
 import java.util.List;
 
 /**
@@ -10,9 +11,12 @@ import java.util.List;
  */
 public interface IPersonaDAO 
 {
-    public List<Persona> getAllPersonas() throws PersistenciaException;
-    public Persona getPersonaByCurp(String nombre) throws PersistenciaException;
-//    public void addPersona(Persona persona) throws PersistenciaException;
-//    public void updatePersona(Persona persona) throws PersistenciaException;
-//    public void deletePersona(int personaID) throws PersistenciaException;
+     List<Persona> getAllPersonas() throws PersistenciaException;
+     Persona getPersonaByCurp(String nombre) throws PersistenciaException;
+ List <Persona> consultarPersonas(ParametrosBusquedaPersonas parametros);
+  boolean consultarLicenciaVigentePersona(String rfc);
+  boolean insercionMasivaPersonas();
+   boolean validarMayoriaEdadPersona(String rfc);
+    public List<Persona> cargarTodasPersonas();
+   
 }

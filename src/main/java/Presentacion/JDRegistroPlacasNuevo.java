@@ -8,7 +8,7 @@ import Entidades.Placa;
 import Entidades.TramitePlacas;
 import Entidades.Vehiculo;
 import Interfaces.IConexionBD;
-import Negocio.RegistrarPlaca;
+import Negocio.ValidadoresPlaca;
 import Persistencia.ConexionBD;
 import Persistencia.PersistenciaException;
 import Persistencia.PersonaDAO;
@@ -30,16 +30,19 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
     JDSeleccionPlacas sp;
     GeneradorPlacas generarp;
   PersonaDAO personaDAO;
-  RegistrarPlaca registrarPlaca;
+  ValidadoresPlaca registrarPlaca;
     /**
      * Creates new form JDRegistroPlacasNuevo
+     * @param conexion
+     * @param parent
+     * @param modal
      */
     public JDRegistroPlacasNuevo(IConexionBD conexion,java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
             this.conexion = conexion;
             this.personaDAO = new PersonaDAO(conexion.crearConexion());
-            this.registrarPlaca = new RegistrarPlaca(conexion,conexion.crearConexion());
+            this.registrarPlaca = new ValidadoresPlaca(conexion,conexion.crearConexion());
            
     }
     

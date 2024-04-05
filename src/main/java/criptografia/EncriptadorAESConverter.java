@@ -13,7 +13,7 @@ import javax.persistence.Converter;
 
 /**
  * Esta clase sirve para realizar el encriptado de los campos en la base de datos.
- * @author 233133_233259
+ * @author JOSUE GOMEZ
  */
 @Converter
 public class EncriptadorAESConverter implements AttributeConverter<String, String> {

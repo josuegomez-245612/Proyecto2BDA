@@ -8,7 +8,7 @@ import java.util.Random;
 
 /**
  * Clase que funge como un generador aleatorio de placas
- * @author 233133_233259
+ * @author JOSUE GOMEZ
  */
 public class GeneradorPlacas {
     

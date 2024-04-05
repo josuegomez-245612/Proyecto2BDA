@@ -11,7 +11,7 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author RAUL EDUARDO GOMEZ
+ * @author JOSUE GOMEZ
  */
 public class Pruebas {
 
@@ -20,36 +20,55 @@ public class Pruebas {
      */
     public static void main(String[] args) {
         EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("com.mycompany_Proyecto2BDA_jar_1.0-SNAPSHOTPU");
-        EntityManager entityManager = emFactory.createEntityManager();
-        // Crear una instancia de Calendar y configurarla con la fecha de nacimiento deseada
-        Calendar fechaNacimiento = Calendar.getInstance();
-        // Suponiendo que deseas configurar la fecha de nacimiento como el 1 de enero de 1990
-        fechaNacimiento.set(1990, Calendar.JANUARY, 1);
+    EntityManager entityManager = emFactory.createEntityManager();
+    
+    // Begin transaction
+    entityManager.getTransaction().begin();
 
-        Persona persona = new Persona(
-                false, // discapacitado
-                fechaNacimiento, // fecha_nacimiento
-                "1234567890", // telefono
-                "RFC123456", // rfc
-                "Juan", // nombres
-                "Pérez", // apellido_paterno
-                "Gómez", // apellido_materno
-                "CURP12345" // curp
-        );
+    // Create Persona entity
+    Calendar fechaNacimiento = Calendar.getInstance();
+    fechaNacimiento.set(1990, Calendar.JANUARY, 1);
 
-        // Iniciar una transacción
-        entityManager.getTransaction().begin();
+    Persona persona = new Persona(
+            false,
+            fechaNacimiento,
+            "1234567890",
+            "RFC123456",
+            "Juan",
+            "Pérez",
+            "Gómez",
+            "CURP12345"
+    );
+     //public Vehiculo(Long id, String modelo, String tipoVehiculo, String color, String numSerie, String linea, String marca, boolean nuevo)
+    Vehiculo v = new Vehiculo("Fiesta","Auto","Rojo","123456","2024","Nissan",true);
+    Licencia l = new Licencia(3);
+     //public TramiteLicencia(Licencia licencia, int costo, Calendar fechaExpedicion, Persona persona) 
+TramiteLicencia tl = new TramiteLicencia(l,1100,fechaNacimiento,persona);
+//  public TramitePlacas(int costo, Calendar fechaExpedicion, Persona persona)
+TramitePlacas tp = new TramitePlacas(1500,fechaNacimiento,persona);
 
-        // Persistir la entidad Persona
-        entityManager.persist(persona);
+// public Placa(TramitePlacas tramitePlacas, String seriePlacas, Vehiculo vehiculo)
+Placa p = new Placa(1L,tp,"123",v);
 
-        // Completar la transacción
-        entityManager.getTransaction().commit();
+tp.setPlaca(p);
 
-        // Cerrar el EntityManager
-        entityManager.close();
-        emFactory.close();
+    // Persist Persona entity
+    entityManager.persist(persona);
+    entityManager.persist(v);
 
-    }
 
+    // Create Tramite entity
+    Tramite tramite = new Tramite(1500, Calendar.getInstance(), persona);
+
+    // Persist Tramite entity
+    entityManager.persist(tramite);
+    entityManager.persist(tl);
+   entityManager.persist(tp);
+    // Commit transaction
+    entityManager.getTransaction().commit();
+
+    // Close EntityManager
+    entityManager.close();
+    emFactory.close();
+}
 }

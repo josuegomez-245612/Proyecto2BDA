@@ -10,7 +10,7 @@ package Presentacion;
  */
 public class HistorialLicencias extends javax.swing.JFrame {
 
-    ConsultarLicencias consultarLicencias;
+    ConsultarPersonas consultarLicencias;
     
     
     public HistorialLicencias() {
@@ -20,7 +20,7 @@ public class HistorialLicencias extends javax.swing.JFrame {
      * Creates new form HistorialPlacas
      * @param frame
      */
-    public HistorialLicencias(ConsultarLicencias frame) {
+    public HistorialLicencias(ConsultarPersonas frame) {
         initComponents();
         consultarLicencias = frame;
     }

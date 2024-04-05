@@ -20,7 +20,7 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author RAUL EDUARDO GOMEZ
+ * @author JOSUE GOMEZ
  */
 /**
  * Esta entidad representa trámites con sus respectivos atributos.
@@ -54,8 +54,8 @@ public class Tramite implements Serializable {
      * Este atributo representa la persona que realizó el trámite.
      */
     @ManyToOne
-    @JoinColumn(name = "idPersona", nullable = false)
-    private Persona persona;
+@JoinColumn(name = "idPersona", nullable = false)
+private Persona persona;
     
     /**
      * Este constructor crea el trámite e inicializa sus atributos a los valores

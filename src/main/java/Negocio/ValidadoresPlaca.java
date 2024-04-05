@@ -18,13 +18,13 @@ import javax.swing.JOptionPane;
  *
  * @author JOSUE GOMEZ
  */
-public class RegistrarPlaca implements IRegistrarPlacas{
+public class ValidadoresPlaca implements IRegistrarPlacas{
     private final EntityManager entityManager;
 IConexionBD conexion;
   TramitePlacasDAO placas;
   PlacasDAO placa;
 
-    public RegistrarPlaca(IConexionBD conexion,EntityManager entityManager) {
+    public ValidadoresPlaca(IConexionBD conexion,EntityManager entityManager) {
         this.entityManager = entityManager;
         this.conexion = conexion;
         placas = new TramitePlacasDAO(conexion.crearConexion());
