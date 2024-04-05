@@ -13,6 +13,8 @@ import Utilidades.ParametrosBusquedaPersonas;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -401,9 +403,11 @@ public class ConsultarPersonas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.setVisible(false);
-        HistorialLicencias historialLicencias = new HistorialLicencias(this);
-        historialLicencias.setVisible(true);
+        try {
+            this.Consultar();
+        } catch (PersistenciaException ex) {
+            Logger.getLogger(ConsultarPersonas.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtFieldCURPFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtFieldCURPFocusLost

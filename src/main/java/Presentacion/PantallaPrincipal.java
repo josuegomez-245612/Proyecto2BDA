@@ -7,6 +7,7 @@ package Presentacion;
 import Interfaces.IConexionBD;
 import Persistencia.PersonaDAO;
 import Utilidades.ConstantesGUI;
+import static Utilidades.ConstantesGUI.LICENCIAS;
 import javax.swing.JOptionPane;
 
 /**
@@ -102,6 +103,11 @@ ConstantesGUI operacion;
         tramitesMenu.setText("Tramites");
 
         licenciaMenu.setText("Licencia");
+        licenciaMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                licenciaMenuActionPerformed(evt);
+            }
+        });
 
         tramitarLicenciaMenuItem.setText("Tramitar Licencia");
         tramitarLicenciaMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -195,7 +201,8 @@ ConstantesGUI operacion;
     }//GEN-LAST:event_acercaDeMenuItemActionPerformed
 
     private void tramitarLicenciaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tramitarLicenciaMenuItemActionPerformed
-       cl = new ConsultarPersonas(conexion,operacion);
+   operacion = LICENCIAS;
+        cl = new ConsultarPersonas(conexion,operacion);
         cl.setVisible(true);
     }//GEN-LAST:event_tramitarLicenciaMenuItemActionPerformed
 
@@ -230,6 +237,10 @@ ConstantesGUI operacion;
         GenerarReporte generarReporte = new GenerarReporte();
         generarReporte.setVisible(true);
     }//GEN-LAST:event_reporteMenuItemActionPerformed
+
+    private void licenciaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_licenciaMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_licenciaMenuActionPerformed
 
   
     

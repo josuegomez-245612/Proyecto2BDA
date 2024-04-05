@@ -12,6 +12,8 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -186,8 +188,27 @@ public class PersonaDAO implements IPersonaDAO {
     }
 
     @Override
-    public boolean validarMayoriaEdadPersona(String rfc) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean validarMayoriaEdadPersona(String CURP) {
+       Persona persona = null;
+        try {
+            persona = this.getPersonaByCurp(CURP);
+        } catch (PersistenciaException ex) {
+            Logger.getLogger(PersonaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Calendar fechaNacimiento = persona.getFecha_nacimiento();
+        
+        if (persona != null) {
+            Calendar fechaCumpleMayoriaEdad = Calendar.getInstance();
+            fechaCumpleMayoriaEdad.setTime(fechaNacimiento.getTime());
+            fechaCumpleMayoriaEdad.add(Calendar.YEAR, 18);
+            
+            Calendar fechaActual = Calendar.getInstance();
+            
+            return !fechaActual.before(fechaCumpleMayoriaEdad);
+        } else {
+            System.out.println("Error al buscar la persona");
+            return false;
+        }
     }
 
     @Override
