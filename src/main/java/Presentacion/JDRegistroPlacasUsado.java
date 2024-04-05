@@ -28,188 +28,184 @@ JDSeleccionPlacas sp;
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        imagen = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        headerImgLabel = new javax.swing.JLabel();
+        tituloLabel = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        CancelarBtn = new javax.swing.JButton();
-        AceptarBtn = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        numeroPlacaAnteriorTxt = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        marcaTxt = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        lineaTxt = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        colorTxt = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        modeloTxt = new javax.swing.JTextField();
-        AceptarBtn1 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        clienteLbl = new javax.swing.JLabel();
+        volverBtn = new javax.swing.JButton();
+        buscarBtn = new javax.swing.JButton();
+        numeroPlacaLabel = new javax.swing.JLabel();
+        numeroPlacaTxtField = new javax.swing.JTextField();
+        marcaLabel = new javax.swing.JLabel();
+        marcaTxtField = new javax.swing.JTextField();
+        lineaLabel = new javax.swing.JLabel();
+        lineaTxtField = new javax.swing.JTextField();
+        modeloLabel = new javax.swing.JLabel();
+        colorTxtField = new javax.swing.JTextField();
+        colorLabel = new javax.swing.JLabel();
+        modeloTxtField = new javax.swing.JTextField();
+        aceptarBtn = new javax.swing.JButton();
+        clienteImgLabel = new javax.swing.JLabel();
+        clienteLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(227, 227, 217));
 
-        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/marcoPantallaPrincipal.png"))); // NOI18N
+        headerImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/marcoPantallaPrincipal.png"))); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setText("Renovacion de placas");
+        tituloLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tituloLabel.setText("Renovacion de placas");
 
-        CancelarBtn.setText("Volver");
-        CancelarBtn.addActionListener(new java.awt.event.ActionListener() {
+        volverBtn.setText("Volver");
+        volverBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelarBtnActionPerformed(evt);
+                volverBtnActionPerformed(evt);
             }
         });
 
-        AceptarBtn.setText("Buscar");
-        AceptarBtn.addActionListener(new java.awt.event.ActionListener() {
+        buscarBtn.setText("Buscar");
+        buscarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AceptarBtnActionPerformed(evt);
+                buscarBtnActionPerformed(evt);
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setText("Numero de placa anterior:");
+        numeroPlacaLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        numeroPlacaLabel.setText("Numero de placa anterior:");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Marca:");
+        marcaLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        marcaLabel.setText("Marca:");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setText("Linea:");
+        lineaLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lineaLabel.setText("Linea:");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel8.setText("Modelo:");
+        modeloLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        modeloLabel.setText("Modelo:");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel9.setText("Color:");
+        colorLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        colorLabel.setText("Color:");
 
-        AceptarBtn1.setText("Aceptar");
-        AceptarBtn1.addActionListener(new java.awt.event.ActionListener() {
+        aceptarBtn.setText("Aceptar");
+        aceptarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AceptarBtn1ActionPerformed(evt);
+                aceptarBtnActionPerformed(evt);
             }
         });
 
-        jLabel3.setBackground(new java.awt.Color(204, 0, 51));
-        jLabel3.setForeground(new java.awt.Color(204, 255, 0));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/clipart-people-symbol-5 (1).png"))); // NOI18N
-        jLabel3.setText("jLabel3");
+        clienteImgLabel.setBackground(new java.awt.Color(204, 0, 51));
+        clienteImgLabel.setForeground(new java.awt.Color(204, 255, 0));
+        clienteImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/clipart-people-symbol-5 (1).png"))); // NOI18N
+        clienteImgLabel.setText("jLabel3");
 
-        clienteLbl.setText("Jorge Elias");
+        clienteLabel.setText("Jorge Elias");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(imagen)
+                .addComponent(headerImgLabel)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(299, 299, 299)
-                        .addComponent(jLabel4))
+                        .addComponent(tituloLabel))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1734, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGap(54, 54, 54)
+                            .addComponent(numeroPlacaLabel)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(numeroPlacaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(buscarBtn)
+                            .addGap(0, 0, Short.MAX_VALUE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
+                                    .addComponent(marcaLabel)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(marcaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(marcaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(1236, 1236, 1236))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel7)
+                                            .addComponent(lineaLabel)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(lineaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(lineaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel9)
+                                            .addComponent(colorLabel)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(colorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(colorTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addGap(147, 147, 147)
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(clienteImgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addGap(166, 166, 166)
-                                            .addComponent(clienteLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGap(964, 964, 964))))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGap(54, 54, 54)
-                            .addComponent(jLabel6)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(numeroPlacaAnteriorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(AceptarBtn)
-                            .addGap(0, 0, Short.MAX_VALUE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(clienteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(964, 964, 964))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(CancelarBtn))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel8)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(modeloTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(1236, 1236, 1236))))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(volverBtn, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(modeloLabel, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(modeloTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(1236, 1236, 1236))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(689, 689, 689)
-                    .addComponent(AceptarBtn1)
+                    .addComponent(aceptarBtn)
                     .addContainerGap(985, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(headerImgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
+                .addComponent(tituloLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(clienteImgLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(clienteLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(clienteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                        .addComponent(CancelarBtn)
+                        .addComponent(volverBtn)
                         .addGap(21, 21, 21))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(numeroPlacaAnteriorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AceptarBtn))
+                            .addComponent(numeroPlacaLabel)
+                            .addComponent(numeroPlacaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buscarBtn))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(marcaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(marcaLabel)
+                            .addComponent(marcaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(17, 17, 17)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(lineaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lineaLabel)
+                            .addComponent(lineaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(16, 16, 16)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(colorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(colorTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(colorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(modeloTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(modeloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(modeloTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(349, Short.MAX_VALUE)
-                    .addComponent(AceptarBtn1)
+                    .addComponent(aceptarBtn)
                     .addGap(19, 19, 19)))
         );
 
@@ -234,42 +230,42 @@ JDSeleccionPlacas sp;
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CancelarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarBtnActionPerformed
+    private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
 
         dispose();
        
-    }//GEN-LAST:event_CancelarBtnActionPerformed
+    }//GEN-LAST:event_volverBtnActionPerformed
 
-    private void AceptarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarBtnActionPerformed
+    private void buscarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBtnActionPerformed
         dispose();
-    }//GEN-LAST:event_AceptarBtnActionPerformed
+    }//GEN-LAST:event_buscarBtnActionPerformed
 
-    private void AceptarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarBtn1ActionPerformed
+    private void aceptarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AceptarBtn1ActionPerformed
+    }//GEN-LAST:event_aceptarBtnActionPerformed
 
   
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AceptarBtn;
-    private javax.swing.JButton AceptarBtn1;
-    private javax.swing.JButton CancelarBtn;
-    private javax.swing.JLabel clienteLbl;
-    private javax.swing.JTextField colorTxt;
-    private javax.swing.JLabel imagen;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton aceptarBtn;
+    private javax.swing.JButton buscarBtn;
+    private javax.swing.JLabel clienteImgLabel;
+    private javax.swing.JLabel clienteLabel;
+    private javax.swing.JLabel colorLabel;
+    private javax.swing.JTextField colorTxtField;
+    private javax.swing.JLabel headerImgLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField lineaTxt;
-    private javax.swing.JTextField marcaTxt;
-    private javax.swing.JTextField modeloTxt;
-    private javax.swing.JTextField numeroPlacaAnteriorTxt;
+    private javax.swing.JLabel lineaLabel;
+    private javax.swing.JTextField lineaTxtField;
+    private javax.swing.JLabel marcaLabel;
+    private javax.swing.JTextField marcaTxtField;
+    private javax.swing.JLabel modeloLabel;
+    private javax.swing.JTextField modeloTxtField;
+    private javax.swing.JLabel numeroPlacaLabel;
+    private javax.swing.JTextField numeroPlacaTxtField;
+    private javax.swing.JLabel tituloLabel;
+    private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

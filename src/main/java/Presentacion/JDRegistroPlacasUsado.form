@@ -52,79 +52,73 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="imagen" min="-2" max="-2" attributes="0"/>
+                  <Component id="headerImgLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="299" max="-2" attributes="0"/>
-                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <Component id="tituloLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jSeparator1" min="-2" pref="1734" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" alignment="1" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                              <Component id="numeroPlacaLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="numeroPlacaTxtField" min="-2" pref="221" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="buscarBtn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="marcaLabel" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="marcaTxt" min="-2" pref="221" max="-2" attributes="0"/>
+                                      <Component id="marcaTxtField" min="-2" pref="221" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="1236" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lineaLabel" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lineaTxt" min="-2" pref="221" max="-2" attributes="0"/>
+                                              <Component id="lineaTxtField" min="-2" pref="221" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                              <Component id="colorLabel" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="colorTxt" min="-2" pref="221" max="-2" attributes="0"/>
+                                              <Component id="colorTxtField" min="-2" pref="221" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <EmptySpace min="147" pref="147" max="-2" attributes="0"/>
-                                              <Component id="jLabel3" min="-2" pref="106" max="-2" attributes="0"/>
+                                              <Component id="clienteImgLabel" min="-2" pref="106" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
-                                              <Component id="clienteLbl" min="-2" pref="106" max="-2" attributes="0"/>
+                                              <Component id="clienteLabel" min="-2" pref="106" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace min="-2" pref="964" max="-2" attributes="0"/>
                                   </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="numeroPlacaAnteriorTxt" min="-2" pref="221" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="AceptarBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="24" max="32767" attributes="0"/>
-                                      <Component id="CancelarBtn" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="207" max="32767" attributes="0"/>
-                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="volverBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="modeloLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="modeloTxtField" min="-2" pref="221" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="1236" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="modeloTxt" min="-2" pref="221" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="1236" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -133,7 +127,7 @@
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="689" max="-2" attributes="0"/>
-                      <Component id="AceptarBtn1" min="-2" max="-2" attributes="0"/>
+                      <Component id="aceptarBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="985" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -142,46 +136,46 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="imagen" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="headerImgLabel" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                  <Component id="tituloLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel3" max="32767" attributes="0"/>
+                          <Component id="clienteImgLabel" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="clienteLbl" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="clienteLabel" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace pref="53" max="32767" attributes="0"/>
-                          <Component id="CancelarBtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="volverBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="numeroPlacaAnteriorTxt" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="AceptarBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="numeroPlacaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="numeroPlacaTxtField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="buscarBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="marcaTxt" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="marcaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="marcaTxtField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lineaTxt" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="lineaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lineaTxtField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="colorTxt" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="jLabel9" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="colorTxtField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="colorLabel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel8" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="modeloTxt" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="modeloLabel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="modeloTxtField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -190,7 +184,7 @@
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="349" max="32767" attributes="0"/>
-                      <Component id="AceptarBtn1" min="-2" max="-2" attributes="0"/>
+                      <Component id="aceptarBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -198,14 +192,14 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="imagen">
+        <Component class="javax.swing.JLabel" name="headerImgLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagenes/marcoPantallaPrincipal.png"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="tituloLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -215,23 +209,23 @@
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator1">
         </Component>
-        <Component class="javax.swing.JButton" name="CancelarBtn">
+        <Component class="javax.swing.JButton" name="volverBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Volver"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CancelarBtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="volverBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="AceptarBtn">
+        <Component class="javax.swing.JButton" name="buscarBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buscar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AceptarBtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="numeroPlacaLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -239,9 +233,9 @@
             <Property name="text" type="java.lang.String" value="Numero de placa anterior:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="numeroPlacaAnteriorTxt">
+        <Component class="javax.swing.JTextField" name="numeroPlacaTxtField">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="marcaLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -249,9 +243,9 @@
             <Property name="text" type="java.lang.String" value="Marca:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="marcaTxt">
+        <Component class="javax.swing.JTextField" name="marcaTxtField">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel7">
+        <Component class="javax.swing.JLabel" name="lineaLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -259,9 +253,9 @@
             <Property name="text" type="java.lang.String" value="Linea:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="lineaTxt">
+        <Component class="javax.swing.JTextField" name="lineaTxtField">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel8">
+        <Component class="javax.swing.JLabel" name="modeloLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -269,9 +263,9 @@
             <Property name="text" type="java.lang.String" value="Modelo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="colorTxt">
+        <Component class="javax.swing.JTextField" name="colorTxtField">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel9">
+        <Component class="javax.swing.JLabel" name="colorLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -279,17 +273,17 @@
             <Property name="text" type="java.lang.String" value="Color:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="modeloTxt">
+        <Component class="javax.swing.JTextField" name="modeloTxtField">
         </Component>
-        <Component class="javax.swing.JButton" name="AceptarBtn1">
+        <Component class="javax.swing.JButton" name="aceptarBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Aceptar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AceptarBtn1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aceptarBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
+        <Component class="javax.swing.JLabel" name="clienteImgLabel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="cc" type="rgb"/>
@@ -303,7 +297,7 @@
             <Property name="text" type="java.lang.String" value="jLabel3"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="clienteLbl">
+        <Component class="javax.swing.JLabel" name="clienteLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Jorge Elias"/>
           </Properties>
