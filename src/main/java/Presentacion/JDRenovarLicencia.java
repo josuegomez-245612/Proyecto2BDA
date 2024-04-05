@@ -30,6 +30,8 @@ ConstantesGUI operaciones;
         initComponents();
         this.conexion = conexion;
         this.personaElegida = persona;
+        System.out.println(persona.getNombres());
+        this.settearNombrePersonaElegida();
     }
 public void settearNombrePersonaElegida(){
     nombreLbl1.setText(personaElegida.getNombres());
