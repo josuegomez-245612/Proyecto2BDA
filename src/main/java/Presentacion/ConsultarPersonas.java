@@ -77,8 +77,9 @@ public class ConsultarPersonas extends javax.swing.JFrame {
         } else if (!vigencia && mayoriaEdad) {
             JOptionPane.showMessageDialog(null, "Cumple con los requisitos para seguir con el trámite");
             Persona personaElegida = this.pDAO.getPersonaByCurp((String) this.listaPersonasJT.getValueAt(this.listaPersonasJT.getSelectedRow(), 4));
-            new JDRenovarLicencia(conexion, personaElegida, this, true).setVisible(true);
             this.setVisible(false);
+            new JDRenovarLicencia(conexion, personaElegida, this, true).setVisible(true);
+            
         } else if (!vigencia && !mayoriaEdad) {
             JOptionPane.showMessageDialog(null, "No se puede registrar licencia para esta persona debido a que es menor de edad");
         } else {

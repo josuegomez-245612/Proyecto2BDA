@@ -193,7 +193,7 @@ public class Placa implements Serializable {
 
     /**
      * Este método asigna el valor del atributo automovil al valor recibido en el parámetro.
-     * @param automovil Representa el valor a asignar.
+     * @param vehiculo
      */
     public void setVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;

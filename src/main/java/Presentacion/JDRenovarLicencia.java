@@ -6,7 +6,11 @@ package Presentacion;
 
 import Entidades.Persona;
 import Interfaces.IConexionBD;
+import Negocio.ValidadoresLicencia;
+import Persistencia.TramiteLicenciasDAO;
 import Utilidades.ConstantesGUI;
+import java.awt.event.ItemEvent;
+import javax.persistence.EntityManager;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,28 +19,76 @@ import javax.swing.JOptionPane;
  */
 public class JDRenovarLicencia extends javax.swing.JDialog {
 
-IConexionBD conexion;
-Persona personaElegida;
-ConstantesGUI operaciones;
+    IConexionBD conexion;
+    Persona personaElegida;
+    ConstantesGUI operaciones;
+    private Integer vigenciaLicencia;
+    private EntityManager entityManager;
+    private Integer costoLicencia;
+    private ValidadoresLicencia vLicencia;
+
     /**
      * Creates new form JDRenovarLicencia
+     *
      * @param conexion
      * @param persona
      * @param parent
      * @param modal
      */
-    public JDRenovarLicencia(IConexionBD conexion,Persona persona,java.awt.Frame parent, boolean modal) {
+    public JDRenovarLicencia(IConexionBD conexion, Persona persona, java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         this.conexion = conexion;
         this.personaElegida = persona;
-        System.out.println(persona.getNombres());
+        this.txtFieldCosto.setEditable(false);
+        this.entityManager = conexion.crearConexion();
+        this.vLicencia = new ValidadoresLicencia(conexion,this.entityManager);
+        this.calcularCosto();
+
         this.settearNombrePersonaElegida();
     }
-public void settearNombrePersonaElegida(){
-    nombreCliente2Label.setText(personaElegida.getNombres());
-       nombreLabel.setText(personaElegida.getNombres());
-}
+
+    public void settearNombrePersonaElegida() {
+        nombreCliente2Label.setText(personaElegida.getNombres());
+        nombreLabel.setText(personaElegida.getNombres());
+    }
+
+    /**
+     * Método que calcula el costo de una licencia mediante la vigencia
+     * seleccionada
+     */
+    private void calcularCosto() {
+        String vigencia = (String) this.tipoVigenciaComboBox.getSelectedItem();
+        if (vigencia.equalsIgnoreCase("1 AÑO")) {
+            this.vigenciaLicencia = 1;
+            if (personaElegida.isDiscapacitado()) {
+                this.costoLicencia = 200;
+                this.txtFieldCosto.setText("Costo: " + this.costoLicencia);
+            } else {
+                this.costoLicencia = 600;
+                this.txtFieldCosto.setText("Costo: " + this.costoLicencia);
+            }
+        } else if (vigencia.equalsIgnoreCase("2 AÑOS")) {
+            this.vigenciaLicencia = 2;
+            if (personaElegida.isDiscapacitado()) {
+                this.costoLicencia = 500;
+                this.txtFieldCosto.setText("Costo: " + this.costoLicencia);
+            } else {
+                this.costoLicencia = 900;
+                this.txtFieldCosto.setText("Costo: " + this.costoLicencia);
+            }
+        } else {
+            this.vigenciaLicencia = 3;
+            if (personaElegida.isDiscapacitado()) {
+                this.costoLicencia = 700;
+                this.txtFieldCosto.setText("Costo: " + this.costoLicencia);
+            } else {
+                this.costoLicencia = 1100;
+                this.txtFieldCosto.setText("Costo: " + this.costoLicencia);
+            }
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,13 +107,11 @@ public void settearNombrePersonaElegida(){
         volverBtn = new javax.swing.JButton();
         aceptarBtn = new javax.swing.JButton();
         tipoVigenciaComboBox = new javax.swing.JComboBox<>();
-        discapacitadaComboBox = new javax.swing.JComboBox<>();
         nombreClienteLabel = new javax.swing.JLabel();
         clienteImgLabel = new javax.swing.JLabel();
         nombreLabel = new javax.swing.JLabel();
-        cantidadPrecioLabel = new javax.swing.JLabel();
-        descapacitadaLabel = new javax.swing.JLabel();
         nombreCliente2Label = new javax.swing.JLabel();
+        txtFieldCosto = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -76,7 +126,7 @@ public void settearNombrePersonaElegida(){
         precioLabel.setText("Precio:");
 
         tipoVigenciaLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        tipoVigenciaLabel.setText("Tipo de vigencia (años):");
+        tipoVigenciaLabel.setText("Tipo de vigencia:");
 
         volverBtn.setText("Volver");
         volverBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -92,9 +142,12 @@ public void settearNombrePersonaElegida(){
             }
         });
 
-        tipoVigenciaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 ", "2 ", "3 " }));
-
-        discapacitadaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No", "Si" }));
+        tipoVigenciaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 AÑO", "2 AÑOS", "3 AÑOS" }));
+        tipoVigenciaComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                tipoVigenciaComboBoxItemStateChanged(evt);
+            }
+        });
 
         nombreClienteLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         nombreClienteLabel.setText("Nombre del cliente:");
@@ -106,12 +159,9 @@ public void settearNombrePersonaElegida(){
 
         nombreLabel.setText("Jorge Elias");
 
-        cantidadPrecioLabel.setText("jLabel1");
-
-        descapacitadaLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        descapacitadaLabel.setText("La persona es discapacitada?");
-
         nombreCliente2Label.setText("jLabel1");
+
+        txtFieldCosto.setText("jTextField1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -131,25 +181,17 @@ public void settearNombrePersonaElegida(){
                 .addComponent(nombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(92, 92, 92))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(196, 196, 196)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(precioLabel)
+                    .addComponent(tipoVigenciaLabel)
+                    .addComponent(nombreClienteLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(nombreClienteLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nombreCliente2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(precioLabel)
-                            .addComponent(tipoVigenciaLabel)
-                            .addComponent(descapacitadaLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tipoVigenciaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(discapacitadaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cantidadPrecioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(tipoVigenciaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFieldCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombreCliente2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(clienteImgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(116, 116, 116))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -171,28 +213,23 @@ public void settearNombrePersonaElegida(){
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nombreClienteLabel)
                             .addComponent(nombreCliente2Label))
-                        .addGap(34, 34, 34)
+                        .addGap(47, 47, 47)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tipoVigenciaLabel)
-                            .addComponent(tipoVigenciaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(discapacitadaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(descapacitadaLabel)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(clienteImgLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(4, 4, 4)))
+                            .addComponent(tipoVigenciaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(clienteImgLabel))
+                .addGap(4, 4, 4)
                 .addComponent(nombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(precioLabel)
-                    .addComponent(cantidadPrecioLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                    .addComponent(txtFieldCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(volverBtn)
                     .addComponent(aceptarBtn))
@@ -218,24 +255,26 @@ public void settearNombrePersonaElegida(){
 
     private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         dispose();
-         
-        ConsultarPersonas cp = new ConsultarPersonas(conexion,operaciones);
+
+        ConsultarPersonas cp = new ConsultarPersonas(conexion, operaciones);
         cp.setVisible(true);
     }//GEN-LAST:event_volverBtnActionPerformed
 
     private void aceptarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBtnActionPerformed
+vLicencia.crearLicencia(personaElegida, vigenciaLicencia, costoLicencia);
         dispose();
-          JOptionPane.showMessageDialog(null, "Tramite exitoso", "Se realizó el tramite de renovacion con exito",JOptionPane.NO_OPTION);
     }//GEN-LAST:event_aceptarBtnActionPerformed
 
-   
+    private void tipoVigenciaComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_tipoVigenciaComboBoxItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            calcularCosto();
+        }
+    }//GEN-LAST:event_tipoVigenciaComboBoxItemStateChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptarBtn;
-    private javax.swing.JLabel cantidadPrecioLabel;
     private javax.swing.JLabel clienteImgLabel;
-    private javax.swing.JLabel descapacitadaLabel;
-    private javax.swing.JComboBox<String> discapacitadaComboBox;
     private javax.swing.JLabel headerImgLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
@@ -246,6 +285,7 @@ public void settearNombrePersonaElegida(){
     private javax.swing.JComboBox<String> tipoVigenciaComboBox;
     private javax.swing.JLabel tipoVigenciaLabel;
     private javax.swing.JLabel tituloLabel;
+    private javax.swing.JTextField txtFieldCosto;
     private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

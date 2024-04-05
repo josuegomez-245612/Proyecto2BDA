@@ -62,7 +62,7 @@
         <dependency>
     <groupId>com.github.lgooddatepicker</groupId>
     <artifactId>lgooddatepicker</artifactId>
-    <version>10.5.1</version>
+    <version>11.2.1</version>
 </dependency>
 <dependency>
     <groupId>net.sf.jasperreports</groupId>
