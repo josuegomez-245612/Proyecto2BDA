@@ -38,7 +38,7 @@ public class HistorialPlacas extends javax.swing.JFrame {
         clienteLabel = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        historialTable = new javax.swing.JTable();
         volverBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         headerImgLabel = new javax.swing.JLabel();
@@ -60,7 +60,7 @@ public class HistorialPlacas extends javax.swing.JFrame {
         jPanel1.add(clienteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, 20));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 760, 30));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        historialTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"G5H7LN", "Sentra", "Nissan", "2008", "07/08/2012", null},
                 {null, null, null, null, null, null},
@@ -79,7 +79,7 @@ public class HistorialPlacas extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(historialTable);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 700, 540));
 
@@ -115,11 +115,11 @@ public class HistorialPlacas extends javax.swing.JFrame {
     private javax.swing.JLabel clienteLabel;
     private javax.swing.JLabel descClienteLabel;
     private javax.swing.JLabel headerImgLabel;
+    private javax.swing.JTable historialTable;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }
