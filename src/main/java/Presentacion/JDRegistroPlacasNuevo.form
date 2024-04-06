@@ -44,44 +44,44 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="imagen" min="-2" max="-2" attributes="0"/>
+                  <Component id="headerImgLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                          <Component id="CancelarBtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="volverBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="576" max="-2" attributes="0"/>
-                          <Component id="AceptarBtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="aceptarBtn" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="299" max="-2" attributes="0"/>
-                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <Component id="tituloLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                  <Component id="curpLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="CURPTxt" min="-2" pref="221" max="-2" attributes="0"/>
+                                  <Component id="curpTxtField" min="-2" pref="221" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                      <Component id="numeroSerieLabel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="marcaLabel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lineaLabel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="modeloLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="colorLabel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="marcaTxt" min="-2" pref="221" max="-2" attributes="0"/>
-                                      <Component id="numeroSerieTxt" min="-2" pref="221" max="-2" attributes="0"/>
-                                      <Component id="lineaTxt" min="-2" pref="221" max="-2" attributes="0"/>
-                                      <Component id="colorTxt" min="-2" pref="221" max="-2" attributes="0"/>
-                                      <Component id="modeloTxt" min="-2" pref="221" max="-2" attributes="0"/>
+                                      <Component id="marcaTxtField" min="-2" pref="221" max="-2" attributes="0"/>
+                                      <Component id="numeroSerieTxtField" min="-2" pref="221" max="-2" attributes="0"/>
+                                      <Component id="lineaTxtField" min="-2" pref="221" max="-2" attributes="0"/>
+                                      <Component id="colorTxtField" min="-2" pref="221" max="-2" attributes="0"/>
+                                      <Component id="modeloTxtField" min="-2" pref="221" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -96,9 +96,9 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="imagen" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="headerImgLabel" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                  <Component id="tituloLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -107,40 +107,40 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="CURPTxt" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="curpLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="curpTxtField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="numeroSerieTxt" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="numeroSerieTxtField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="numeroSerieLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="marcaTxt" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="marcaTxtField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="marcaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lineaTxt" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="lineaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lineaTxtField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel9" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="colorTxt" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="colorLabel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="colorTxtField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="modeloTxt" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="jLabel8" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="modeloTxtField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="modeloLabel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="54" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="CancelarBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="AceptarBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="volverBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="aceptarBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               </Group>
@@ -148,14 +148,14 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="imagen">
+        <Component class="javax.swing.JLabel" name="headerImgLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagenes/marcoPantallaPrincipal.png"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="tituloLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -165,23 +165,23 @@
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator1">
         </Component>
-        <Component class="javax.swing.JButton" name="CancelarBtn">
+        <Component class="javax.swing.JButton" name="volverBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Volver"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CancelarBtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="volverBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="AceptarBtn">
+        <Component class="javax.swing.JButton" name="aceptarBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Aceptar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AceptarBtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aceptarBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="numeroSerieLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -189,9 +189,9 @@
             <Property name="text" type="java.lang.String" value="Numero de serie:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="numeroSerieTxt">
+        <Component class="javax.swing.JTextField" name="numeroSerieTxtField">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="marcaLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -199,9 +199,9 @@
             <Property name="text" type="java.lang.String" value="Marca:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="marcaTxt">
+        <Component class="javax.swing.JTextField" name="marcaTxtField">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel7">
+        <Component class="javax.swing.JLabel" name="lineaLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -209,9 +209,9 @@
             <Property name="text" type="java.lang.String" value="Linea:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="lineaTxt">
+        <Component class="javax.swing.JTextField" name="lineaTxtField">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel8">
+        <Component class="javax.swing.JLabel" name="modeloLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -219,9 +219,9 @@
             <Property name="text" type="java.lang.String" value="Modelo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="colorTxt">
+        <Component class="javax.swing.JTextField" name="colorTxtField">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel9">
+        <Component class="javax.swing.JLabel" name="colorLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -229,12 +229,12 @@
             <Property name="text" type="java.lang.String" value="Color:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="modeloTxt">
+        <Component class="javax.swing.JTextField" name="modeloTxtField">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modeloTxtActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modeloTxtFieldActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel12">
+        <Component class="javax.swing.JLabel" name="curpLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -242,7 +242,7 @@
             <Property name="text" type="java.lang.String" value="CURP:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="CURPTxt">
+        <Component class="javax.swing.JTextField" name="curpTxtField">
         </Component>
       </SubComponents>
     </Container>

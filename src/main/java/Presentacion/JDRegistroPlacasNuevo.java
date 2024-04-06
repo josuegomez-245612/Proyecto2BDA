@@ -67,109 +67,109 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        imagen = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        headerImgLabel = new javax.swing.JLabel();
+        tituloLabel = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        CancelarBtn = new javax.swing.JButton();
-        AceptarBtn = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        numeroSerieTxt = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        marcaTxt = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        lineaTxt = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        colorTxt = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        modeloTxt = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        CURPTxt = new javax.swing.JTextField();
+        volverBtn = new javax.swing.JButton();
+        aceptarBtn = new javax.swing.JButton();
+        numeroSerieLabel = new javax.swing.JLabel();
+        numeroSerieTxtField = new javax.swing.JTextField();
+        marcaLabel = new javax.swing.JLabel();
+        marcaTxtField = new javax.swing.JTextField();
+        lineaLabel = new javax.swing.JLabel();
+        lineaTxtField = new javax.swing.JTextField();
+        modeloLabel = new javax.swing.JLabel();
+        colorTxtField = new javax.swing.JTextField();
+        colorLabel = new javax.swing.JLabel();
+        modeloTxtField = new javax.swing.JTextField();
+        curpLabel = new javax.swing.JLabel();
+        curpTxtField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(227, 227, 217));
 
-        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/marcoPantallaPrincipal.png"))); // NOI18N
+        headerImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/marcoPantallaPrincipal.png"))); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setText("Registro de placas nuevas");
+        tituloLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tituloLabel.setText("Registro de placas nuevas");
 
-        CancelarBtn.setText("Volver");
-        CancelarBtn.addActionListener(new java.awt.event.ActionListener() {
+        volverBtn.setText("Volver");
+        volverBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelarBtnActionPerformed(evt);
+                volverBtnActionPerformed(evt);
             }
         });
 
-        AceptarBtn.setText("Aceptar");
-        AceptarBtn.addActionListener(new java.awt.event.ActionListener() {
+        aceptarBtn.setText("Aceptar");
+        aceptarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AceptarBtnActionPerformed(evt);
+                aceptarBtnActionPerformed(evt);
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setText("Numero de serie:");
+        numeroSerieLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        numeroSerieLabel.setText("Numero de serie:");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Marca:");
+        marcaLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        marcaLabel.setText("Marca:");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setText("Linea:");
+        lineaLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lineaLabel.setText("Linea:");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel8.setText("Modelo:");
+        modeloLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        modeloLabel.setText("Modelo:");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel9.setText("Color:");
+        colorLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        colorLabel.setText("Color:");
 
-        modeloTxt.addActionListener(new java.awt.event.ActionListener() {
+        modeloTxtField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modeloTxtActionPerformed(evt);
+                modeloTxtFieldActionPerformed(evt);
             }
         });
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel12.setText("CURP:");
+        curpLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        curpLabel.setText("CURP:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(imagen)
+                .addComponent(headerImgLabel)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(CancelarBtn)
+                        .addComponent(volverBtn)
                         .addGap(576, 576, 576)
-                        .addComponent(AceptarBtn))
+                        .addComponent(aceptarBtn))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(299, 299, 299)
-                        .addComponent(jLabel4))
+                        .addComponent(tituloLabel))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(220, 220, 220)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel12)
+                                .addComponent(curpLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(CURPTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(curpTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9))
+                                    .addComponent(numeroSerieLabel)
+                                    .addComponent(marcaLabel)
+                                    .addComponent(lineaLabel)
+                                    .addComponent(modeloLabel)
+                                    .addComponent(colorLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(marcaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(numeroSerieTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lineaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(colorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(modeloTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(marcaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(numeroSerieTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lineaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(colorTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(modeloTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1734, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -177,9 +177,9 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(headerImgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
+                .addComponent(tituloLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -187,32 +187,32 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
                         .addGap(34, 34, 34))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(CURPTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(curpLabel)
+                            .addComponent(curpTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(numeroSerieTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                    .addComponent(numeroSerieTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numeroSerieLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(marcaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(marcaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(marcaLabel))
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(lineaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lineaLabel)
+                    .addComponent(lineaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(colorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(colorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(colorTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(modeloTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(modeloTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modeloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CancelarBtn)
-                    .addComponent(AceptarBtn))
+                    .addComponent(volverBtn)
+                    .addComponent(aceptarBtn))
                 .addGap(21, 21, 21))
         );
 
@@ -231,26 +231,26 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CancelarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarBtnActionPerformed
+    private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
 
         dispose();
 
 
-    }//GEN-LAST:event_CancelarBtnActionPerformed
+    }//GEN-LAST:event_volverBtnActionPerformed
 
-    private void AceptarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarBtnActionPerformed
+    private void aceptarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBtnActionPerformed
    Calendar fechaActual = Calendar.getInstance();
    
  generarp = new GeneradorPlacas();
-        if (!validarCamposTexto(CURPTxt, colorTxt, lineaTxt, marcaTxt, modeloTxt,numeroSerieTxt)) {
+        if (!validarCamposTexto(curpTxtField, colorTxtField, lineaTxtField, marcaTxtField, modeloTxtField,numeroSerieTxtField)) {
             JOptionPane.showMessageDialog(null, "ERROR: rellene todos los campos están vacíos", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-           String CURP = CURPTxt.getText();
-           String color = colorTxt.getText();
-String linea = lineaTxt.getText();
-String marca = marcaTxt.getText();
-String modelo = modeloTxt.getText();
-String numeroSerie =numeroSerieTxt.getText();
+           String CURP = curpTxtField.getText();
+           String color = colorTxtField.getText();
+String linea = lineaTxtField.getText();
+String marca = marcaTxtField.getText();
+String modelo = modeloTxtField.getText();
+String numeroSerie =numeroSerieTxtField.getText();
 // public Vehiculo(String modelo, String color, String numSerie, String linea, String marca, boolean nuevo) 
 Vehiculo v = new Vehiculo(modelo,color,numeroSerie,linea,marca,true);
 //  public Placa(Calendar fechaRecepcion, String seriePlacas, Vehiculo vehiculo)
@@ -263,32 +263,32 @@ Placa p = new Placa(fechaActual,generarCadena(),v);
            Logger.getLogger(JDRegistroPlacasNuevo.class.getName()).log(Level.SEVERE, null, ex);
        }
         }       
-    }//GEN-LAST:event_AceptarBtnActionPerformed
+    }//GEN-LAST:event_aceptarBtnActionPerformed
 
-    private void modeloTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modeloTxtActionPerformed
+    private void modeloTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modeloTxtFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_modeloTxtActionPerformed
+    }//GEN-LAST:event_modeloTxtFieldActionPerformed
 
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AceptarBtn;
-    private javax.swing.JTextField CURPTxt;
-    private javax.swing.JButton CancelarBtn;
-    private javax.swing.JTextField colorTxt;
-    private javax.swing.JLabel imagen;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton aceptarBtn;
+    private javax.swing.JLabel colorLabel;
+    private javax.swing.JTextField colorTxtField;
+    private javax.swing.JLabel curpLabel;
+    private javax.swing.JTextField curpTxtField;
+    private javax.swing.JLabel headerImgLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField lineaTxt;
-    private javax.swing.JTextField marcaTxt;
-    private javax.swing.JTextField modeloTxt;
-    private javax.swing.JTextField numeroSerieTxt;
+    private javax.swing.JLabel lineaLabel;
+    private javax.swing.JTextField lineaTxtField;
+    private javax.swing.JLabel marcaLabel;
+    private javax.swing.JTextField marcaTxtField;
+    private javax.swing.JLabel modeloLabel;
+    private javax.swing.JTextField modeloTxtField;
+    private javax.swing.JLabel numeroSerieLabel;
+    private javax.swing.JTextField numeroSerieTxtField;
+    private javax.swing.JLabel tituloLabel;
+    private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }
