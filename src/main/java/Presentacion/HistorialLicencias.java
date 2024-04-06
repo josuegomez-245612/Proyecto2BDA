@@ -11,13 +11,14 @@ package Presentacion;
 public class HistorialLicencias extends javax.swing.JFrame {
 
     ConsultarPersonas consultarLicencias;
-    
-    
+
     public HistorialLicencias() {
         initComponents();
     }
+
     /**
      * Creates new form HistorialPlacas
+     *
      * @param frame
      */
     public HistorialLicencias(ConsultarPersonas frame) {
@@ -111,7 +112,7 @@ public class HistorialLicencias extends javax.swing.JFrame {
         consultarLicencias.setVisible(true);
     }//GEN-LAST:event_volverBtnActionPerformed
 
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel clienteLabel;
     private javax.swing.JLabel descClienteLabel;

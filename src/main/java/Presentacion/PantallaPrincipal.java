@@ -16,17 +16,19 @@ import javax.swing.JOptionPane;
  * @author JOSUE GOMEZ
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
-   JDRenovarLicencia renovarLicencia;
+
+    JDRenovarLicencia renovarLicencia;
     ConsultarPersonas cl;
-JDSeleccionPlacas sp;
-PersonaDAO pDAO;
-IConexionBD conexion;
-ConstantesGUI operacion;
+    PersonaDAO pDAO;
+    IConexionBD conexion;
+    ConstantesGUI operacion;
+
     /**
      * Creates new form PantallaPrincipal
+     *
      * @param conexion
      */
-    public PantallaPrincipal(IConexionBD conexion,ConstantesGUI gui) {
+    public PantallaPrincipal(IConexionBD conexion, ConstantesGUI gui) {
         initComponents();
         this.conexion = conexion;
         this.pDAO = new PersonaDAO(conexion.crearConexion());
@@ -189,50 +191,50 @@ ConstantesGUI operacion;
     }// </editor-fold>//GEN-END:initComponents
 
     private void acercaDeMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acercaDeMenuItemActionPerformed
-   JOptionPane.showMessageDialog(null, 
-    "Programa realizado por:\n" +
-    "Josué Gómez Garza\n" +
-    "Jorge Eduardo Elias Cazarez\n" +
-            "\n"+
-    "Estudiantes de Ingeniería en Software de ITSON\n" +
-    "Número de contacto:\n" +
-    "6442586327",
-    "Información de contacto",
-    JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showMessageDialog(null,
+                "Programa realizado por:\n"
+                + "Josué Gómez Garza\n"
+                + "Jorge Eduardo Elias Cazarez\n"
+                + "\n"
+                + "Estudiantes de Ingeniería en Software de ITSON\n"
+                + "Número de contacto:\n"
+                + "6442586327",
+                "Información de contacto",
+                JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_acercaDeMenuItemActionPerformed
 
     private void tramitarLicenciaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tramitarLicenciaMenuItemActionPerformed
-   operacion = LICENCIAS;
-        cl = new ConsultarPersonas(conexion,operacion);
+        operacion = LICENCIAS;
+        cl = new ConsultarPersonas(conexion, operacion);
         cl.setVisible(true);
     }//GEN-LAST:event_tramitarLicenciaMenuItemActionPerformed
 
     private void tramitarPlacasMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tramitarPlacasMenuItemActionPerformed
         operacion = PLACAS;
-        cl = new ConsultarPersonas(conexion,operacion);
+        cl = new ConsultarPersonas(conexion, operacion);
         cl.setVisible(true);
     }//GEN-LAST:event_tramitarPlacasMenuItemActionPerformed
 
     private void consultaPlacasMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaPlacasMenuItemActionPerformed
-       
+
         ConsultarPlacas consultarPlacas = new ConsultarPlacas();
         consultarPlacas.setVisible(true);
     }//GEN-LAST:event_consultaPlacasMenuItemActionPerformed
 
     private void consultaLicenciaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaLicenciaMenuItemActionPerformed
 
-        ConsultarPersonas consultarLicencias = new ConsultarPersonas(conexion,operacion);
+        ConsultarPersonas consultarLicencias = new ConsultarPersonas(conexion, operacion);
         consultarLicencias.setVisible(true);
     }//GEN-LAST:event_consultaLicenciaMenuItemActionPerformed
 
     private void insercionMasivaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insercionMasivaBtnActionPerformed
-                                       
-  pDAO.insercionMasivaPersonas();
+
+        pDAO.insercionMasivaPersonas();
         JOptionPane.showMessageDialog(null, "Se han agregado los clientes con exito");
     }//GEN-LAST:event_insercionMasivaBtnActionPerformed
 
     private void renovarLicenciaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_renovarLicenciaMenuItemActionPerformed
-      
+
     }//GEN-LAST:event_renovarLicenciaMenuItemActionPerformed
 
     private void reporteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteMenuItemActionPerformed
@@ -244,8 +246,6 @@ ConstantesGUI operacion;
         // TODO add your handling code here:
     }//GEN-LAST:event_licenciaMenuActionPerformed
 
-  
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem acercaDeMenuItem;

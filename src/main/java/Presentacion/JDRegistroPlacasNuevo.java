@@ -28,28 +28,33 @@ import javax.swing.JTextField;
 public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
 
     IConexionBD conexion;
-    JDSeleccionPlacas sp;
+
     GeneradorPlacas generarp;
-  PersonaDAO personaDAO;
-  ValidadoresPlaca registrarPlaca;
-  Persona personaElegida;
+    PersonaDAO personaDAO;
+    ValidadoresPlaca registrarPlaca;
+    Persona personaElegida;
+
     /**
      * Creates new form JDRegistroPlacasNuevo
+     *
      * @param conexion
-     * @param parent
-     * @param modal
+     * @param persona
      */
-    public JDRegistroPlacasNuevo(IConexionBD conexion,Persona persona,java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public JDRegistroPlacasNuevo(IConexionBD conexion, Persona persona) {
         initComponents();
-            this.conexion = conexion;
-            this.personaElegida = persona;
-            this.personaDAO = new PersonaDAO(conexion.crearConexion());
-            this.registrarPlaca = new ValidadoresPlaca(conexion,conexion.crearConexion());
-           
+        this.conexion = conexion;
+        this.personaElegida = persona;
+        this.personaDAO = new PersonaDAO(conexion.crearConexion());
+        this.registrarPlaca = new ValidadoresPlaca(conexion, conexion.crearConexion());
+
     }
-    
-     public static boolean validarCamposTexto(JTextField... campos) {
+
+    public void settearNombrePersonaElegida() {
+        curpTxtField.setText(personaElegida.getCurp());
+
+    }
+
+    public static boolean validarCamposTexto(JTextField... campos) {
         for (JTextField campo : campos) {
             if (campo.getText().isEmpty()) {
                 return false;
@@ -57,8 +62,6 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
         }
         return true;
     }
-     
-     
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -69,9 +72,11 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         headerImgLabel = new javax.swing.JLabel();
-        tituloLabel = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         volverBtn = new javax.swing.JButton();
         aceptarBtn = new javax.swing.JButton();
@@ -87,15 +92,19 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
         modeloTxtField = new javax.swing.JTextField();
         curpLabel = new javax.swing.JLabel();
         curpTxtField = new javax.swing.JTextField();
+        tituloLabel = new javax.swing.JLabel();
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(227, 227, 217));
 
         headerImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/marcoPantallaPrincipal.png"))); // NOI18N
-
-        tituloLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        tituloLabel.setText("Registro de placas nuevas");
 
         volverBtn.setText("Volver");
         volverBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -150,9 +159,6 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
                         .addGap(576, 576, 576)
                         .addComponent(aceptarBtn))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(299, 299, 299)
-                        .addComponent(tituloLabel))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(220, 220, 220)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -172,8 +178,9 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
                                     .addComponent(numeroSerieTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lineaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(colorTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(modeloTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(modeloTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1734, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -181,18 +188,13 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(headerImgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tituloLabel)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(curpLabel)
+                    .addComponent(curpTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(curpLabel)
-                            .addComponent(curpTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(numeroSerieTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(numeroSerieLabel))
@@ -212,22 +214,40 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(modeloTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(modeloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(volverBtn)
                     .addComponent(aceptarBtn))
                 .addGap(21, 21, 21))
         );
 
+        tituloLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tituloLabel.setText("Registro de placas nuevas");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 798, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 6, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 804, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(295, 295, 295)
+                    .addComponent(tituloLabel)
+                    .addContainerGap(295, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(227, 227, 227)
+                    .addComponent(tituloLabel)
+                    .addContainerGap(250, Short.MAX_VALUE)))
         );
 
         pack();
@@ -242,37 +262,36 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
     }//GEN-LAST:event_volverBtnActionPerformed
 
     private void aceptarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBtnActionPerformed
-   Calendar fechaActual = Calendar.getInstance();
-   
- generarp = new GeneradorPlacas();
-        if (!validarCamposTexto(curpTxtField, colorTxtField, lineaTxtField, marcaTxtField, modeloTxtField,numeroSerieTxtField)) {
+        Calendar fechaActual = Calendar.getInstance();
+
+        generarp = new GeneradorPlacas();
+        if (!validarCamposTexto(curpTxtField, colorTxtField, lineaTxtField, marcaTxtField, modeloTxtField, numeroSerieTxtField)) {
             JOptionPane.showMessageDialog(null, "ERROR: rellene todos los campos están vacíos", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-           String CURP = curpTxtField.getText();
-           String color = colorTxtField.getText();
-String linea = lineaTxtField.getText();
-String marca = marcaTxtField.getText();
-String modelo = modeloTxtField.getText();
-String numeroSerie =numeroSerieTxtField.getText();
+            String CURP = curpTxtField.getText();
+            String color = colorTxtField.getText();
+            String linea = lineaTxtField.getText();
+            String marca = marcaTxtField.getText();
+            String modelo = modeloTxtField.getText();
+            String numeroSerie = numeroSerieTxtField.getText();
 // public Vehiculo(String modelo, String color, String numSerie, String linea, String marca, boolean nuevo) 
-Vehiculo v = new Vehiculo(modelo,color,numeroSerie,linea,marca,true);
+            Vehiculo v = new Vehiculo(modelo, color, numeroSerie, linea, marca, true);
 //  public Placa(Calendar fechaRecepcion, String seriePlacas, Vehiculo vehiculo)
-Placa p = new Placa(fechaActual,generarCadena(),v);
-       try {
-           // public TramitePlacas(Placa placa, int costo, Calendar fechaExpedicion, Persona persona)
-           TramitePlacas tp = new TramitePlacas(p,1500,fechaActual,personaDAO.getPersonaByCurp(CURP));
-           registrarPlaca.RegistrarPlacaNuevo(p, v);
-       } catch (PersistenciaException ex) {
-           Logger.getLogger(JDRegistroPlacasNuevo.class.getName()).log(Level.SEVERE, null, ex);
-       }
-        }       
+            Placa p = new Placa(fechaActual, generarCadena(), v);
+            try {
+                // public TramitePlacas(Placa placa, int costo, Calendar fechaExpedicion, Persona persona)
+                TramitePlacas tp = new TramitePlacas(p, 1500, fechaActual, personaDAO.getPersonaByCurp(CURP));
+                registrarPlaca.RegistrarPlacaNuevo(p, v);
+            } catch (PersistenciaException ex) {
+                Logger.getLogger(JDRegistroPlacasNuevo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_aceptarBtnActionPerformed
 
     private void modeloTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modeloTxtFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_modeloTxtFieldActionPerformed
 
- 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptarBtn;
@@ -281,6 +300,9 @@ Placa p = new Placa(fechaActual,generarCadena(),v);
     private javax.swing.JLabel curpLabel;
     private javax.swing.JTextField curpTxtField;
     private javax.swing.JLabel headerImgLabel;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lineaLabel;

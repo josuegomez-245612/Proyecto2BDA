@@ -11,18 +11,18 @@ package Presentacion;
 public class HistorialPlacas extends javax.swing.JFrame {
 
     ConsultarPlacas consultarPlacas;
+
     /**
      * Creates new form HistorialPlacas
      */
     public HistorialPlacas() {
         initComponents();
     }
-    
+
     public HistorialPlacas(ConsultarPlacas frame) {
         initComponents();
         consultarPlacas = frame;
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -110,7 +110,7 @@ public class HistorialPlacas extends javax.swing.JFrame {
         consultarPlacas.setVisible(true);
     }//GEN-LAST:event_volverBtnActionPerformed
 
-  
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel clienteLabel;
     private javax.swing.JLabel descClienteLabel;

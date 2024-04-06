@@ -15,26 +15,29 @@ import Utilidades.GeneradorPlacas;
  * @author JOSUE GOMEZ
  */
 public class JDRegistroPlacasUsado extends javax.swing.JDialog {
-  IConexionBD conexion;
-    JDSeleccionPlacas sp;
+
+    IConexionBD conexion;
+
     GeneradorPlacas generarp;
-  PersonaDAO personaDAO;
-  ValidadoresPlaca registrarPlaca;
-  Persona personaElegida;
+    PersonaDAO personaDAO;
+    ValidadoresPlaca registrarPlaca;
+    Persona personaElegida;
+
     /**
      * Creates new form JDRegistroPlacasNuevo
+     *
      * @param conexion
      * @param parent
      * @param modal
      */
-    public JDRegistroPlacasUsado(IConexionBD conexion,Persona persona,java.awt.Frame parent, boolean modal) {
+    public JDRegistroPlacasUsado(IConexionBD conexion, Persona persona, java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-            this.conexion = conexion;
-            this.personaElegida = persona;
-            this.personaDAO = new PersonaDAO(conexion.crearConexion());
-            this.registrarPlaca = new ValidadoresPlaca(conexion,conexion.crearConexion());
-           
+        this.conexion = conexion;
+        this.personaElegida = persona;
+        this.personaDAO = new PersonaDAO(conexion.crearConexion());
+        this.registrarPlaca = new ValidadoresPlaca(conexion, conexion.crearConexion());
+
     }
 
     /**
@@ -252,7 +255,7 @@ public class JDRegistroPlacasUsado extends javax.swing.JDialog {
     private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
 
         dispose();
-       
+
     }//GEN-LAST:event_volverBtnActionPerformed
 
     private void buscarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBtnActionPerformed
@@ -263,8 +266,6 @@ public class JDRegistroPlacasUsado extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_aceptarBtnActionPerformed
 
-  
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptarBtn;

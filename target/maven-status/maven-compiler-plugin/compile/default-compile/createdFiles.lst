@@ -16,7 +16,6 @@ Presentacion\ConsultarVehiculos$5.class
 Presentacion\ConsultarVehiculos.class
 Presentacion\ConsultarPersonas$4.class
 Persistencia\PlacasDAO.class
-Presentacion\JDSeleccionPlacas$2.class
 Presentacion\ConsultarPlacas.class
 Entidades\TramiteLicencia.class
 Interfaces\IPlacasDAO.class
@@ -72,12 +71,10 @@ interfacesNegocio\IValidadoresLicencia.class
 Presentacion\JDRegistroPlacasNuevo$3.class
 Presentacion\HistorialPlacas$1.class
 Persistencia\TramiteLicenciasDAO.class
-Presentacion\JDSeleccionPlacas.class
 Presentacion\JDRenovarLicencia$1.class
 Presentacion\ConsultarPersonas$10.class
 Presentacion\ConsultarVehiculos$2.class
 Presentacion\ConsultarPersonas.class
-Presentacion\JDSeleccionPlacas$1.class
 interfacesNegocio\ICrearLicencia.class
 Interfaces\ITramitePlacasDAO.class
 Presentacion\JDRegistroPlacasUsado$3.class

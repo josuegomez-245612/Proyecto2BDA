@@ -13,7 +13,6 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-
 /**
  *
  * @author JOSUE GOMEZ
@@ -21,23 +20,26 @@ import javax.swing.table.DefaultTableModel;
 public class ConsultarVehiculos extends javax.swing.JFrame {
 
     private IConexionBD conexion;
-  
+
     private AutoDAO autoDAO;
-   
+
     private Persona persona;
+
     /**
      * Creates new form ConsultarAutos
+     *
      * @param conexion
      * @param persona
      */
-    public ConsultarVehiculos(IConexionBD conexion,Persona persona) {
+    public ConsultarVehiculos(IConexionBD conexion, Persona persona) {
         initComponents();
         this.conexion = conexion;
         this.autoDAO = new AutoDAO(conexion.crearConexion());
         this.cargarAutos();
         this.persona = persona;
     }
- private void cargarAutos() {
+
+    private void cargarAutos() {
         DefaultTableModel modeloTabla = (DefaultTableModel) this.tblAutos.getModel();
         modeloTabla.setRowCount(0);
         String placas = this.txtFieldNumSerie.getText();
@@ -55,9 +57,10 @@ public class ConsultarVehiculos extends javax.swing.JFrame {
             }
         }
         if (listAutos.size() == 0) {
-           JOptionPane.showMessageDialog(null, "No se encontraron registros");
+            JOptionPane.showMessageDialog(null, "No se encontraron registros");
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -299,7 +302,7 @@ public class ConsultarVehiculos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -307,7 +310,7 @@ public class ConsultarVehiculos extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        
+
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void txtFieldNumSerieFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtFieldNumSerieFocusLost
@@ -318,7 +321,7 @@ public class ConsultarVehiculos extends javax.swing.JFrame {
 
     private void txtFieldNumSerieMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFieldNumSerieMouseEntered
         if (txtFieldNumSerie.getText().equals("Ingrese su numero de Serie"))
-        txtFieldNumSerie.setText("");
+            txtFieldNumSerie.setText("");
     }//GEN-LAST:event_txtFieldNumSerieMouseEntered
 
     private void txtFieldNumSerieMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFieldNumSerieMouseExited
@@ -352,10 +355,9 @@ public class ConsultarVehiculos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFieldNumSerieKeyTyped
 
     private void agregarVehiculoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarVehiculoBtnActionPerformed
-
+        new JDRegistroPlacasNuevo(this.conexion, this.persona).setVisible(true);
     }//GEN-LAST:event_agregarVehiculoBtnActionPerformed
 
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addImgLabel;
