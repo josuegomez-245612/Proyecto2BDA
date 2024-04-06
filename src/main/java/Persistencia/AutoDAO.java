@@ -34,7 +34,7 @@ public class AutoDAO implements IAutoDAO {
         List<VehiculosPlacasDTO> lista = new ArrayList<>();
         String jpql = "SELECT p.seriePlacas, a FROM TramitePlacas tp "
                 + "INNER JOIN tp.placa p "
-                + "INNER JOIN p.automovil a "
+                + "INNER JOIN p.vehiculo a "
                 + "WHERE p.fechaRecepcion IS NULL";
 
         TypedQuery<Object[]> query = entityManager.createQuery(jpql, Object[].class);
@@ -50,7 +50,7 @@ public class AutoDAO implements IAutoDAO {
         List<VehiculosPlacasDTO> lista = new ArrayList<>();
         String jpql = "SELECT p.seriePlacas, a FROM TramitePlacas tp "
                 + "INNER JOIN tp.placa p "
-                + "INNER JOIN p.automovil a "
+                + "INNER JOIN p.vehiculo a "
                 + "WHERE p.fechaRecepcion IS NULL AND p.seriePlacas = :placa";
         
         TypedQuery<Object[]> query = entityManager.createQuery(jpql, Object[].class);

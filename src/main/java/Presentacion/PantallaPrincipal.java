@@ -8,6 +8,7 @@ import Interfaces.IConexionBD;
 import Persistencia.PersonaDAO;
 import Utilidades.ConstantesGUI;
 import static Utilidades.ConstantesGUI.LICENCIAS;
+import static Utilidades.ConstantesGUI.PLACAS;
 import javax.swing.JOptionPane;
 
 /**
@@ -207,8 +208,9 @@ ConstantesGUI operacion;
     }//GEN-LAST:event_tramitarLicenciaMenuItemActionPerformed
 
     private void tramitarPlacasMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tramitarPlacasMenuItemActionPerformed
-       sp = new JDSeleccionPlacas(conexion,this,true);
-       sp.setVisible(true);
+        operacion = PLACAS;
+        cl = new ConsultarPersonas(conexion,operacion);
+        cl.setVisible(true);
     }//GEN-LAST:event_tramitarPlacasMenuItemActionPerformed
 
     private void consultaPlacasMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaPlacasMenuItemActionPerformed

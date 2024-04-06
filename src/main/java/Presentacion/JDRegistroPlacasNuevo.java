@@ -4,6 +4,7 @@
  */
 package Presentacion;
 
+import Entidades.Persona;
 import Entidades.Placa;
 import Entidades.TramitePlacas;
 import Entidades.Vehiculo;
@@ -31,16 +32,18 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
     GeneradorPlacas generarp;
   PersonaDAO personaDAO;
   ValidadoresPlaca registrarPlaca;
+  Persona personaElegida;
     /**
      * Creates new form JDRegistroPlacasNuevo
      * @param conexion
      * @param parent
      * @param modal
      */
-    public JDRegistroPlacasNuevo(IConexionBD conexion,java.awt.Frame parent, boolean modal) {
+    public JDRegistroPlacasNuevo(IConexionBD conexion,Persona persona,java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
             this.conexion = conexion;
+            this.personaElegida = persona;
             this.personaDAO = new PersonaDAO(conexion.crearConexion());
             this.registrarPlaca = new ValidadoresPlaca(conexion,conexion.crearConexion());
            

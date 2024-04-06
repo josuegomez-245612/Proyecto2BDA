@@ -7,7 +7,6 @@ package Negocio;
 import Entidades.Placa;
 import Entidades.Vehiculo;
 import Interfaces.IConexionBD;
-import Persistencia.ConexionBD;
 import Persistencia.PlacasDAO;
 import Persistencia.TramitePlacasDAO;
 import interfacesNegocio.IRegistrarPlacas;

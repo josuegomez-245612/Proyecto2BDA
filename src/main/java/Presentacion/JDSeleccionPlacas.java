@@ -4,6 +4,7 @@
  */
 package Presentacion;
 
+import Entidades.Persona;
 import Interfaces.IConexionBD;
 
 /**
@@ -14,12 +15,16 @@ public class JDSeleccionPlacas extends javax.swing.JDialog {
 JDRegistroPlacasNuevo rpn;
 JDRegistroPlacasUsado rpu;
 IConexionBD conexion;
+Persona personaElegida;
     /**
      * Creates new form JDSeleccionPlacas
+     * @param conexion
      */
-    public JDSeleccionPlacas(IConexionBD conexion,java.awt.Frame parent, boolean modal) {
+//            new JDSeleccionPlacas(conexion, personaElegida, this, true).setVisible(true);
+    public JDSeleccionPlacas(IConexionBD conexion,Persona persona,java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.conexion = conexion;
+        this.personaElegida = persona;
         initComponents();
     }
 
@@ -140,10 +145,10 @@ IConexionBD conexion;
        String opcion = (String) estadoVechiculoCB.getSelectedItem();
        
        if(opcion == "Nuevo"){
-           rpn = new JDRegistroPlacasNuevo(conexion,null,true);
+           rpn = new JDRegistroPlacasNuevo(conexion,personaElegida,null,true);
            rpn.setVisible(true);
        }else if(opcion == "Usado"){
-           rpu = new JDRegistroPlacasUsado(null, true);
+           rpu = new JDRegistroPlacasUsado(conexion,personaElegida,null, true);
            rpu.setVisible(true);
        }
        

@@ -4,8 +4,6 @@
  */
 package interfacesNegocio;
 
-import Entidades.Persona;
-
 /**
  *
  * @author JOSUE GOMEZ

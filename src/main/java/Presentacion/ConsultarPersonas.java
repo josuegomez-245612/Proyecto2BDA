@@ -66,12 +66,12 @@ public class ConsultarPersonas extends javax.swing.JFrame {
      * Método que comprueba que la persona puede continuar con el trámite de
      * licencia
      *
-     * @param rfcPersonaSeleccionada Rfc de la persona
+     * @param rfcPersonaSeleccionada CURP de la persona
      */
-    private void operacionLicencia(String rfcPersonaSeleccionada) throws PersistenciaException {
-        boolean vigencia = pDAO.consultarLicenciaVigentePersona(rfcPersonaSeleccionada),
-                mayoriaEdad = pDAO.validarMayoriaEdadPersona(rfcPersonaSeleccionada);
-
+    private void operacionLicencia(String CURPPersonaSeleccionada) throws PersistenciaException {
+        boolean vigencia = pDAO.consultarLicenciaVigentePersona(CURPPersonaSeleccionada),
+                mayoriaEdad = pDAO.validarMayoriaEdadPersona(CURPPersonaSeleccionada);
+ System.out.println(vigencia+" y "+mayoriaEdad);
         if (vigencia && mayoriaEdad) {
             JOptionPane.showMessageDialog(null, "No se puede registrar licencia para esta persona debido a que ya cuenta con una vigente");
         } else if (!vigencia && mayoriaEdad) {
@@ -86,21 +86,21 @@ public class ConsultarPersonas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No se puede registrar licencia para esta persona debido a que es menor de edad");
         }
     }
-      private void operacionPlacas(String rfcPersonaSeleccionada) throws PersistenciaException {
-    boolean vigencia = pDAO.consultarLicenciaVigentePersona(rfcPersonaSeleccionada),
-            mayoriaEdad = pDAO.validarMayoriaEdadPersona(rfcPersonaSeleccionada);
+      private void operacionPlacas(String CURPPersonaSeleccionada) throws PersistenciaException {
+    boolean vigencia = pDAO.consultarLicenciaVigentePersona(CURPPersonaSeleccionada),
+            mayoriaEdad = pDAO.validarMayoriaEdadPersona(CURPPersonaSeleccionada);
+          System.out.println(vigencia+" y "+mayoriaEdad);
     if (vigencia && mayoriaEdad) {
         JOptionPane.showMessageDialog(null, "Cumple con los requisitos para seguir con el trámite");
        Persona personaElegida = this.pDAO.getPersonaByCurp((String) this.listaPersonasJT.getValueAt(this.listaPersonasJT.getSelectedRow(), 4));
-//            new JDSeleccionPlacas(conexion, personaElegida, this, true).setVisible(true);
+            new ConsultarVehiculos(conexion, personaElegida).setVisible(true);
             this.setVisible(false);
     } else if (!vigencia && mayoriaEdad) {
         JOptionPane.showMessageDialog(null, "No se puede seguir con el trámite debido a que no cuenta con una licencia vigente");
     } else if (!vigencia && !mayoriaEdad) {
         JOptionPane.showMessageDialog(null, "No se puede seguir con el trámite debido a que no cuenta con una licencia vigente y es menor de edad");
-    } else {
-        JOptionPane.showMessageDialog(null, "No se puede seguir con el trámite debido a que es menor de edad");
     }
+    
 }
 
     public void Consultar() throws PersistenciaException {
@@ -146,7 +146,6 @@ public class ConsultarPersonas extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         DpFecha = new com.github.lgooddatepicker.components.DatePicker();
         txtFieldCURP = new javax.swing.JTextField();
@@ -242,8 +241,6 @@ public class ConsultarPersonas extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-
-        jLabel6.setText("jLabel6");
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgBusqueda/loupe-et-icone-de-recherche-de-couleur-orange (1).png"))); // NOI18N
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -352,9 +349,7 @@ public class ConsultarPersonas extends javax.swing.JFrame {
                                 .addComponent(jLabel4))
                             .addComponent(DpFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -377,20 +372,18 @@ public class ConsultarPersonas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtFieldCURP, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(DpFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(txtFieldNombre, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)
-                        .addContainerGap(56, Short.MAX_VALUE))
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 813, 770));
@@ -520,7 +513,6 @@ public class ConsultarPersonas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

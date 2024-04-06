@@ -4,18 +4,37 @@
  */
 package Presentacion;
 
+import Entidades.Persona;
+import Interfaces.IConexionBD;
+import Negocio.ValidadoresPlaca;
+import Persistencia.PersonaDAO;
+import Utilidades.GeneradorPlacas;
+
 /**
  *
- * @author RAUL EDUARDO GOMEZ
+ * @author JOSUE GOMEZ
  */
 public class JDRegistroPlacasUsado extends javax.swing.JDialog {
-JDSeleccionPlacas sp;
+  IConexionBD conexion;
+    JDSeleccionPlacas sp;
+    GeneradorPlacas generarp;
+  PersonaDAO personaDAO;
+  ValidadoresPlaca registrarPlaca;
+  Persona personaElegida;
     /**
-     * Creates new form JDRegistroPlacasUsado
+     * Creates new form JDRegistroPlacasNuevo
+     * @param conexion
+     * @param parent
+     * @param modal
      */
-    public JDRegistroPlacasUsado(java.awt.Frame parent, boolean modal) {
+    public JDRegistroPlacasUsado(IConexionBD conexion,Persona persona,java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+            this.conexion = conexion;
+            this.personaElegida = persona;
+            this.personaDAO = new PersonaDAO(conexion.crearConexion());
+            this.registrarPlaca = new ValidadoresPlaca(conexion,conexion.crearConexion());
+           
     }
 
     /**
