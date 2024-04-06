@@ -53,11 +53,7 @@ public class ValidadoresPersona implements IValidadoresPersona {
 
     }
 
-    @Override
-    public void agregarPersonas() {
-      
-    }
-    
+   
     
 
 }

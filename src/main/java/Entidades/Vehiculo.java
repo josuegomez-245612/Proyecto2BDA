@@ -17,7 +17,7 @@ import javax.persistence.Table;
  */
 
 /**
- * Esta entidad representa automóviles con sus respectivos atributos.
+ * Esta entidad representa vehiculos con sus respectivos atributos.
  */
 @Entity
 @Table(name = "Vehiculos")

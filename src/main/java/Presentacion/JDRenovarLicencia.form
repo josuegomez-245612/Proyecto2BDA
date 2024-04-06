@@ -63,30 +63,19 @@
                   <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="nombreClienteLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="nombreCliente2Label" min="-2" pref="144" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="precioLabel" min="-2" max="-2" attributes="0"/>
-                              <Component id="tipoVigenciaLabel" min="-2" max="-2" attributes="0"/>
-                              <Component id="descapacitadaLabel" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="tipoVigenciaComboBox" min="-2" max="-2" attributes="0"/>
-                              <Component id="discapacitadaComboBox" min="-2" max="-2" attributes="0"/>
-                              <Component id="cantidadPrecioLabel" min="-2" pref="144" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
+                  <EmptySpace min="-2" pref="196" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="precioLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="tipoVigenciaLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="nombreClienteLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="tipoVigenciaComboBox" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFieldCosto" min="-2" max="-2" attributes="0"/>
+                      <Component id="nombreCliente2Label" min="-2" pref="144" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="clienteImgLabel" min="-2" pref="109" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
               </Group>
@@ -114,35 +103,28 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="nombreClienteLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="nombreCliente2Label" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="tipoVigenciaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="tipoVigenciaComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="discapacitadaComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="descapacitadaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="clienteImgLabel" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="clienteImgLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                   <Component id="nombreLabel" min="-2" pref="29" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="precioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cantidadPrecioLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFieldCosto" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="97" max="32767" attributes="0"/>
+                  <EmptySpace pref="96" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="volverBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="aceptarBtn" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -181,7 +163,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Tipo de vigencia (a&#xf1;os):"/>
+            <Property name="text" type="java.lang.String" value="Tipo de vigencia:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator1">
@@ -206,25 +188,15 @@
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="3">
-                <StringItem index="0" value="1 "/>
-                <StringItem index="1" value="2 "/>
-                <StringItem index="2" value="3 "/>
+                <StringItem index="0" value="1 A&#xd1;O"/>
+                <StringItem index="1" value="2 A&#xd1;OS"/>
+                <StringItem index="2" value="3 A&#xd1;OS"/>
               </StringArray>
             </Property>
           </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="discapacitadaComboBox">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="2">
-                <StringItem index="0" value="No"/>
-                <StringItem index="1" value="Si"/>
-              </StringArray>
-            </Property>
-          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="tipoVigenciaComboBoxItemStateChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -256,22 +228,14 @@
             <Property name="text" type="java.lang.String" value="Jorge Elias"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="cantidadPrecioLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel1"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="descapacitadaLabel">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="La persona es discapacitada?"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="nombreCliente2Label">
           <Properties>
             <Property name="text" type="java.lang.String" value="jLabel1"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtFieldCosto">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jTextField1"/>
           </Properties>
         </Component>
       </SubComponents>

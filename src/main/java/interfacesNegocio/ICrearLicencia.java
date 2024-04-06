@@ -5,13 +5,14 @@
 package interfacesNegocio;
 
 import Entidades.Persona;
+import Persistencia.TramiteLicenciasDAO;
+import javax.persistence.EntityManager;
 
 /**
  *
  * @author JOSUE GOMEZ
  */
-public interface IAgregarPersonas {
+public interface ICrearLicencia {
     
-    public void agregarPersonas();
-    
+    public void crearLicencia(Persona persona,Integer vigenciaLicencia,Integer costoLicencia);
 }
