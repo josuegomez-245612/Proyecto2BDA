@@ -299,12 +299,25 @@ public class ConsultarVehiculos extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
+  Integer indiceRenglonInicial = 0, indiceColumnaPlacas = 0;
+        if (this.tblAutos.getSelectedRow() >= indiceRenglonInicial) {
+            String placasAutoSeleccionadas = (String) this.tblAutos.getModel().getValueAt(this.tblAutos.getSelectedRow(), indiceColumnaPlacas);
+            VehiculosPlacasDTO autoSeleccionado = this.autoDAO.cargarVehiculo(placasAutoSeleccionadas).get(0);
+            this.abrirRegistroPlacas(persona, autoSeleccionado);
+        } else {
+            JOptionPane.showMessageDialog(null,"Seleccione un auto o realice una búsqueda de autos");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
-
+ private void abrirRegistroPlacas(Persona persona, VehiculosPlacasDTO auto) {
+        if (this.isVisible()) {
+            new JDRegistroPlacasUsado(conexion, persona, auto, 1000).setVisible(true);
+            this.setVisible(false);
+        }
+    }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed

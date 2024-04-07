@@ -2,6 +2,7 @@ Presentacion\JDRegistroPlacasUsado.class
 interfacesNegocio\IValidadoresPersona.class
 Presentacion\ConsultarPersonas$12.class
 Presentacion\ConsultarPlacas$2.class
+Presentacion\JDRegistroPlacasNuevo$5.class
 Presentacion\GenerarReporte.class
 Presentacion\ConsultarVehiculos$8.class
 Presentacion\JDRenovarLicencia$2.class
@@ -57,6 +58,7 @@ Persistencia\ConexionBD.class
 Presentacion\ConsultarPersonas$3.class
 Presentacion\PantallaPrincipal$1.class
 Presentacion\GenerarReporte$2.class
+Presentacion\JDRegistroPlacasNuevo$4.class
 Presentacion\JDRenovarLicencia$3.class
 Utilidades\VehiculosPlacasDTO.class
 Entidades\Placa.class
@@ -77,7 +79,6 @@ Presentacion\ConsultarVehiculos$2.class
 Presentacion\ConsultarPersonas.class
 interfacesNegocio\ICrearLicencia.class
 Interfaces\ITramitePlacasDAO.class
-Presentacion\JDRegistroPlacasUsado$3.class
 Presentacion\ConsultarPersonas$5.class
 Presentacion\PantallaPrincipal$8.class
 Persistencia\TramitePlacasDAO.class

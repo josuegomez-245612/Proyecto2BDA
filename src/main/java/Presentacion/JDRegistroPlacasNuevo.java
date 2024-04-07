@@ -15,6 +15,7 @@ import Persistencia.PersistenciaException;
 import Persistencia.PersonaDAO;
 import Utilidades.GeneradorPlacas;
 import static Utilidades.GeneradorPlacas.generarCadena;
+import Utilidades.VehiculosPlacasDTO;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -46,13 +47,22 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
         this.personaElegida = persona;
         this.personaDAO = new PersonaDAO(conexion.crearConexion());
         this.registrarPlaca = new ValidadoresPlaca(conexion, conexion.crearConexion());
+         this.curpTxtField.setEditable(false);
+         this.settearNombrePersonaElegida();
 
     }
 
     public void settearNombrePersonaElegida() {
         curpTxtField.setText(personaElegida.getCurp());
 
+    }  
+    
+    private void abrirRegistroPlacas(VehiculosPlacasDTO autoPlacas) {
+        
+        new JDRegistroPlacasUsado(this.conexion, this.personaElegida, autoPlacas, 1500).setVisible(true);
+        this.dispose();
     }
+
 
     public static boolean validarCamposTexto(JTextField... campos) {
         for (JTextField campo : campos) {
@@ -123,6 +133,17 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
         numeroSerieLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         numeroSerieLabel.setText("Numero de serie:");
 
+        numeroSerieTxtField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numeroSerieTxtFieldActionPerformed(evt);
+            }
+        });
+        numeroSerieTxtField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                numeroSerieTxtFieldKeyTyped(evt);
+            }
+        });
+
         marcaLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         marcaLabel.setText("Marca:");
 
@@ -144,6 +165,9 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
         curpLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         curpLabel.setText("CURP:");
 
+        tituloLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tituloLabel.setText("Registro de placas");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -159,11 +183,14 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
                         .addGap(576, 576, 576)
                         .addComponent(aceptarBtn))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(220, 220, 220)
+                        .addContainerGap()
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1734, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(215, 215, 215)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(curpLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(curpTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -180,25 +207,27 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
                                     .addComponent(colorTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(modeloTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1734, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(312, 312, 312)
+                        .addComponent(tituloLabel)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(headerImgLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tituloLabel)
+                .addGap(8, 8, 8)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(curpLabel)
-                    .addComponent(curpTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(numeroSerieTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(numeroSerieLabel))
+                    .addComponent(curpTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(curpLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(numeroSerieLabel)
+                    .addComponent(numeroSerieTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(marcaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(marcaLabel))
@@ -214,15 +243,12 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(modeloTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(modeloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(volverBtn)
                     .addComponent(aceptarBtn))
                 .addGap(21, 21, 21))
         );
-
-        tituloLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        tituloLabel.setText("Registro de placas nuevas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -231,23 +257,12 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 6, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 804, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(295, 295, 295)
-                    .addComponent(tituloLabel)
-                    .addContainerGap(295, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(227, 227, 227)
-                    .addComponent(tituloLabel)
-                    .addContainerGap(250, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -260,37 +275,74 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
 
 
     }//GEN-LAST:event_volverBtnActionPerformed
-
+private Vehiculo extraerDatos() {
+        String modelo = this.modeloTxtField.getText(),
+                linea = this.lineaTxtField.getText(),
+                color = this.colorTxtField.getText(),
+                marca = this.marcaTxtField.getText(),
+                numSerie = this.numeroSerieTxtField.getText();
+        
+        //  public Vehiculo(String modelo, String tipoVehiculo, String color, String numSerie, String linea, String marca)  
+        Vehiculo vehiculo = new Vehiculo(modelo,"Carro", color, numSerie, linea, marca);
+        return vehiculo;
+    }
     private void aceptarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBtnActionPerformed
-        Calendar fechaActual = Calendar.getInstance();
 
-        generarp = new GeneradorPlacas();
         if (!validarCamposTexto(curpTxtField, colorTxtField, lineaTxtField, marcaTxtField, modeloTxtField, numeroSerieTxtField)) {
             JOptionPane.showMessageDialog(null, "ERROR: rellene todos los campos están vacíos", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-            String CURP = curpTxtField.getText();
-            String color = colorTxtField.getText();
-            String linea = lineaTxtField.getText();
-            String marca = marcaTxtField.getText();
-            String modelo = modeloTxtField.getText();
-            String numeroSerie = numeroSerieTxtField.getText();
-// public Vehiculo(String modelo, String color, String numSerie, String linea, String marca, boolean nuevo) 
-            Vehiculo v = new Vehiculo(modelo, color, numeroSerie, linea, marca, true);
-//  public Placa(Calendar fechaRecepcion, String seriePlacas, Vehiculo vehiculo)
-            Placa p = new Placa(fechaActual, generarCadena(), v);
-            try {
-                // public TramitePlacas(Placa placa, int costo, Calendar fechaExpedicion, Persona persona)
-                TramitePlacas tp = new TramitePlacas(p, 1500, fechaActual, personaDAO.getPersonaByCurp(CURP));
-                registrarPlaca.RegistrarPlacaNuevo(p, v);
-            } catch (PersistenciaException ex) {
-                Logger.getLogger(JDRegistroPlacasNuevo.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            VehiculosPlacasDTO autoPlacas = new VehiculosPlacasDTO();
+        Vehiculo autoIngresado = this.extraerDatos();
+      
+            autoPlacas.setAutomovil(autoIngresado);
+            
+        this.dispose();
+        this.abrirRegistroPlacas(autoPlacas);
+        
         }
     }//GEN-LAST:event_aceptarBtnActionPerformed
 
     private void modeloTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modeloTxtFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_modeloTxtFieldActionPerformed
+
+    private void numeroSerieTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroSerieTxtFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numeroSerieTxtFieldActionPerformed
+
+    private void numeroSerieTxtFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numeroSerieTxtFieldKeyTyped
+      numeroSerieTxtField.setText(numeroSerieTxtField.getText().trim());
+        if (numeroSerieTxtField.getText().equals("Num. Serie")) {
+            numeroSerieTxtField.setText("");
+        }
+
+        char c = evt.getKeyChar();
+        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+           
+            if (numeroSerieTxtField.getText().length() < 3) {
+                // Permitir hasta 3 letras
+                evt.setKeyChar(Character.toUpperCase(c));
+            } else {
+                evt.consume(); // Ignorar más letras
+            }
+        } else if (c == '-') {
+          
+            if (numeroSerieTxtField.getText().length() == 3) {
+                evt.setKeyChar(c);
+            } else {
+                evt.consume(); 
+            }
+        } else if (c >= '0' && c <= '9') {
+            
+            if (numeroSerieTxtField.getText().length() > 3 && numeroSerieTxtField.getText().length() < 7) {
+                evt.setKeyChar(c);
+            } else {
+                evt.consume(); 
+            }
+        } else {
+            evt.consume(); 
+        }
+    }//GEN-LAST:event_numeroSerieTxtFieldKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
