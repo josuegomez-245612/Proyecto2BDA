@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface IPersonaDAO 
 {
-     List<Persona> getAllPersonas() throws PersistenciaException;
+    
      Persona getPersonaByCurp(String nombre) throws PersistenciaException;
  List <Persona> consultarPersonas(ParametrosBusquedaPersonas parametros);
   boolean consultarLicenciaVigentePersona(String rfc);

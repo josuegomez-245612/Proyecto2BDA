@@ -5,6 +5,7 @@
 package Presentacion;
 
 import Interfaces.IConexionBD;
+import Negocio.ValidadoresPersona;
 import Persistencia.PersonaDAO;
 import Utilidades.ConstantesGUI;
 import static Utilidades.ConstantesGUI.LICENCIAS;
@@ -19,7 +20,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     JDRenovarLicencia renovarLicencia;
     ConsultarPersonas cl;
-    PersonaDAO pDAO;
+    ValidadoresPersona pDAO;
     IConexionBD conexion;
     ConstantesGUI operacion;
 
@@ -31,7 +32,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     public PantallaPrincipal(IConexionBD conexion, ConstantesGUI gui) {
         initComponents();
         this.conexion = conexion;
-        this.pDAO = new PersonaDAO(conexion.crearConexion());
+        this.pDAO = new ValidadoresPersona(conexion.crearConexion(),conexion);
         this.operacion = gui;
     }
 
@@ -233,7 +234,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void insercionMasivaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insercionMasivaBtnActionPerformed
 
         pDAO.insercionMasivaPersonas();
-        JOptionPane.showMessageDialog(null, "Se han agregado los clientes con exito");
+       
     }//GEN-LAST:event_insercionMasivaBtnActionPerformed
 
     private void renovarLicenciaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_renovarLicenciaMenuItemActionPerformed

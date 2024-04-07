@@ -53,6 +53,26 @@ public class ValidadoresPersona implements IValidadoresPersona {
 
     }
 
+    @Override
+    public void insercionMasivaPersonas() {
+       if(pDAO.insercionMasivaPersonas() == false){
+           JOptionPane.showMessageDialog(null, "La insercion masiva ya fue realizada.");
+       }else{
+           pDAO.insercionMasivaPersonas();
+            JOptionPane.showMessageDialog(null, "Se han agregado los clientes con exito");
+       }
+    }
+
+    @Override
+    public void cargarTodasPersonas() {
+        if(pDAO.cargarTodasPersonas() == null){
+            JOptionPane.showMessageDialog(null, "No existen registros para consultar.");
+        }
+        else{
+            pDAO.cargarTodasPersonas();
+        }
+    }
+
    
     
 

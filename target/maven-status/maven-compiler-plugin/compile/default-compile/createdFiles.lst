@@ -71,6 +71,7 @@ Presentacion\ConsultarVehiculos$1.class
 Presentacion\JDRegistroPlacasUsado$1.class
 interfacesNegocio\IValidadoresLicencia.class
 Presentacion\JDRegistroPlacasNuevo$3.class
+interfacesNegocio\IinsercionMasivaPersonas.class
 Presentacion\HistorialPlacas$1.class
 Persistencia\TramiteLicenciasDAO.class
 Presentacion\JDRenovarLicencia$1.class

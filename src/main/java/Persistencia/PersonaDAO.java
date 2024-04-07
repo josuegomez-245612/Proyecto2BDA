@@ -37,20 +37,7 @@ public class PersonaDAO implements IPersonaDAO {
         this.entityManager = null;
     }
 
-    @Override
-    public List<Persona> getAllPersonas() throws PersistenciaException {
-        List<Persona> personas = new ArrayList<>();
-        //0 - dsicapacitado  1 - fechaNacimiento  2 - telefono  3 - rfc  4 - nombres  5 - apellidoPaterno  6 - apellidoMaterno  7 - curp
-        String jpql = "SELECT p.discapacitado, tl.fecha_nacimiento, p.telefono, p.rfc, p.nombres, p.apellidoPaterno, p.apellidoMaterno, p.curp, FROM Persona p ";
 
-        TypedQuery<Object[]> query = entityManager.createQuery(jpql, Object[].class);
-        List<Object[]> resultList = query.getResultList();
-        for (Object[] objects : resultList) {
-            personas.add(new Persona((boolean) objects[0], (Calendar) objects[1], (String) objects[2], (String) objects[3],
-                    (String) objects[4], (String) objects[5], (String) objects[1], (String) objects[1]));
-        }
-        return personas;
-    }
 
     @Override
     public Persona getPersonaByCurp(String curp) throws PersistenciaException {
