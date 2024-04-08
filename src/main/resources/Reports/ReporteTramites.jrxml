@@ -49,7 +49,7 @@
 		<band height="73" splitType="Stretch">
 			<image onErrorType="Blank">
 				<reportElement x="-20" y="-20" width="509" height="89" uuid="e4d73173-a328-4584-b32d-dddd3d704a85"/>
-				<imageExpression><![CDATA["D:/Documents/Images/header.png"]]></imageExpression>
+				<imageExpression><![CDATA["src/main/resources/Imagenes/header.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
