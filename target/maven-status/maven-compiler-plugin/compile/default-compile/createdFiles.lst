@@ -16,6 +16,7 @@ Presentacion\JDRegistroPlacasNuevo$2.class
 Entidades\Vehiculo.class
 Presentacion\GenerarReporte$3.class
 Negocio\NegocioException.class
+Negocio\ValidadoresTramitesPlaca.class
 Interfaces\ITramiteLicenciasDAO.class
 Presentacion\ConsultarVehiculos$5.class
 Presentacion\ConsultarVehiculos.class
@@ -31,7 +32,6 @@ Presentacion\HistorialTramites$3.class
 Presentacion\ConsultarPersonas$8.class
 Persistencia\PersistenciaException.class
 Presentacion\GenerarReporte$1.class
-Negocio\ValidadoresTramites.class
 interfacesNegocio\IValidadoresVehiculo.class
 Utilidades\ConstantesGUI.class
 Negocio\ValidadoresPlaca.class
@@ -90,6 +90,7 @@ interfacesNegocio\IValidadoresLicencia.class
 Presentacion\JDRegistroPlacasNuevo$3.class
 interfacesNegocio\IinsercionMasivaPersonas.class
 Persistencia\TramiteLicenciasDAO.class
+Negocio\ValidadoresTramitesLicencia.class
 Presentacion\JDRenovarLicencia$1.class
 Presentacion\ConsultarPersonas$10.class
 Presentacion\ConsultarVehiculos$2.class
