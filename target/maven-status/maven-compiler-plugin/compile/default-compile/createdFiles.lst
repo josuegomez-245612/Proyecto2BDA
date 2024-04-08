@@ -9,7 +9,9 @@ Presentacion\PantallaPrincipal$3.class
 Negocio\ValidadoresVehiculo.class
 Persistencia\PersonaDAO.class
 interfacesNegocio\IBuscarPersonaPorCurp.class
+Presentacion\HistorialTramites$1.class
 Presentacion\JDRegistroPlacasUsado$2.class
+Presentacion\HistorialTramites$4.class
 Presentacion\JDRegistroPlacasNuevo$2.class
 Entidades\Vehiculo.class
 Presentacion\GenerarReporte$3.class
@@ -25,13 +27,13 @@ Entidades\TramiteLicencia.class
 Interfaces\IPlacasDAO.class
 Presentacion\ConsultarPersonas$7.class
 Presentacion\ConsultarPersonas$1.class
+Presentacion\HistorialTramites$3.class
 Presentacion\ConsultarPersonas$8.class
 Persistencia\PersistenciaException.class
 interfacesNegocio\IValidadoresVehiculo.class
 Utilidades\ConstantesGUI.class
 Negocio\ValidadoresPlaca.class
 Interfaces\IAutoDAO.class
-Presentacion\HistorialPlacas.class
 Presentacion\JDRenovarLicencia.class
 Presentacion\PantallaPrincipal$6.class
 Presentacion\PantallaPrincipal.class
@@ -73,7 +75,9 @@ Presentacion\JDRenovarLicencia$3.class
 Utilidades\VehiculosPlacasDTO.class
 Entidades\Placa.class
 Interfaces\IPersonaDAO.class
+Presentacion\HistorialTramites$2.class
 Presentacion\JDRegistroPlacasNuevo$1.class
+Presentacion\HistorialTramites$5.class
 Presentacion\ConsultarPersonas$11.class
 Presentacion\JDRegistroPlacasNuevo.class
 Utilidades\ParametrosBusquedaPersonas.class
@@ -82,7 +86,6 @@ Presentacion\JDRegistroPlacasUsado$1.class
 interfacesNegocio\IValidadoresLicencia.class
 Presentacion\JDRegistroPlacasNuevo$3.class
 interfacesNegocio\IinsercionMasivaPersonas.class
-Presentacion\HistorialPlacas$1.class
 Persistencia\TramiteLicenciasDAO.class
 Presentacion\JDRenovarLicencia$1.class
 Presentacion\ConsultarPersonas$10.class
@@ -97,5 +100,6 @@ Presentacion\ConsultarVehiculos$9.class
 Presentacion\ConsultarVehiculos$3.class
 Presentacion\PantallaPrincipal$2.class
 Interfaces\IConexionBD.class
+Presentacion\HistorialTramites.class
 Presentacion\Proyecto2BDA.class
 Utilidades\GeneradorPlacas.class

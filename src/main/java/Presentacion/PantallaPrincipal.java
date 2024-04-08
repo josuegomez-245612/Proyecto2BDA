@@ -8,6 +8,7 @@ import Interfaces.IConexionBD;
 import Negocio.ValidadoresPersona;
 import Persistencia.PersonaDAO;
 import Utilidades.ConstantesGUI;
+import static Utilidades.ConstantesGUI.HISTORIAL;
 import static Utilidades.ConstantesGUI.LICENCIAS;
 import static Utilidades.ConstantesGUI.PLACAS;
 import javax.swing.JOptionPane;
@@ -62,9 +63,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         renovarLicenciaMenuItem = new javax.swing.JMenuItem();
         tramitarPlacasMenuItem = new javax.swing.JMenuItem();
         operacionesMenu = new javax.swing.JMenu();
-        menuConsultas = new javax.swing.JMenu();
-        consultaPlacasMenuItem = new javax.swing.JMenuItem();
-        consultaLicenciaMenuItem = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         reporteMenuItem = new javax.swing.JMenuItem();
         informacionMenu = new javax.swing.JMenu();
         acercaDeMenuItem = new javax.swing.JMenuItem();
@@ -146,25 +145,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         operacionesMenu.setText("Operaciones");
 
-        menuConsultas.setText("Consultas");
-
-        consultaPlacasMenuItem.setText("Placas");
-        consultaPlacasMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem2.setText("Consulta de historial");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultaPlacasMenuItemActionPerformed(evt);
+                jMenuItem2ActionPerformed(evt);
             }
         });
-        menuConsultas.add(consultaPlacasMenuItem);
-
-        consultaLicenciaMenuItem.setText("Licencias");
-        consultaLicenciaMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultaLicenciaMenuItemActionPerformed(evt);
-            }
-        });
-        menuConsultas.add(consultaLicenciaMenuItem);
-
-        operacionesMenu.add(menuConsultas);
+        operacionesMenu.add(jMenuItem2);
 
         reporteMenuItem.setText("Reporte");
         reporteMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -219,16 +206,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         cl.setVisible(true);
     }//GEN-LAST:event_tramitarPlacasMenuItemActionPerformed
 
-    private void consultaPlacasMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaPlacasMenuItemActionPerformed
-
-    }//GEN-LAST:event_consultaPlacasMenuItemActionPerformed
-
-    private void consultaLicenciaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaLicenciaMenuItemActionPerformed
-
-        ConsultarPersonas consultarLicencias = new ConsultarPersonas(conexion, operacion);
-        consultarLicencias.setVisible(true);
-    }//GEN-LAST:event_consultaLicenciaMenuItemActionPerformed
-
     private void insercionMasivaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insercionMasivaBtnActionPerformed
 
         pDAO.insercionMasivaPersonas();
@@ -248,22 +225,26 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_licenciaMenuActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+       operacion = HISTORIAL;
+        cl = new ConsultarPersonas(conexion, operacion);
+        cl.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem acercaDeMenuItem;
     private javax.swing.JLabel addImgLabel;
     private javax.swing.JLabel bienvenidaLabel;
     private java.awt.Checkbox checkbox1;
-    private javax.swing.JMenuItem consultaLicenciaMenuItem;
-    private javax.swing.JMenuItem consultaPlacasMenuItem;
     private javax.swing.JLabel headerImgLabel;
     private javax.swing.JMenu informacionMenu;
     private javax.swing.JButton insercionMasivaBtn;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu licenciaMenu;
-    private javax.swing.JMenu menuConsultas;
     private javax.swing.JMenu operacionesMenu;
     private javax.swing.JMenuItem renovarLicenciaMenuItem;
     private javax.swing.JMenuItem reporteMenuItem;

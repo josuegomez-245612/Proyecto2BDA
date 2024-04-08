@@ -38,17 +38,12 @@ public class ValidadoresPersona implements IValidadoresPersona {
     public Persona encontrarPersonaPorCurp(String CURP) {
 
         try {
-            if (pDAO.getPersonaByCurp(CURP) != null) {
-              
-                 return pDAO.getPersonaByCurp(CURP);
-            } else {
-                JOptionPane.showMessageDialog(null, "ERROR: la persona ya está registrada.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
+            return pDAO.getPersonaByCurp(CURP);
         } catch (PersistenciaException ex) {
             Logger.getLogger(ValidadoresPersona.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         return null;
+           
 
     }
 

@@ -102,7 +102,19 @@ public class ConsultarPersonas extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "No se puede seguir con el trámite debido a que no cuenta con una licencia vigente y es menor de edad");
     }
     
-}
+} 
+      private void operacionHistorial(String CURPPersonaSeleccionada) {
+        boolean mayoriaEdad = pDAO.validarMayoriaEdadPersona(CURPPersonaSeleccionada);
+        if (mayoriaEdad) {
+            JOptionPane.showMessageDialog(null,"Cumple con los requisitos para seguir con la operación");
+              Persona personaElegida = this.pDAO.encontrarPersonaPorCurp((String) this.listaPersonasJT.getValueAt(this.listaPersonasJT.getSelectedRow(), 4));
+              System.out.println(pDAO.encontrarPersonaPorCurp(CURPPersonaSeleccionada));
+            HistorialTramites ventana = new HistorialTramites(conexion, personaElegida);
+            ventana.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null,"No se puede seguir con la operación debido a que es menor de edad");
+        }
+    }
 
     public void Consultar() throws PersistenciaException {
         Integer indiceRenglonInicial = 0, indiceColumnaCURP = 4;
@@ -116,7 +128,7 @@ public class ConsultarPersonas extends javax.swing.JFrame {
                     this.operacionPlacas(CURPPersonaSeleccionada);
                     break;
                 case HISTORIAL:
-//                    this.operacionHistorial(CURPPersonaSeleccionada);
+         this.operacionHistorial(CURPPersonaSeleccionada);
                     break;
                 default:
                     break;
@@ -250,9 +262,9 @@ public class ConsultarPersonas extends javax.swing.JFrame {
             }
         });
 
+        txtFieldCURP.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         txtFieldCURP.setText("Ingrese su CURP");
         txtFieldCURP.setBorder(null);
-        txtFieldCURP.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         txtFieldCURP.setForeground(new java.awt.Color(153, 153, 153));
         txtFieldCURP.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -281,9 +293,9 @@ public class ConsultarPersonas extends javax.swing.JFrame {
             }
         });
 
+        txtFieldNombre.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         txtFieldNombre.setText("Ingrese su Nombre");
         txtFieldNombre.setBorder(null);
-        txtFieldNombre.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         txtFieldNombre.setForeground(new java.awt.Color(153, 153, 153));
         txtFieldNombre.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
