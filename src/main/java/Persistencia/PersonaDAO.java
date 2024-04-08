@@ -219,4 +219,40 @@ public class PersonaDAO implements IPersonaDAO {
 
         return lista.isEmpty() ? null : lista.get(0);
     }
+    
+    @Override
+    public Persona getPersonaByNombreCompleto(String nombreCompleto) {
+        
+        String nombre = "";
+        String apellidoPaterno = "";
+        String apellidoMaterno = "";
+        
+        String nombresSplit[] = nombreCompleto.split(" ");
+        
+        if(nombresSplit.length == 4)
+        {
+            nombre = nombresSplit[0] + " " + nombresSplit[1];
+            apellidoPaterno = nombresSplit[2];
+            apellidoMaterno = nombresSplit[3];
+        }
+        if(nombresSplit.length == 3)
+        {
+            nombre = nombresSplit[0];
+            apellidoPaterno = nombresSplit[1];
+            apellidoMaterno = nombresSplit[2];
+        }
+        
+        String jpql = "SELECT p FROM Persona p WHERE LOWER(p.nombres) = LOWER(:nombre) AND LOWER(p.apellido_paterno) = LOWER(:apellido_paterno) "
+                + "AND LOWER(p.apellido_materno) = LOWER(:apellido_materno)";
+
+        TypedQuery<Persona> query = entityManager.createQuery(jpql, Persona.class);
+        query.setParameter("nombre", nombre);
+        query.setParameter("apellido_paterno", apellidoPaterno);
+        query.setParameter("apellido_materno", apellidoMaterno);
+        query.setMaxResults(1);
+
+        List<Persona> lista = query.getResultList();
+
+        return lista.isEmpty() ? null : lista.get(0);
+    }
 }

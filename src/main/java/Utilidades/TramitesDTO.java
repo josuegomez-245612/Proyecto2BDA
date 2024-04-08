@@ -27,6 +27,13 @@ public TramitesDTO(Integer costoTramite, Calendar fechaExpedicion, String tipoTr
     this.apellidoPersona = apellidoPersona;
 }
 
+public TramitesDTO(Integer costoTramite, Calendar fechaExpedicion, String tipoTramite, String nombrePersona) {
+    this.costoTramite = costoTramite;
+    this.fechaExpedicion = fechaExpedicion;
+    this.tipoTramite = tipoTramite;
+    this.nombrePersona = nombrePersona;
+}
+
 public TramitesDTO(Long id, Integer costoTramite, Calendar fechaExpedicion, String tipoTramite, String nombrePersona, String apellidoPersona) {
     this.id = id;
     this.costoTramite = costoTramite;

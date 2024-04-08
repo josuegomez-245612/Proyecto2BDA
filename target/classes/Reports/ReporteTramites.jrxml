@@ -35,8 +35,8 @@
 		</queryString>
 		<field name="fechaExpedicion" class="java.util.Date"/>
 		<field name="tipoTramite" class="java.lang.String"/>
-		<field name="nombreCompleto" class="java.lang.String"/>
-		<field name="costo" class="java.lang.Integer"/>
+		<field name="nombrePersona" class="java.lang.String"/>
+		<field name="costoTramite" class="java.lang.Integer"/>
 	</subDataset>
 	<parameter name="ds" class="net.sf.jasperreports.engine.data.JRBeanArrayDataSource"/>
 	<queryString>
@@ -141,7 +141,7 @@
 							<textField>
 								<reportElement x="0" y="0" width="230" height="30" uuid="831542cf-fa42-4b99-83e8-31352f2ae23a"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{nombreCompleto}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{nombrePersona}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -160,7 +160,7 @@
 							<textField>
 								<reportElement x="0" y="0" width="78" height="30" uuid="316babc4-bc3d-4213-bfc0-f7d1b99bdf75"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{costo}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{costoTramite}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>

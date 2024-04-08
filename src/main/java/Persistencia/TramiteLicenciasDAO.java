@@ -4,6 +4,7 @@
  */
 package Persistencia;
 
+import Entidades.Persona;
 import Entidades.TramiteLicencia;
 import Interfaces.ITramiteLicenciasDAO;
 import Utilidades.ParametrosConsultaTramites;
@@ -65,39 +66,20 @@ public class TramiteLicenciasDAO implements ITramiteLicenciasDAO {
     public List<TramitesDTO> cargarTramitesByNombre(String nombreCompleto) {
         List<TramitesDTO> lista = new ArrayList<>();
         
-        String nombres = "";
-        String apellidoPaterno = "";
-        String apellidoMaterno = "";
-        
-        nombreCompleto = nombreCompleto.toUpperCase();
-        String nombresSplit[] = nombreCompleto.split(" ");
-        
-        if(nombresSplit.length == 4)
-        {
-          nombres = nombresSplit[0] + " " + nombresSplit[1];
-            apellidoPaterno = nombresSplit[2];
-            apellidoMaterno = nombresSplit[3];
-        }
-        if(nombresSplit.length == 3)
-        {
-            nombres = nombresSplit[0];
-            apellidoPaterno = nombresSplit[1];
-            apellidoMaterno = nombresSplit[2];
-        }
+        PersonaDAO personaDAO = new PersonaDAO(entityManager);
+        Persona persona = personaDAO.getPersonaByNombreCompleto(nombreCompleto);
         
         //0 - nombres  1 - apellidoPaterno  2 - costo  3 - fechaExpedicion  4 - apellidoMaterno
         String jpql = "SELECT p.nombres, p.apellido_paterno, tl.costo, tl.fechaExpedicion, p.apellido_materno FROM TramiteLicencia tl "
-                + "INNER JOIN tl.persona p WHERE p.nombres = :nombres AND p.apellido_paterno = :apellido_paterno AND p.apellido_materno = :apellido_materno";
+                + "INNER JOIN tl.persona p WHERE p.id = :id";
 
         TypedQuery<Object[]> query = entityManager.createQuery(jpql, Object[].class);
-        query.setParameter("nombres", nombres);
-        query.setParameter("apellido_paterno", apellidoPaterno);
-        query.setParameter("apellido_materno", apellidoMaterno);
+        query.setParameter("id", persona.getId());
 
         List<Object[]> resultados = query.getResultList();
 
         for (Object[] tramite : resultados) {
-            lista.add(new TramitesDTO((Integer) tramite[2], (Calendar) tramite[3], "Licencia", (String) tramite[0], (String) tramite[1] + tramite[4]));
+            lista.add(new TramitesDTO((Integer) tramite[2], (Calendar) tramite[3], "Licencia", (String)tramite[0] + " " + tramite[1] + " " + tramite[4]));
         }
         return lista;
     }
@@ -106,46 +88,26 @@ public class TramiteLicenciasDAO implements ITramiteLicenciasDAO {
     public List<TramitesDTO> cargarTramitesByNombreInPeriod(String nombreCompleto, Calendar periodoInicio, Calendar periodoFin) {
         List<TramitesDTO> lista = new ArrayList<>();
         
-        String nombres = "";
-        String apellidoPaterno = "";
-        String apellidoMaterno = "";
+        PersonaDAO personaDAO = new PersonaDAO(entityManager);
+        Persona persona = personaDAO.getPersonaByNombreCompleto(nombreCompleto);
         
-        nombreCompleto = nombreCompleto.toUpperCase();
-        String nombresSplit[] = nombreCompleto.split(" ");
-        
-        if(nombresSplit.length == 4)
-        {
-            nombres = nombresSplit[0] + nombresSplit[1];
-            apellidoPaterno = nombresSplit[2];
-            apellidoMaterno = nombresSplit[3];
-        }
-        if(nombresSplit.length == 3)
-        {
-            nombres = nombresSplit[0];
-            apellidoPaterno = nombresSplit[1];
-            apellidoMaterno = nombresSplit[2];
-        }
-        
-        Date sqlPeriodoInicio = new Date((periodoInicio.getTime()).getTime());
-        Date sqlPeriodoFin = new Date((periodoFin.getTime()).getTime());
+        Date sqlPeriodoInicio = new Date(periodoInicio.getTimeInMillis());
+        Date sqlPeriodoFin = new Date(periodoFin.getTimeInMillis());
         
         //0 - nombres  1 - apellidoPaterno  2 - costo  3 - fechaExpedicion  4 - apellidoMaterno
-       String jpql = "SELECT p.nombres, p.apellido_paterno, tl.costo, tl.fechaExpedicion, p.apellido_materno FROM TramiteLicencia tl "
-                + "INNER JOIN tl.persona p WHERE p.nombres = :nombres AND p.apellido_paterno = :apellido_paterno AND p.apellido_materno = :apellido_materno "
-                + "AND tl.fechaExpedicion >= :periodo_inicio AND tl.fechaExpedicion <= :periodo_fin";
+        String jpql = "SELECT p.nombres, p.apellido_paterno, tl.costo, tl.fechaExpedicion, p.apellido_materno FROM TramiteLicencia tl "
+                + "INNER JOIN tl.persona p WHERE p.id = :id AND tl.fechaExpedicion >= :periodo_inicio AND tl.fechaExpedicion <= :periodo_fin";
 
 
         TypedQuery<Object[]> query = entityManager.createQuery(jpql, Object[].class);
-        query.setParameter("nombres", nombres);
-        query.setParameter("apellido_paterno", apellidoPaterno);
-        query.setParameter("apellido_materno", apellidoMaterno);
+        query.setParameter("id", persona.getId());
         query.setParameter("periodo_inicio", sqlPeriodoInicio);
         query.setParameter("periodo_fin", sqlPeriodoFin);
 
         List<Object[]> resultados = query.getResultList();
 
         for (Object[] tramite : resultados) {
-            lista.add(new TramitesDTO((Integer) tramite[2], (Calendar) tramite[3], "Licencia", (String) tramite[0], (String) tramite[1] + tramite[4]));
+            lista.add(new TramitesDTO((Integer) tramite[2], (Calendar) tramite[3], "Licencia", (String) tramite[0] + " " + tramite[1] + " " + tramite[4]));
         }
         return lista;
     }

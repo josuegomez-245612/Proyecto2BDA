@@ -24,13 +24,21 @@ public class Pruebas {
      */
     public static void main(String[] args) {
         EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("com.mycompany_Proyecto2BDA_jar_1.0-SNAPSHOTPU");
-    EntityManager entityManager = emFactory.createEntityManager();
-    TramiteLicenciasDAO tlDAO = new TramiteLicenciasDAO(entityManager);
-    
-   LocalDate fechaInicio = LocalDate.of(2024, 4, 1);
-  LocalDate fechaFin = LocalDate.of(2024, 4, 30);
-PersonaDAO pDAO = new PersonaDAO(entityManager);
-    // Begin transaction
+        EntityManager entityManager = emFactory.createEntityManager();
+        TramiteLicenciasDAO tlDAO = new TramiteLicenciasDAO(entityManager);
+
+        LocalDate fechaInicio = LocalDate.of(2024, 4, 1);
+        LocalDate fechaFin = LocalDate.of(2024, 4, 30);
+        Calendar periodoInicio = Calendar.getInstance();
+        periodoInicio.set(2023, 12, 12);
+        Calendar periodoFin = Calendar.getInstance();
+        periodoFin.set(2024, 12, 12);
+        PersonaDAO pDAO = new PersonaDAO(entityManager);
+        
+        System.out.println(tlDAO.cargarTramitesByNombre("Laurita Galindo Soto").toString());
+        System.out.println(tlDAO.cargarTramitesByNombreInPeriod("Laurita Galindo Soto", periodoInicio, periodoFin).toString());
+//        System.out.println(pDAO.getPersonaByNombreCompleto("Laurita Galindo Soto").getNombres());
+        // Begin transaction
 //    entityManager.getTransaction().begin();
 //
 //    // Create Persona entity
@@ -79,10 +87,11 @@ PersonaDAO pDAO = new PersonaDAO(entityManager);
 //    entityManager.close();
 //    emFactory.close();
 //    
-ParametrosConsultaTramites ct = new ParametrosConsultaTramites(fechaInicio,  fechaFin,"Laurita");
 
-        System.out.println(pDAO.getPersonaByNombre("Laurita").getNombres());
-  
-  
-}
+//ParametrosConsultaTramites ct = new ParametrosConsultaTramites(fechaInicio,  fechaFin,"Laurita");
+//
+//        System.out.println(pDAO.getPersonaByNombre("Laurita").getNombres());
+
+        
+    }
 }

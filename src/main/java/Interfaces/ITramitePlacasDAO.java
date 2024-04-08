@@ -7,6 +7,7 @@ package Interfaces;
 import Entidades.Placa;
 import Utilidades.ParametrosConsultaTramites;
 import Utilidades.TramitesDTO;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -44,4 +45,22 @@ public interface ITramitePlacasDAO {
      * @return Una lista de objetos TramitesDTO que representan todos los trámites de placas de vehículo disponibles.
      */
     List<TramitesDTO> cargarTodosTramites();
+    
+    /**
+     * Carga trámites de placas de vehículo por nombre de una persona.
+     * 
+     * @param nombreCompleto Nombre completo de la persona asociada con los tramites a cargar.
+     * @return Una lista de objetos TramitesDTO que cumplen con los criterios de búsqueda.
+     */
+    public List<TramitesDTO> cargarTramitesByNombre(String nombreCompleto);
+    
+    /**
+     * Carga trámites de placas de vehículo por nombre de una persona durante un periodo de tiempo.
+     * 
+     * @param nombreCompleto Nombre completo de la persona asociada con los tramites a cargar.
+     * @param periodoInicio  Periodo minimo de tramites a cargar.
+     * @param periodoFin Periodo maximo de tramites a cargar.
+     * @return Una lista de objetos TramitesDTO que cumplen con los criterios de búsqueda.
+     */
+    public List<TramitesDTO> cargarTramitesByNombreInPeriod(String nombreCompleto, Calendar periodoInicio, Calendar periodoFin);
 }

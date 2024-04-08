@@ -30,6 +30,7 @@ Presentacion\ConsultarPersonas$1.class
 Presentacion\HistorialTramites$3.class
 Presentacion\ConsultarPersonas$8.class
 Persistencia\PersistenciaException.class
+Presentacion\GenerarReporte$1.class
 interfacesNegocio\IValidadoresVehiculo.class
 Utilidades\ConstantesGUI.class
 Negocio\ValidadoresPlaca.class
