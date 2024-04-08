@@ -10,7 +10,6 @@ package Presentacion;
  */
 public class HistorialPlacas extends javax.swing.JFrame {
 
-    ConsultarPlacas consultarPlacas;
 
     /**
      * Creates new form HistorialPlacas
@@ -19,10 +18,7 @@ public class HistorialPlacas extends javax.swing.JFrame {
         initComponents();
     }
 
-    public HistorialPlacas(ConsultarPlacas frame) {
-        initComponents();
-        consultarPlacas = frame;
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -107,7 +103,7 @@ public class HistorialPlacas extends javax.swing.JFrame {
 
     private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         this.dispose();
-        consultarPlacas.setVisible(true);
+       
     }//GEN-LAST:event_volverBtnActionPerformed
 
 

@@ -8,7 +8,7 @@ package interfacesNegocio;
  *
  * @author JOSUE GOMEZ
  */
-public interface IValidadoresPersona extends IBuscarPersonaPorCurp,IinsercionMasivaPersonas,IConseguirTodasPersonas{
+public interface IValidadoresPersona extends IBuscarPersonaPorCurp,IinsercionMasivaPersonas,IConseguirTodasPersonas,IConsultarPersonas,IVerificarVigenciaPersona,IValidarMayoriaEdadPersona{
       
   
 }

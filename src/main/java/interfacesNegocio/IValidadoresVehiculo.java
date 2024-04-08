@@ -4,14 +4,10 @@
  */
 package interfacesNegocio;
 
-import Entidades.Persona;
-import java.util.List;
-
 /**
  *
  * @author JOSUE GOMEZ
  */
-public interface IConseguirTodasPersonas {
+public interface IValidadoresVehiculo extends ICargarTodosLosVehiculos,ICargarVehiculo {
     
-     public List<Persona> cargarTodasPersonas();
 }

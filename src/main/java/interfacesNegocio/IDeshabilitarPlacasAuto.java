@@ -4,14 +4,14 @@
  */
 package interfacesNegocio;
 
-import Entidades.Persona;
-import java.util.List;
+import Entidades.Placa;
 
 /**
  *
  * @author JOSUE GOMEZ
  */
-public interface IConseguirTodasPersonas {
+public interface IDeshabilitarPlacasAuto {
     
-     public List<Persona> cargarTodasPersonas();
+     public void DeshabilitarPlacaAuto(Placa placa);
+     
 }

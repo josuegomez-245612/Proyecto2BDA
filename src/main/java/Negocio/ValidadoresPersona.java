@@ -10,6 +10,8 @@ import Persistencia.PersistenciaException;
 import Persistencia.PersonaDAO;
 import Persistencia.PlacasDAO;
 import Persistencia.TramitePlacasDAO;
+import Utilidades.ParametrosBusquedaPersonas;
+import java.util.List;
 import interfacesNegocio.IValidadoresPersona;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,7 +36,7 @@ public class ValidadoresPersona implements IValidadoresPersona {
 
     @Override
     public Persona encontrarPersonaPorCurp(String CURP) {
-       
+
         try {
             if (pDAO.getPersonaByCurp(CURP) != null) {
                 JOptionPane.showMessageDialog(null, "ERROR: la persona ya está registrada.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -48,32 +50,46 @@ public class ValidadoresPersona implements IValidadoresPersona {
         } catch (PersistenciaException ex) {
             Logger.getLogger(ValidadoresPersona.class.getName()).log(Level.SEVERE, null, ex);
         }
-     
+
         return null;
 
     }
 
     @Override
     public void insercionMasivaPersonas() {
-       if(pDAO.insercionMasivaPersonas() == false){
-           JOptionPane.showMessageDialog(null, "La insercion masiva ya fue realizada.");
-       }else{
-           pDAO.insercionMasivaPersonas();
+        if (pDAO.insercionMasivaPersonas() == false) {
+            JOptionPane.showMessageDialog(null, "La insercion masiva ya fue realizada.");
+        } else {
+            pDAO.insercionMasivaPersonas();
             JOptionPane.showMessageDialog(null, "Se han agregado los clientes con exito");
-       }
-    }
-
-    @Override
-    public void cargarTodasPersonas() {
-        if(pDAO.cargarTodasPersonas() == null){
-            JOptionPane.showMessageDialog(null, "No existen registros para consultar.");
-        }
-        else{
-            pDAO.cargarTodasPersonas();
         }
     }
 
    
-    
 
+    @Override
+    public List<Persona> consultarPersonas(ParametrosBusquedaPersonas parametros) {
+        return pDAO.consultarPersonas(parametros);
+    }
+
+    @Override
+    public boolean consultarLicenciaVigentePersona(String CURP) {
+        return pDAO.consultarLicenciaVigentePersona(CURP);
+    }
+     @Override
+    public boolean validarMayoriaEdadPersona(String CURP) {
+        return pDAO.validarMayoriaEdadPersona(CURP);
+    }
+    
+@Override
+    public List<Persona> cargarTodasPersonas() {
+       if (pDAO.cargarTodasPersonas() == null) {
+            JOptionPane.showMessageDialog(null, "No existen registros para consultar.");
+        } else {
+            return pDAO.cargarTodasPersonas();
+        }
+        return null;
+    }
+    
+    
 }

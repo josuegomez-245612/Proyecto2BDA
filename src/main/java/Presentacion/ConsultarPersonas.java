@@ -6,6 +6,7 @@ package Presentacion;
 
 import Entidades.Persona;
 import Interfaces.IConexionBD;
+import Negocio.ValidadoresPersona;
 import Persistencia.PersistenciaException;
 import Persistencia.PersonaDAO;
 import Utilidades.ConstantesGUI;
@@ -25,7 +26,7 @@ import javax.swing.table.DefaultTableModel;
 public class ConsultarPersonas extends javax.swing.JFrame {
 
     IConexionBD conexion;
-    PersonaDAO pDAO;
+    ValidadoresPersona pDAO;
     ConstantesGUI operacion;
 
     /**
@@ -36,7 +37,7 @@ public class ConsultarPersonas extends javax.swing.JFrame {
     public ConsultarPersonas(IConexionBD conexion, ConstantesGUI gui) {
         initComponents();
         this.conexion = conexion;
-        this.pDAO = new PersonaDAO(conexion.crearConexion());
+        this.pDAO = new ValidadoresPersona(conexion.crearConexion(),conexion);
         this.cargarPersonas();
         this.operacion = gui;
 
@@ -66,7 +67,7 @@ public class ConsultarPersonas extends javax.swing.JFrame {
      * Método que comprueba que la persona puede continuar con el trámite de
      * licencia
      *
-     * @param rfcPersonaSeleccionada CURP de la persona
+     * @param CURPPersonaSeleccionada CURP de la persona
      */
     private void operacionLicencia(String CURPPersonaSeleccionada) throws PersistenciaException {
         boolean vigencia = pDAO.consultarLicenciaVigentePersona(CURPPersonaSeleccionada),
@@ -76,7 +77,7 @@ public class ConsultarPersonas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No se puede registrar licencia para esta persona debido a que ya cuenta con una vigente");
         } else if (!vigencia && mayoriaEdad) {
             JOptionPane.showMessageDialog(null, "Cumple con los requisitos para seguir con el trámite");
-            Persona personaElegida = this.pDAO.getPersonaByCurp((String) this.listaPersonasJT.getValueAt(this.listaPersonasJT.getSelectedRow(), 4));
+            Persona personaElegida = this.pDAO.encontrarPersonaPorCurp((String) this.listaPersonasJT.getValueAt(this.listaPersonasJT.getSelectedRow(), 4));
             this.setVisible(false);
             new JDRenovarLicencia(conexion, personaElegida, this, true).setVisible(true);
             
@@ -92,7 +93,7 @@ public class ConsultarPersonas extends javax.swing.JFrame {
           System.out.println(vigencia+" y "+mayoriaEdad);
     if (vigencia && mayoriaEdad) {
         JOptionPane.showMessageDialog(null, "Cumple con los requisitos para seguir con el trámite");
-       Persona personaElegida = this.pDAO.getPersonaByCurp((String) this.listaPersonasJT.getValueAt(this.listaPersonasJT.getSelectedRow(), 4));
+       Persona personaElegida = this.pDAO.encontrarPersonaPorCurp((String) this.listaPersonasJT.getValueAt(this.listaPersonasJT.getSelectedRow(), 4));
             new ConsultarVehiculos(conexion, personaElegida).setVisible(true);
             this.setVisible(false);
     } else if (!vigencia && mayoriaEdad) {

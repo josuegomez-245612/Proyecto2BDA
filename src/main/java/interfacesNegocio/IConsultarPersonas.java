@@ -5,13 +5,14 @@
 package interfacesNegocio;
 
 import Entidades.Persona;
+import Utilidades.ParametrosBusquedaPersonas;
 import java.util.List;
 
 /**
  *
  * @author JOSUE GOMEZ
  */
-public interface IConseguirTodasPersonas {
+public interface IConsultarPersonas {
     
-     public List<Persona> cargarTodasPersonas();
+     public List<Persona> consultarPersonas(ParametrosBusquedaPersonas parametros);
 }

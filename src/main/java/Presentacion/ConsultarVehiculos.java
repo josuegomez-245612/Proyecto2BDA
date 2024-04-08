@@ -6,6 +6,7 @@ package Presentacion;
 
 import Entidades.Persona;
 import Interfaces.IConexionBD;
+import Negocio.ValidadoresVehiculo;
 import Persistencia.AutoDAO;
 import Utilidades.VehiculosPlacasDTO;
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class ConsultarVehiculos extends javax.swing.JFrame {
 
     private IConexionBD conexion;
 
-    private AutoDAO autoDAO;
+    private ValidadoresVehiculo autoDAO;
 
     private Persona persona;
 
@@ -34,7 +35,7 @@ public class ConsultarVehiculos extends javax.swing.JFrame {
     public ConsultarVehiculos(IConexionBD conexion, Persona persona) {
         initComponents();
         this.conexion = conexion;
-        this.autoDAO = new AutoDAO(conexion.crearConexion());
+        this.autoDAO = new ValidadoresVehiculo(conexion.crearConexion(),conexion);
         this.cargarAutos();
         this.persona = persona;
     }

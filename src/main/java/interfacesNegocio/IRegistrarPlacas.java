@@ -6,14 +6,12 @@ package interfacesNegocio;
 
 import Entidades.Placa;
 import Entidades.Vehiculo;
-import Persistencia.PlacasDAO;
-import Persistencia.TramitePlacasDAO;
 
 /**
  *
  * @author JOSUE GOMEZ
  */
-public interface IRegistrarPlacas {
+public interface IRegistrarPlacas extends IValidarExistenciaPlaca,IObtenerPlacas,IDeshabilitarPlacasAuto{
     
     
     public void RegistrarPlacaNuevo(Placa p, Vehiculo v);

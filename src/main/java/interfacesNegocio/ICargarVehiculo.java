@@ -4,14 +4,14 @@
  */
 package interfacesNegocio;
 
-import Entidades.Persona;
+import Utilidades.VehiculosPlacasDTO;
 import java.util.List;
 
 /**
  *
  * @author JOSUE GOMEZ
  */
-public interface IConseguirTodasPersonas {
+public interface ICargarVehiculo {
     
-     public List<Persona> cargarTodasPersonas();
+      public List<VehiculosPlacasDTO> cargarVehiculo(String placas);
 }

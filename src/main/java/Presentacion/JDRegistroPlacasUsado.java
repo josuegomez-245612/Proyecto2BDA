@@ -10,7 +10,6 @@ import Entidades.TramitePlacas;
 import Interfaces.IConexionBD;
 import Interfaces.IPlacasDAO;
 import Negocio.ValidadoresPlaca;
-import Persistencia.PersonaDAO;
 import Persistencia.PlacasDAO;
 import Persistencia.TramitePlacasDAO;
 import Utilidades.GeneradorPlacas;
@@ -28,7 +27,7 @@ public class JDRegistroPlacasUsado extends javax.swing.JDialog {
 
     private TramitePlacasDAO tramitePlacasDAO;
   
-    private IPlacasDAO placasDAO;
+    private ValidadoresPlaca placasDAO;
     
     private Persona persona;
     
@@ -52,7 +51,7 @@ public class JDRegistroPlacasUsado extends javax.swing.JDialog {
         this.persona = persona;
         this.auto = auto;
         this.costo = costo;
-        this.placasDAO = new PlacasDAO(conexion.crearConexion());
+        this.placasDAO = new ValidadoresPlaca(conexion,conexion.crearConexion());
         this.generarPlaca();
         this.mostrarPlacas();
         this.txtFieldCosto.setText(String.valueOf(this.costo));

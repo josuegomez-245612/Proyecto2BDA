@@ -40,5 +40,26 @@ IConexionBD conexion;
    }
    }
 
+    @Override
+    public boolean validarExistenciaPlaca(String seriePlacas) {
+      return placa.validarExistenciaPlaca(seriePlacas);
+    }
+
+    @Override
+    public Placa obtenerPlaca(String seriePlacas) {
+        if(placa.obtenerPlaca(seriePlacas) == null){
+            JOptionPane.showMessageDialog(null, "La placa no existe.");
+        }else{
+            return placa.obtenerPlaca(seriePlacas);
+        }
+        return null;
+       
+    }
+
+    @Override
+    public void DeshabilitarPlacaAuto(Placa p) {
+       placa.DeshabilitarPlacaAuto(p);
+    }
+
   
 }

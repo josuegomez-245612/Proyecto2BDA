@@ -29,9 +29,7 @@ import javax.swing.JTextField;
 public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
 
     IConexionBD conexion;
-
     GeneradorPlacas generarp;
-    PersonaDAO personaDAO;
     ValidadoresPlaca registrarPlaca;
     Persona personaElegida;
 
@@ -45,11 +43,9 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
         initComponents();
         this.conexion = conexion;
         this.personaElegida = persona;
-        this.personaDAO = new PersonaDAO(conexion.crearConexion());
         this.registrarPlaca = new ValidadoresPlaca(conexion, conexion.crearConexion());
          this.curpTxtField.setEditable(false);
          this.settearNombrePersonaElegida();
-
     }
 
     public void settearNombrePersonaElegida() {
@@ -298,7 +294,7 @@ private Vehiculo extraerDatos() {
             
         this.dispose();
         this.abrirRegistroPlacas(autoPlacas);
-        
+       
         }
     }//GEN-LAST:event_aceptarBtnActionPerformed
 

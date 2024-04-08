@@ -221,8 +221,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void consultaPlacasMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaPlacasMenuItemActionPerformed
 
-        ConsultarPlacas consultarPlacas = new ConsultarPlacas();
-        consultarPlacas.setVisible(true);
     }//GEN-LAST:event_consultaPlacasMenuItemActionPerformed
 
     private void consultaLicenciaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaLicenciaMenuItemActionPerformed

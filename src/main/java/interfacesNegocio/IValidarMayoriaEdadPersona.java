@@ -4,14 +4,11 @@
  */
 package interfacesNegocio;
 
-import Entidades.Persona;
-import java.util.List;
-
 /**
  *
  * @author JOSUE GOMEZ
  */
-public interface IConseguirTodasPersonas {
+public interface IValidarMayoriaEdadPersona {
     
-     public List<Persona> cargarTodasPersonas();
+     public boolean validarMayoriaEdadPersona(String CURP);
 }

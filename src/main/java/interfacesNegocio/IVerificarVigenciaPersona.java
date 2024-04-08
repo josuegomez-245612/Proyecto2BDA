@@ -4,14 +4,11 @@
  */
 package interfacesNegocio;
 
-import Entidades.Persona;
-import java.util.List;
-
 /**
  *
  * @author JOSUE GOMEZ
  */
-public interface IConseguirTodasPersonas {
+public interface IVerificarVigenciaPersona {
     
-     public List<Persona> cargarTodasPersonas();
+      public boolean consultarLicenciaVigentePersona(String CURP);
 }
