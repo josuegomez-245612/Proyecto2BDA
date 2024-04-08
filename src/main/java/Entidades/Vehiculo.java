@@ -78,8 +78,18 @@ public class Vehiculo implements Serializable {
      */
     @OneToMany(mappedBy = "vehiculo", cascade = {CascadeType.PERSIST})
     private List<Placa> placas;
-    
-    
+    /**
+     * Constructor de la clase Vehiculo.
+     * 
+     * @param id Identificador único del vehículo.
+     * @param modelo Modelo del vehículo.
+     * @param tipoVehiculo Tipo de vehículo.
+     * @param color Color del vehículo.
+     * @param numSerie Número de serie del vehículo.
+     * @param linea Línea del vehículo.
+     * @param marca Marca del vehículo.
+     * @param nuevo Indica si el vehículo es nuevo o no.
+     */
     public Vehiculo(Long id, String modelo, String tipoVehiculo, String color, String numSerie, String linea, String marca, boolean nuevo) {
         this.id = id;
         this.modelo = modelo;
@@ -91,6 +101,16 @@ public class Vehiculo implements Serializable {
         this.nuevo = nuevo;
     }
 
+   /**
+     * Constructor de la clase Vehiculo para un vehículo nuevo.
+     * 
+     * @param modelo Modelo del vehículo.
+     * @param tipoVehiculo Tipo de vehículo.
+     * @param color Color del vehículo.
+     * @param numSerie Número de serie del vehículo.
+     * @param linea Línea del vehículo.
+     * @param marca Marca del vehículo.
+     */
     public Vehiculo(String modelo, String tipoVehiculo, String color, String numSerie, String linea, String marca) {
         this.modelo = modelo;
         this.tipoVehiculo = tipoVehiculo;
@@ -108,6 +128,17 @@ public class Vehiculo implements Serializable {
         this.id = id;
     }
 
+    /**
+     * Constructor de la clase Vehiculo.
+     * 
+     * @param modelo Modelo del vehículo.
+     * @param tipoVehiculo Tipo de vehículo.
+     * @param color Color del vehículo.
+     * @param numSerie Número de serie del vehículo.
+     * @param linea Línea del vehículo.
+     * @param marca Marca del vehículo.
+     * @param nuevo Indica si el vehículo es nuevo o no.
+     */
     public Vehiculo(String modelo, String tipoVehiculo, String color, String numSerie, String linea, String marca, boolean nuevo) {
         this.modelo = modelo;
         this.tipoVehiculo = tipoVehiculo;
@@ -117,7 +148,16 @@ public class Vehiculo implements Serializable {
         this.marca = marca;
         this.nuevo = nuevo;
     }
-
+ /**
+     * Constructor de la clase Vehiculo para un vehículo usado.
+     * 
+     * @param modelo Modelo del vehículo.
+     * @param color Color del vehículo.
+     * @param numSerie Número de serie del vehículo.
+     * @param linea Línea del vehículo.
+     * @param marca Marca del vehículo.
+     * @param nuevo Indica si el vehículo es nuevo o no.
+     */
     public Vehiculo(String modelo, String color, String numSerie, String linea, String marca, boolean nuevo) {
         this.modelo = modelo;
         this.color = color;
@@ -126,71 +166,150 @@ public class Vehiculo implements Serializable {
         this.marca = marca;
         this.nuevo = nuevo;
     }
+     /**
+     * Obtiene el identificador único del vehículo.
+     * 
+     * @return Identificador único del vehículo.
+     */
+    public Long getId() {
+        return id;
+    }
     
+  /**
+     * Establece el identificador único del vehículo.
+     * 
+     * @param id Identificador único del vehículo.
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    /**
+     * Obtiene el modelo del vehículo.
+     * 
+     * @return Modelo del vehículo.
+     */
     public String getModelo() {
         return modelo;
     }
 
-    public String getTipoVehiculo() {
-        return tipoVehiculo;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public String getNumSerie() {
-        return numSerie;
-    }
-
-    public String getLinea() {
-        return linea;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public boolean isNuevo() {
-        return nuevo;
-    }
-
+    /**
+     * Establece el modelo del vehículo.
+     * 
+     * @param modelo Modelo del vehículo.
+     */
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
+    /**
+     * Obtiene el tipo de vehículo.
+     * 
+     * @return Tipo de vehículo.
+     */
+    public String getTipoVehiculo() {
+        return tipoVehiculo;
+    }
+
+    /**
+     * Establece el tipo de vehículo.
+     * 
+     * @param tipoVehiculo Tipo de vehículo.
+     */
     public void setTipoVehiculo(String tipoVehiculo) {
         this.tipoVehiculo = tipoVehiculo;
     }
 
+    /**
+     * Obtiene el color del vehículo.
+     * 
+     * @return Color del vehículo.
+     */
+    public String getColor() {
+        return color;
+    }
+
+    /**
+     * Establece el color del vehículo.
+     * 
+     * @param color Color del vehículo.
+     */
     public void setColor(String color) {
         this.color = color;
     }
 
+    /**
+     * Obtiene el número de serie del vehículo.
+     * 
+     * @return Número de serie del vehículo.
+     */
+    public String getNumSerie() {
+        return numSerie;
+    }
+
+    /**
+     * Establece el número de serie del vehículo.
+     * 
+     * @param numSerie Número de serie del vehículo.
+     */
     public void setNumSerie(String numSerie) {
         this.numSerie = numSerie;
     }
 
+    /**
+     * Obtiene la línea del vehículo.
+     * 
+     * @return Línea del vehículo.
+     */
+    public String getLinea() {
+        return linea;
+    }
+
+    /**
+     * Establece la línea del vehículo.
+     * 
+     * @param linea Línea del vehículo.
+     */
     public void setLinea(String linea) {
         this.linea = linea;
     }
 
+    /**
+     * Obtiene la marca del vehículo.
+     * 
+     * @return Marca del vehículo.
+     */
+    public String getMarca() {
+        return marca;
+    }
+
+    /**
+     * Establece la marca del vehículo.
+     * 
+     * @param marca Marca del vehículo.
+     */
     public void setMarca(String marca) {
         this.marca = marca;
     }
 
+    /**
+     * Indica si el vehículo es nuevo.
+     * 
+     * @return true si el vehículo es nuevo, false en caso contrario.
+     */
+    public boolean isNuevo() {
+        return nuevo;
+    }
+    
+    /**
+     * Establece si el vehiculo es nuevo.
+     * 
+     * @param nuevo
+     */
     public void setNuevo(boolean nuevo) {
         this.nuevo = nuevo;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     @Override
     public int hashCode() {

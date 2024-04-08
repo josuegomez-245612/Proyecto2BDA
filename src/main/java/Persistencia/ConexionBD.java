@@ -20,7 +20,11 @@ public class ConexionBD implements IConexionBD{
     public ConexionBD(String PERSISTENCE_UNIT_NAME) {
         this.PERSISTENCE_UNIT_NAME = PERSISTENCE_UNIT_NAME;
     }
-    
+      /**
+     * Crea una conexión con la base de datos y devuelve un objeto EntityManager.
+     * 
+     * @return Un objeto EntityManager que representa la conexión con la base de datos.
+     */
     @Override
     public EntityManager crearConexion() {
        EntityManagerFactory emFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);

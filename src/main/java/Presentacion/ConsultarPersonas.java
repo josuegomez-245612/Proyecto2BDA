@@ -18,7 +18,23 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
+/**
+ * Esta clase representa una ventana para consultar personas.
+ * Permite buscar personas por CURP, nombre y fecha de nacimiento,
+ * mostrar los resultados en una tabla y realizar diversas acciones
+ * relacionadas con las personas encontradas.
+ * <p>
+ * La interfaz proporciona funcionalidades como:
+ * <ul>
+ * <li>Búsqueda de personas por CURP, nombre y fecha de nacimiento.</li>
+ * <li>Visualización de los resultados de la búsqueda en una tabla.</li>
+ * <li>Realización de acciones como trámites de licencia, trámites de placas y ver historial.</li>
+ * </ul>
+ * </p>
+ * 
+ * @author JOSUE GOMEZ
+ * @version 1.0
+ */
 /**
  *
  * @author JOSUE GOMEZ
@@ -29,10 +45,10 @@ public class ConsultarPersonas extends javax.swing.JFrame {
     ValidadoresPersona pDAO;
     ConstantesGUI operacion;
 
-    /**
-     * Creates new form ConsultarPlacas
-     *
-     * @param conexion
+      /** 
+     * Crea una nueva instancia de ConsultarPersonas.
+     * @param conexion Una instancia de {@code IConexionBD} para la conexión a la base de datos.
+     * @param gui Una instancia de {@code ConstantesGUI} para definir la operación a realizar.
      */
     public ConsultarPersonas(IConexionBD conexion, ConstantesGUI gui) {
         initComponents();
@@ -42,7 +58,9 @@ public class ConsultarPersonas extends javax.swing.JFrame {
         this.operacion = gui;
 
     }
-
+ /**
+     * Método para cargar personas según los criterios de búsqueda especificados.
+     */
     private void cargarPersonas() {
         SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");
         DefaultTableModel modeloTabla = (DefaultTableModel) this.listaPersonasJT.getModel();
@@ -87,6 +105,10 @@ public class ConsultarPersonas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No se puede registrar licencia para esta persona debido a que es menor de edad");
         }
     }
+      /**
+     * Método que comprueba que la persona cuenta con los requisitos para seguir con el trámite de placas
+     * @param rfcPersonaSeleccionada Rfc de la persona
+     */
       private void operacionPlacas(String CURPPersonaSeleccionada) throws PersistenciaException {
     boolean vigencia = pDAO.consultarLicenciaVigentePersona(CURPPersonaSeleccionada),
             mayoriaEdad = pDAO.validarMayoriaEdadPersona(CURPPersonaSeleccionada);
@@ -103,6 +125,10 @@ public class ConsultarPersonas extends javax.swing.JFrame {
     }
     
 } 
+      /**
+     * Método que comprueba si la persona es mayor de edad y si lo es abre un HistorialTramites para ver el historial
+     * @param rfcPersonaSeleccionada Rfc de la persona seleccionada
+     */
       private void operacionHistorial(String CURPPersonaSeleccionada) {
         boolean mayoriaEdad = pDAO.validarMayoriaEdadPersona(CURPPersonaSeleccionada);
         if (mayoriaEdad) {
@@ -115,7 +141,10 @@ public class ConsultarPersonas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"No se puede seguir con la operación debido a que es menor de edad");
         }
     }
-
+ /**
+     * Método para realizar una operación relacionada con una persona seleccionada.
+     * @throws PersistenciaException Si ocurre un error durante la consulta en la base de datos.
+     */
     public void Consultar() throws PersistenciaException {
         Integer indiceRenglonInicial = 0, indiceColumnaCURP = 4;
         if (this.listaPersonasJT.getSelectedRow() >= indiceRenglonInicial) {
@@ -262,9 +291,9 @@ public class ConsultarPersonas extends javax.swing.JFrame {
             }
         });
 
-        txtFieldCURP.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         txtFieldCURP.setText("Ingrese su CURP");
         txtFieldCURP.setBorder(null);
+        txtFieldCURP.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         txtFieldCURP.setForeground(new java.awt.Color(153, 153, 153));
         txtFieldCURP.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -293,9 +322,9 @@ public class ConsultarPersonas extends javax.swing.JFrame {
             }
         });
 
-        txtFieldNombre.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         txtFieldNombre.setText("Ingrese su Nombre");
         txtFieldNombre.setBorder(null);
+        txtFieldNombre.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         txtFieldNombre.setForeground(new java.awt.Color(153, 153, 153));
         txtFieldNombre.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {

@@ -28,7 +28,11 @@ public class AutoDAO implements IAutoDAO {
         this.entityManager = null;
     }
 
-   
+     /**
+     * Carga todos los vehículos disponibles en el sistema.
+     * 
+     * @return Una lista de objetos VehiculosPlacasDTO que contienen información de cada vehículo.
+     */
     @Override
     public List<VehiculosPlacasDTO> cargarTodosLosVehiculos() {
         List<VehiculosPlacasDTO> lista = new ArrayList<>();
@@ -44,7 +48,13 @@ public class AutoDAO implements IAutoDAO {
         }
         return lista;
     }
-   
+    
+    /**
+     * Este método regresa una lista de autos con su placa más reciente a partir
+     * de una serie de placas.
+     * @param placas Representa la serie de placas a ser utilizada para la búsqueda.
+     * @return Regresa una lista de autos con su placa más reciente.
+     */
     @Override
     public List<VehiculosPlacasDTO> cargarVehiculo(String placas) {
         List<VehiculosPlacasDTO> lista = new ArrayList<>();

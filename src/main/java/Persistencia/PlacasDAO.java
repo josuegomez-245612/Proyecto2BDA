@@ -26,7 +26,12 @@ public PlacasDAO(EntityManager entityManager){
     this.entityManager = null;
     }
 
-
+/**
+     * Valida la existencia de una placa en el sistema.
+     * 
+     * @param seriePlacas La serie de placas a validar.
+     * @return true si la placa existe en el sistema, false en caso contrario.
+     */
     @Override
     public boolean validarExistenciaPlaca(String seriePlacas) {
           String jpql = "SELECT p FROM Placa p WHERE p.seriePlacas = :serie";
@@ -38,7 +43,11 @@ public PlacasDAO(EntityManager entityManager){
         List<Placa> placas = query.getResultList();
         return !placas.isEmpty();
     }
-
+ /**
+     * Deshabilita una placa de auto en el sistema.
+     * 
+     * @param placa La placa de auto a deshabilitar.
+     */
     @Override
     public void DeshabilitarPlacaAuto(Placa placa) {
           entityManager.getTransaction().begin();
@@ -48,7 +57,12 @@ public PlacasDAO(EntityManager entityManager){
         
         entityManager.getTransaction().commit();
     }
-
+/**
+     * Obtiene una placa de auto por su serie.
+     * 
+     * @param seriePlacas La serie de placas a buscar.
+     * @return La placa de auto correspondiente a la serie especificada.
+     */
     @Override
     public Placa obtenerPlaca(String seriePlacas) {
         String jpql = "SELECT p FROM Placa p WHERE p.seriePlacas = :serie";

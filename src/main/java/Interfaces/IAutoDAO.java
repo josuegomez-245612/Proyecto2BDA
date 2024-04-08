@@ -13,6 +13,11 @@ import java.util.List;
  */
 public interface IAutoDAO {
    
+    /**
+     * Carga todos los vehículos disponibles en el sistema.
+     * 
+     * @return Una lista de objetos VehiculosPlacasDTO que contienen información de cada vehículo.
+     */
     List<VehiculosPlacasDTO> cargarTodosLosVehiculos();
 
     /**

@@ -11,6 +11,11 @@ import javax.persistence.EntityManager;
  * @author JOSUE GOMEZ
  */
 public interface IConexionBD {
-    
+     
+    /**
+     * Crea una conexión con la base de datos y devuelve un objeto EntityManager.
+     * 
+     * @return Un objeto EntityManager que representa la conexión con la base de datos.
+     */
     EntityManager crearConexion();
 }
