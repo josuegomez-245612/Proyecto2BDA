@@ -14,15 +14,32 @@ import javax.persistence.EntityManager;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Ryzen 5
+ * Esta clase implementa la interfaz IValidadoresTramites para proporcionar validaciones
+ * específicas para los trámites de licencia.
  */
 public class ValidadoresTramitesLicencia implements IValidadoresTramites
 {
+    /**
+     * El EntityManager utilizado para operaciones en la base de datos.
+     */
     private final EntityManager entityManager;
+    
+    /**
+     * La interfaz para establecer la conexión a la base de datos.
+     */
     IConexionBD conexion;
+    
+    /**
+     * El objeto DAO para manejar las operaciones de TramiteLicencia en la base de datos.
+     */
     TramiteLicenciasDAO tlDAO;
     
+    /**
+     * Construye un nuevo ValidadoresTramitesLicencia con el EntityManager y la conexión especificados.
+     *
+     * @param entityManager El EntityManager que se utilizará para operaciones en la base de datos.
+     * @param conexion La interfaz para establecer la conexión a la base de datos.
+     */
     public ValidadoresTramitesLicencia(EntityManager entityManager, IConexionBD conexion) 
     {
         this.entityManager = entityManager;
@@ -30,6 +47,12 @@ public class ValidadoresTramitesLicencia implements IValidadoresTramites
         this.tlDAO = new TramiteLicenciasDAO(this.conexion.crearConexion());
     }
     
+    /**
+     * Carga los trámites asociados con un nombre completo de persona.
+     *
+     * @param nombreCompleto El nombre completo de la persona para la cual cargar los trámites.
+     * @return Una lista de trámites asociados con el nombre completo especificado.
+     */
     @Override
     public List<TramitesDTO> cargarTramitesByNombre(String nombreCompleto)
     {
@@ -41,6 +64,13 @@ public class ValidadoresTramitesLicencia implements IValidadoresTramites
         return null;
     }
     
+    /**
+     * Carga los trámites registrados en un período de tiempo especificado.
+     *
+     * @param periodoInicio La fecha de inicio del período.
+     * @param periodoFin La fecha de fin del período.
+     * @return Una lista de trámites registrados en el período de tiempo especificado.
+     */
     @Override
     public List<TramitesDTO> cargarTramitesInPeriod(Calendar periodoInicio, Calendar periodoFin)
     {
@@ -52,6 +82,14 @@ public class ValidadoresTramitesLicencia implements IValidadoresTramites
         return null;
     }
     
+    /**
+     * Carga los trámites asociados con un nombre completo de persona y registrados en un período de tiempo especificado.
+     *
+     * @param nombreCompleto El nombre completo de la persona para la cual cargar los trámites.
+     * @param periodoInicio La fecha de inicio del período.
+     * @param periodoFin La fecha de fin del período.
+     * @return Una lista de trámites asociados con el nombre completo y período especificados.
+     */
     @Override
     public List<TramitesDTO> cargarTramitesByNombreInPeriod(String nombreCompleto, Calendar periodoInicio, Calendar periodoFin)
     {
@@ -63,6 +101,11 @@ public class ValidadoresTramitesLicencia implements IValidadoresTramites
         return null;
     }
     
+    /**
+     * Carga todos los trámites registrados en la base de datos.
+     *
+     * @return Una lista de todos los trámites registrados en la base de datos.
+     */
     @Override
     public List<TramitesDTO> cargarTodosTramites()
     {

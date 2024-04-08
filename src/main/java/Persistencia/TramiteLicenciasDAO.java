@@ -19,21 +19,38 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 /**
- *
- * @author JOSUE GOMEZ
+ * Esta clase representa un Objeto de Acceso a Datos (DAO) para gestionar entidades TramiteLicencia.
+ * Proporciona métodos para crear y cargar entidades TramiteLicencia desde la base de datos.
  */
-public class TramiteLicenciasDAO implements ITramiteLicenciasDAO {
- private final EntityManager entityManager;
-
+public class TramiteLicenciasDAO implements ITramiteLicenciasDAO 
+{
+    /**
+     * El EntityManager utilizado para operaciones en la base de datos.
+     */
+    private final EntityManager entityManager;
+    
+    /**
+     * Construye un nuevo TramiteLicenciasDAO con el EntityManager especificado.
+     *
+     * @param entityManager El EntityManager que se utilizará para operaciones en la base de datos.
+     */
     public TramiteLicenciasDAO(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
+    /**
+     * Construye un nuevo TramiteLicenciasDAO con un EntityManager nulo.
+     */
     public TramiteLicenciasDAO() {
      this.entityManager = null;
     }
  
  
+    /**
+     * Crea una nueva entidad TramiteLicencia en la base de datos.
+     *
+     * @param tramite La entidad TramiteLicencia que se va a crear.
+     */
     @Override
     public void crearTramite(TramiteLicencia tramite) {
        
@@ -43,6 +60,13 @@ public class TramiteLicenciasDAO implements ITramiteLicenciasDAO {
         
     }
 
+    
+    /**
+     * Carga entidades TramitesDTO asociadas con un idPersona dado desde la base de datos.
+     *
+     * @param idPersona El id de la persona para la cual cargar los trámites.
+     * @return Una lista de entidades TramitesDTO asociadas con el idPersona especificado.
+     */
     @Override
     public List<TramitesDTO> cargarTramites(Long idPersona) {
        List<TramitesDTO> lista = new ArrayList<>();
@@ -62,6 +86,12 @@ public class TramiteLicenciasDAO implements ITramiteLicenciasDAO {
       
     }
     
+    /**
+     * Carga entidades TramitesDTO asociadas con un nombre completo de persona desde la base de datos.
+     *
+     * @param nombreCompleto El nombre completo de la persona para la cual cargar los trámites.
+     * @return Una lista de entidades TramitesDTO asociadas con el nombre completo especificado.
+     */
     @Override
     public List<TramitesDTO> cargarTramitesByNombre(String nombreCompleto) {
         List<TramitesDTO> lista = new ArrayList<>();
@@ -84,6 +114,14 @@ public class TramiteLicenciasDAO implements ITramiteLicenciasDAO {
         return lista;
     }
     
+    
+    /**
+     * Carga entidades TramitesDTO asociadas con un período de tiempo desde la base de datos.
+     *
+     * @param periodoInicio La fecha de inicio del período.
+     * @param periodoFin La fecha de fin del período.
+     * @return Una lista de entidades TramitesDTO asociadas con el período especificado.
+     */
     @Override
     public List<TramitesDTO> cargarTramitesInPeriod(Calendar periodoInicio, Calendar periodoFin) {
         List<TramitesDTO> lista = new ArrayList<>();
@@ -108,6 +146,14 @@ public class TramiteLicenciasDAO implements ITramiteLicenciasDAO {
         return lista;
     }
     
+    /**
+     * Carga entidades TramitesDTO asociadas con un nombre completo de persona y un período de tiempo desde la base de datos.
+     *
+     * @param nombreCompleto El nombre completo de la persona para la cual cargar los trámites.
+     * @param periodoInicio La fecha de inicio del período.
+     * @param periodoFin La fecha de fin del período.
+     * @return Una lista de entidades TramitesDTO asociadas con el nombre completo y período especificados.
+     */
     @Override
     public List<TramitesDTO> cargarTramitesByNombreInPeriod(String nombreCompleto, Calendar periodoInicio, Calendar periodoFin) {
         List<TramitesDTO> lista = new ArrayList<>();
@@ -136,6 +182,13 @@ public class TramiteLicenciasDAO implements ITramiteLicenciasDAO {
         return lista;
     }
 
+    
+    /**
+     * Carga entidades TramitesDTO asociadas con los parámetros de consulta especificados desde la base de datos.
+     *
+     * @param parametros Los parámetros de consulta para los trámites.
+     * @return Una lista de entidades TramitesDTO que coinciden con los parámetros de consulta.
+     */
     @Override
     public List<TramitesDTO> cargarTramites(ParametrosConsultaTramites parametros) {
       Set<TramitesDTO> consultaFiltros = new HashSet<>();
@@ -185,6 +238,12 @@ public class TramiteLicenciasDAO implements ITramiteLicenciasDAO {
         return tramitesEncontrados;
     }
 
+    
+    /**
+     * Carga todas las entidades TramitesDTO desde la base de datos.
+     *
+     * @return Una lista de todas las entidades TramitesDTO en la base de datos.
+     */
     @Override
     public List<TramitesDTO> cargarTodosTramites() {
          List<TramitesDTO> lista = new ArrayList<>();
