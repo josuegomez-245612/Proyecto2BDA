@@ -4,6 +4,23 @@
  */
 package Presentacion;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
+import net.sf.jasperreports.engine.JREmptyDataSource;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
+
 /**
  *
  * @author Ryzen 5
@@ -72,6 +89,11 @@ public class GenerarReporte extends javax.swing.JFrame {
         periodoHastaTramitesTxtField.setText("06/08/2015");
 
         generarReporteBtn.setText("Generar Reporte");
+        generarReporteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generarReporteBtnActionPerformed(evt);
+            }
+        });
 
         reporteTxtArea.setColumns(20);
         reporteTxtArea.setRows(5);
@@ -111,14 +133,15 @@ public class GenerarReporte extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(68, 68, 68)
+                                .addComponent(periodoTramitesLabel)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(periodoDesdeTramitesTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(26, 26, 26)
-                                .addComponent(periodoHastaTramitesTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(68, 68, 68)
-                                .addComponent(periodoTramitesLabel)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                        .addComponent(generarReporteBtn)))
+                                .addComponent(periodoHastaTramitesTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                                .addComponent(generarReporteBtn)))))
                 .addGap(18, 18, 18))
         );
         jPanel1Layout.setVerticalGroup(
@@ -180,6 +203,103 @@ public class GenerarReporte extends javax.swing.JFrame {
     private void tipoTramitesComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoTramitesComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tipoTramitesComboBoxActionPerformed
+
+    private void generarReporteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarReporteBtnActionPerformed
+        /* Output file location to create report in pdf form */
+//        String outputFile = "C:\\Users\\amitk\\Desktop\\JASPER\\" + "JasperReportExample.pdf";
+
+        try
+        {
+                /* List to hold Items */
+                List<Employee> listItems = new ArrayList<Employee>();
+
+                /* Create Employee objects */
+                Employee emp1 = new Employee();
+                Employee emp2 = new Employee();
+                Employee emp3 = new Employee();
+
+                /*first employee object*/
+                emp1.setId(101);
+                emp1.setFirstName("SAM");
+                emp1.setLastName("Smith");
+                emp1.setAddress("6th Avenue Dalton Road");
+                emp1.setSalary(10000.0);
+
+
+                /*second employee object*/
+                emp2.setId(101);
+                emp2.setFirstName("JOHN");
+                emp2.setLastName("Williams");
+                emp2.setAddress("4th Square Down Town");
+                emp2.setSalary(17000.0);
+
+                /*third employee object*/
+                emp3.setId(101);
+                emp3.setFirstName("JACOB");
+                emp3.setLastName("Wilson");
+                emp3.setAddress("19th Zygon Square, Middle Town");
+                emp3.setSalary(22000.0);
+
+
+                /* Add Items to List */
+                listItems.add(emp1);
+                listItems.add(emp2);
+                listItems.add(emp3);
+
+                /* Placas */
+                if(tipoTramitesComboBox.getSelectedIndex() == 0)
+                {
+                    
+                }
+                
+                /* Licencias */
+                if(tipoTramitesComboBox.getSelectedIndex() == 1)
+                {
+                    
+                }
+                
+                /* Todos */
+                if(tipoTramitesComboBox.getSelectedIndex() == 2)
+                {
+                    
+                }
+                
+                /* Convert List to JRBeanCollectionDataSource */
+                JRBeanCollectionDataSource itemsJRBean = new JRBeanCollectionDataSource(listItems);
+
+                /* Map to hold Jasper report Parameters */
+                Map<String, Object> parameters = new HashMap<String, Object>();
+                parameters.put("CollectionBeanParam", itemsJRBean);
+
+                //read jrxml file and creating jasperdesign object
+                InputStream input = new FileInputStream(new File("/resources/Reports/ReporteTramites.jrxml"));
+
+                JasperDesign jasperDesign = JRXmlLoader.load(input);
+
+                /*compiling jrxml with help of JasperReport class*/
+                JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+
+                /* Using jasperReport object to generate PDF */
+                JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
+
+                /*call jasper engine to display report in jasperviewer window*/
+                JasperViewer.viewReport(jasperPrint);
+
+
+                /* outputStream to create PDF */
+                //OutputStream outputStream = new FileOutputStream(new File(outputFile));
+
+
+                /* Write content to PDF file */
+                //JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
+
+                System.out.println("File Generated");
+        }
+        catch(JRException | FileNotFoundException ex)
+        {
+            System.out.println("ex.getMessage()");
+        }
+    }//GEN-LAST:event_generarReporteBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

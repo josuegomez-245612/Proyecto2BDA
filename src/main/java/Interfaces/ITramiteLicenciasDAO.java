@@ -7,19 +7,25 @@ package Interfaces;
 import Entidades.TramiteLicencia;
 import Utilidades.ParametrosConsultaTramites;
 import Utilidades.TramitesDTO;
+import java.util.Calendar;
 import java.util.List;
 
 /**
  *
  * @author JOSUE GOMEZ
  */
-public interface ITramiteLicenciasDAO {
+public interface ITramiteLicenciasDAO 
+{
     
-      void crearTramite(TramiteLicencia tramite);
+    void crearTramite(TramiteLicencia tramite);
     
-     List<TramitesDTO> cargarTramites(Long idPersona);
+    List<TramitesDTO> cargarTramites(Long idPersona);
      
-      List<TramitesDTO> cargarTramites(ParametrosConsultaTramites parametros);
+    List<TramitesDTO> cargarTramites(ParametrosConsultaTramites parametros);
       
-        List<TramitesDTO> cargarTodosTramites();
+    List<TramitesDTO> cargarTodosTramites();
+    
+    List<TramitesDTO> cargarTramitesByNombre(String nombreCompleto);
+    
+    List<TramitesDTO> cargarTramitesByNombreInPeriod(String nombreCompleto, Calendar periodoInicio, Calendar periodoFin);
 }
