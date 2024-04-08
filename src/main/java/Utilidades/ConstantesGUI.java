@@ -24,5 +24,5 @@ public enum ConstantesGUI {
     /**
      * Trámite para indicar historialTramites como reporte
      */
-    REPORTE
+    REPORTE,
 }

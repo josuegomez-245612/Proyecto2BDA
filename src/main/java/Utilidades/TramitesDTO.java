@@ -30,9 +30,10 @@ public class TramitesDTO {
         this.apellidoPersona = apellidoPersona;
     }
 
-    public TramitesDTO(Integer costoTramite, Date sqlFechaExpedicion, String tipoTramite, String nombrePersona) {
+    public TramitesDTO(Integer costoTramite, Calendar fechaExpedicion, String tipoTramite, String nombrePersona) {
         this.costoTramite = costoTramite;
-        this.sqlFechaExpedicion = sqlFechaExpedicion;
+        this.fechaExpedicion = fechaExpedicion;
+        this.sqlFechaExpedicion = new Date(fechaExpedicion.getTimeInMillis());
         this.tipoTramite = tipoTramite;
         this.nombrePersona = nombrePersona;
     }

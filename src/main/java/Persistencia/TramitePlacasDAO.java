@@ -78,7 +78,7 @@ public class TramitePlacasDAO implements ITramitePlacasDAO {
         List<Object[]> resultados = query.getResultList();
 
         for (Object[] tramite : resultados) {
-            lista.add(new TramitesDTO((Integer) tramite[2], (Date) tramite[3], "Placa", (String)tramite[0] + " " + tramite[1] + " " + tramite[4]));
+            lista.add(new TramitesDTO((Integer) tramite[2], (Calendar) tramite[3], "Placa", (String)tramite[0] + " " + tramite[1] + " " + tramite[4]));
         }
         return lista;
     }
@@ -106,7 +106,7 @@ public class TramitePlacasDAO implements ITramitePlacasDAO {
         List<Object[]> resultados = query.getResultList();
 
         for (Object[] tramite : resultados) {
-            lista.add(new TramitesDTO((Integer) tramite[2], (Date) tramite[3], "Placa", (String) tramite[0] + " " + tramite[1] + " " + tramite[4]));
+            lista.add(new TramitesDTO((Integer) tramite[2], (Calendar) tramite[3], "Placa", (String) tramite[0] + " " + tramite[1] + " " + tramite[4]));
         }
         return lista;
     }
@@ -129,7 +129,7 @@ public class TramitePlacasDAO implements ITramitePlacasDAO {
         List<Object[]> resultados = query.getResultList();
 
         for (Object[] tramite : resultados) {
-            lista.add(new TramitesDTO((Integer) tramite[2], (Date) tramite[3], "Placa", (String) tramite[0] + " " + tramite[1] + " " + tramite[4]));
+            lista.add(new TramitesDTO((Integer) tramite[2], (Calendar) tramite[3], "Placa", (String) tramite[0] + " " + tramite[1] + " " + tramite[4]));
         }
         return lista;
     }

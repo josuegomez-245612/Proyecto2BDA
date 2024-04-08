@@ -8,9 +8,7 @@ import Interfaces.IConexionBD;
 import Negocio.ValidadoresPersona;
 import Persistencia.PersonaDAO;
 import Utilidades.ConstantesGUI;
-import static Utilidades.ConstantesGUI.HISTORIAL;
-import static Utilidades.ConstantesGUI.LICENCIAS;
-import static Utilidades.ConstantesGUI.PLACAS;
+import static Utilidades.ConstantesGUI.*;
 import interfacesNegocio.IValidadoresTramites;
 import javax.persistence.EntityManager;
 import javax.swing.JOptionPane;
@@ -23,6 +21,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     JDRenovarLicencia renovarLicencia;
     ConsultarPersonas cl;
+    GenerarReporte gr;
     ValidadoresPersona pDAO;
     IValidadoresTramites tramitesNegocio;
     IConexionBD conexion;
@@ -222,8 +221,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_renovarLicenciaMenuItemActionPerformed
 
     private void reporteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteMenuItemActionPerformed
-        GenerarReporte generarReporte = new GenerarReporte();
-        generarReporte.setVisible(true);
+        operacion = REPORTE;
+        gr = new GenerarReporte(conexion, operacion);
+        gr.setVisible(true);
     }//GEN-LAST:event_reporteMenuItemActionPerformed
 
     private void licenciaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_licenciaMenuActionPerformed

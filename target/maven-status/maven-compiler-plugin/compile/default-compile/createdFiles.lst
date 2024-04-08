@@ -102,6 +102,7 @@ Presentacion\PantallaPrincipal$8.class
 Persistencia\TramitePlacasDAO.class
 Presentacion\ConsultarVehiculos$9.class
 Presentacion\ConsultarVehiculos$3.class
+Presentacion\GenerarReporte$4.class
 Presentacion\PantallaPrincipal$2.class
 Interfaces\IConexionBD.class
 Presentacion\HistorialTramites.class
