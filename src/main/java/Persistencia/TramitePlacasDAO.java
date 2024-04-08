@@ -78,7 +78,7 @@ public class TramitePlacasDAO implements ITramitePlacasDAO {
         List<Object[]> resultados = query.getResultList();
 
         for (Object[] tramite : resultados) {
-            lista.add(new TramitesDTO((Integer) tramite[2], (Calendar) tramite[3], "Placa", (String)tramite[0] + " " + tramite[1] + " " + tramite[4]));
+            lista.add(new TramitesDTO((Integer) tramite[2], (Date) tramite[3], "Placa", (String)tramite[0] + " " + tramite[1] + " " + tramite[4]));
         }
         return lista;
     }
@@ -106,7 +106,30 @@ public class TramitePlacasDAO implements ITramitePlacasDAO {
         List<Object[]> resultados = query.getResultList();
 
         for (Object[] tramite : resultados) {
-            lista.add(new TramitesDTO((Integer) tramite[2], (Calendar) tramite[3], "Placa", (String) tramite[0] + " " + tramite[1] + " " + tramite[4]));
+            lista.add(new TramitesDTO((Integer) tramite[2], (Date) tramite[3], "Placa", (String) tramite[0] + " " + tramite[1] + " " + tramite[4]));
+        }
+        return lista;
+    }
+    
+    @Override
+    public List<TramitesDTO> cargarTramitesInPeriod(Calendar periodoInicio, Calendar periodoFin) {
+        List<TramitesDTO> lista = new ArrayList<>();
+        
+        Date sqlPeriodoInicio = new Date(periodoInicio.getTimeInMillis());
+        Date sqlPeriodoFin = new Date(periodoFin.getTimeInMillis());
+        
+        //0 - nombres  1 - apellidoPaterno  2 - costo  3 - fechaExpedicion  4 - apellidoMaterno
+        String jpql = "SELECT p.nombres, p.apellido_paterno, tl.costo, tl.fechaExpedicion, p.apellido_materno FROM TramitePlacas tl "
+                + "INNER JOIN tl.persona p WHERE tl.fechaExpedicion >= :periodo_inicio AND tl.fechaExpedicion <= :periodo_fin";
+
+        TypedQuery<Object[]> query = entityManager.createQuery(jpql, Object[].class);
+        query.setParameter("periodo_inicio", sqlPeriodoInicio);
+        query.setParameter("periodo_fin", sqlPeriodoFin);
+
+        List<Object[]> resultados = query.getResultList();
+
+        for (Object[] tramite : resultados) {
+            lista.add(new TramitesDTO((Integer) tramite[2], (Date) tramite[3], "Placa", (String) tramite[0] + " " + tramite[1] + " " + tramite[4]));
         }
         return lista;
     }

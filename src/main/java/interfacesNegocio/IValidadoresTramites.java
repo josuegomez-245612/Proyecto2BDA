@@ -15,6 +15,7 @@ import java.util.List;
 public interface IValidadoresTramites 
 {
     public List<TramitesDTO> cargarTramitesByNombre(String nombreCompleto);
+    public List<TramitesDTO> cargarTramitesInPeriod(Calendar periodoInicio, Calendar periodoFin);
     public List<TramitesDTO> cargarTramitesByNombreInPeriod(String nombreCompleto, Calendar periodoInicio, Calendar periodoFin);
     public List<TramitesDTO> cargarTodosTramites();
 }

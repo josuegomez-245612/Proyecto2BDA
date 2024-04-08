@@ -54,6 +54,15 @@ public interface ITramiteLicenciasDAO
     public List<TramitesDTO> cargarTramitesByNombre(String nombreCompleto);
     
     /**
+     * Carga trámites de licencia durante un periodo de tiempo.
+     * 
+     * @param periodoInicio  Periodo minimo de tramites a cargar.
+     * @param periodoFin Periodo maximo de tramites a cargar.
+     * @return Una lista de objetos TramitesDTO que cumplen con los criterios de búsqueda.
+     */
+    public List<TramitesDTO> cargarTramitesInPeriod(Calendar periodoInicio, Calendar periodoFin);
+    
+    /**
      * Carga trámites de licencia por nombre de una persona durante un periodo de tiempo.
      * 
      * @param nombreCompleto Nombre completo de la persona asociada con los tramites a cargar.

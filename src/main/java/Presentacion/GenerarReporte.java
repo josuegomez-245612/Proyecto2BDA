@@ -5,7 +5,8 @@
 package Presentacion;
 
 import Interfaces.IConexionBD;
-import Negocio.ValidadoresTramites;
+import Negocio.ValidadoresTramitesLicencia;
+import Negocio.ValidadoresTramitesPlaca;
 import Utilidades.ConstantesGUI;
 import Utilidades.TramitesDTO;
 import interfacesNegocio.IValidadoresTramites;
@@ -37,7 +38,8 @@ import net.sf.jasperreports.view.JasperViewer;
 public class GenerarReporte extends javax.swing.JFrame {
 
     IConexionBD conexion;
-    ValidadoresTramites tramitesNegocio;
+    ValidadoresTramitesLicencia tramitesLicenciaNegocio;
+    ValidadoresTramitesPlaca tramitesPlacaNegocio;
     ConstantesGUI operacion;
 
       /** 
@@ -48,7 +50,8 @@ public class GenerarReporte extends javax.swing.JFrame {
     public GenerarReporte(IConexionBD conexion, ConstantesGUI gui) {
         initComponents();
         this.conexion = conexion;
-        this.tramitesNegocio = new ValidadoresTramites(this.conexion.crearConexion(), conexion);
+        this.tramitesLicenciaNegocio = new ValidadoresTramitesLicencia(this.conexion.crearConexion(), conexion);
+        this.tramitesPlacaNegocio = new ValidadoresTramitesPlaca(this.conexion.crearConexion(), conexion);
         this.operacion = gui;
 
     }
@@ -235,47 +238,88 @@ public class GenerarReporte extends javax.swing.JFrame {
         try
         {         
             List<TramitesDTO> dsReporteTramites = new ArrayList<TramitesDTO>();
-            Date sqlDate = Date.valueOf("2024-01-01");
+//            Date sqlDate = Date.valueOf("2024-01-01");
             Calendar calendar = Calendar.getInstance();
-            dsReporteTramites.add(new TramitesDTO(600, calendar, "Placa", "Laurita Galindo Soto"));
-//            /* Placas */
-//            if(tipoTramitesComboBox.getSelectedIndex() == 0)
-//            {
-//                if(solicitanteTramitesTxtField.getText().isBlank())
-//                {
-//                    
-//                }
-//                
-//                
-//            }
-//
-//            /* Licencias */
-//            if(tipoTramitesComboBox.getSelectedIndex() == 1)
-//            {
-//                if(solicitanteTramitesTxtField.getText().isBlank())
-//                {
-//                    tramites = tramitesNegocio.cargarTodosTramites();
-//                }
-//                
-//                tramites = tramitesNegocio.cargarTramitesByNombre(solicitanteTramitesTxtField.getText());
-//                
-//            }
-//
-//            /* Todos */
-//            if(tipoTramitesComboBox.getSelectedIndex() == 2)
-//            {
-//                if(solicitanteTramitesTxtField.getText().isBlank())
-//                {
-//                    
-//                }
-//            }
+//            System.out.println(sqlDate.toString());
+//            dsReporteTramites.add(new TramitesDTO(900, sqlDate, "Placa", "Laurita Galindo Soto"));
+//            dsReporteTramites.add(new TramitesDTO(900, sqlDate, "Placa", "Laurita Galindo Soto"));
+            /* Placas */
+            if(tipoTramitesComboBox.getSelectedIndex() == 0)
+            {
+                if(solicitanteTramitesTxtField.getText().isBlank() && (periodoDesdeTramitesTxtField.getText().isBlank() || periodoHastaTramitesTxtField.getText().isBlank()))
+                {
+                    dsReporteTramites = tramitesPlacaNegocio.cargarTodosTramites();
+                }
+                else if(periodoDesdeTramitesTxtField.getText().isBlank() || periodoHastaTramitesTxtField.getText().isBlank())
+                {
+                    dsReporteTramites = tramitesPlacaNegocio.cargarTramitesByNombre(solicitanteTramitesTxtField.getText());
+                }
+                else if(solicitanteTramitesTxtField.getText().isBlank())
+                {
+                    dsReporteTramites = tramitesPlacaNegocio.cargarTramitesInPeriod(calendar, calendar);
+                }
+                else
+                {
+                    dsReporteTramites = tramitesPlacaNegocio.cargarTramitesByNombreInPeriod(solicitanteTramitesTxtField.getText(), 
+                            calendar, calendar);
+                }
+            }
+
+            /* Licencias */
+            if(tipoTramitesComboBox.getSelectedIndex() == 1)
+            {
+                if(solicitanteTramitesTxtField.getText().isBlank() && (periodoDesdeTramitesTxtField.getText().isBlank() || periodoHastaTramitesTxtField.getText().isBlank()))
+                {
+                    dsReporteTramites = tramitesLicenciaNegocio.cargarTodosTramites();
+                }
+                else if(periodoDesdeTramitesTxtField.getText().isBlank() || periodoHastaTramitesTxtField.getText().isBlank())
+                {
+                    dsReporteTramites = tramitesLicenciaNegocio.cargarTramitesByNombre(solicitanteTramitesTxtField.getText());
+                }
+                else if(solicitanteTramitesTxtField.getText().isBlank())
+                {
+                    dsReporteTramites = tramitesLicenciaNegocio.cargarTramitesInPeriod(calendar, calendar);
+                }
+                else
+                {
+                    dsReporteTramites = tramitesLicenciaNegocio.cargarTramitesByNombreInPeriod(solicitanteTramitesTxtField.getText(), 
+                            calendar, calendar);
+                }
+            }
+
+            /* Todos */
+            if(tipoTramitesComboBox.getSelectedIndex() == 2)
+            {
+                if(solicitanteTramitesTxtField.getText().isBlank() && (periodoDesdeTramitesTxtField.getText().isBlank() || periodoHastaTramitesTxtField.getText().isBlank()))
+                {
+                    dsReporteTramites = tramitesPlacaNegocio.cargarTodosTramites();
+                    dsReporteTramites.addAll(tramitesLicenciaNegocio.cargarTodosTramites());
+                }
+                else if(periodoDesdeTramitesTxtField.getText().isBlank() || periodoHastaTramitesTxtField.getText().isBlank())
+                {
+                    dsReporteTramites = tramitesPlacaNegocio.cargarTramitesByNombre(solicitanteTramitesTxtField.getText());
+                    dsReporteTramites.addAll(tramitesLicenciaNegocio.cargarTramitesByNombre(solicitanteTramitesTxtField.getText()));
+                }
+                else if(solicitanteTramitesTxtField.getText().isBlank())
+                {
+                    dsReporteTramites = tramitesPlacaNegocio.cargarTramitesInPeriod(calendar, calendar);
+                    dsReporteTramites.addAll(tramitesLicenciaNegocio.cargarTramitesInPeriod(calendar, calendar));
+                }
+                else
+                {
+                    dsReporteTramites = tramitesPlacaNegocio.cargarTramitesByNombreInPeriod(solicitanteTramitesTxtField.getText(), 
+                            calendar, calendar);
+                    dsReporteTramites.addAll(tramitesLicenciaNegocio.cargarTramitesByNombreInPeriod(solicitanteTramitesTxtField.getText(), 
+                            calendar, calendar));
+                }
+            }
 
             /* Convert List to JRBeanCollectionDataSource */
             JRBeanCollectionDataSource itemsJRBean = new JRBeanCollectionDataSource(dsReporteTramites);
 
             /* Map to hold Jasper report Parameters */
             Map<String, Object> parameters = new HashMap<String, Object>();
-            parameters.put("CollectionBeanParam", itemsJRBean);
+            parameters.put("ds", itemsJRBean);
 
             //read jrxml file and creating jasperdesign object
             InputStream input = new FileInputStream(new File("src/main/resources/Reports/ReporteTramites.jrxml"));

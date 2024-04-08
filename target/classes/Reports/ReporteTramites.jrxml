@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" language="groovy" pageWidth="509" pageHeight="842" columnWidth="469" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5fc24dcd-0af9-4646-8156-71f30403a43e">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteTramites" pageWidth="509" pageHeight="842" columnWidth="469" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5fc24dcd-0af9-4646-8156-71f30403a43e">
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
@@ -33,12 +33,12 @@
 		<queryString>
 			<![CDATA[]]>
 		</queryString>
-		<field name="fechaExpedicion" class="java.util.Calendar"/>
+		<field name="sqlFechaExpedicion" class="java.sql.Date"/>
 		<field name="tipoTramite" class="java.lang.String"/>
 		<field name="nombrePersona" class="java.lang.String"/>
 		<field name="costoTramite" class="java.lang.Integer"/>
 	</subDataset>
-	<parameter name="ds" class="net.sf.jasperreports.engine.data.JRBeanArrayDataSource"/>
+	<parameter name="ds" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -100,10 +100,10 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
-							<textField>
-								<reportElement x="0" y="0" width="100" height="30" uuid="b4e783fe-4837-4798-99b0-816cee60c904"/>
+							<textField pattern="dd/MM/yyyy">
+								<reportElement x="0" y="0" width="100" height="30" uuid="df2f566f-8901-4970-b7cf-9cb2127cc9a5"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{fechaExpedicion}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{sqlFechaExpedicion}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
