@@ -33,7 +33,7 @@
 		<queryString>
 			<![CDATA[]]>
 		</queryString>
-		<field name="fechaExpedicion" class="java.util.Date"/>
+		<field name="fechaExpedicion" class="java.util.Calendar"/>
 		<field name="tipoTramite" class="java.lang.String"/>
 		<field name="nombrePersona" class="java.lang.String"/>
 		<field name="costoTramite" class="java.lang.Integer"/>
@@ -107,11 +107,11 @@
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="60" uuid="23856aa3-3c7b-4875-a94e-edb5c7cb581c">
+					<jr:column width="50" uuid="23856aa3-3c7b-4875-a94e-edb5c7cb581c">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="60" height="30" uuid="99b25185-3ec0-4a04-8f0d-7e7ef6a49f49"/>
+								<reportElement x="0" y="0" width="50" height="30" uuid="99b25185-3ec0-4a04-8f0d-7e7ef6a49f49"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font isBold="true"/>
 								</textElement>
@@ -120,17 +120,17 @@
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="60" height="30" uuid="fe7973a4-70d9-4408-868d-c8ff854171c1"/>
+								<reportElement x="0" y="0" width="50" height="30" uuid="fe7973a4-70d9-4408-868d-c8ff854171c1"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
 								<textFieldExpression><![CDATA[$F{tipoTramite}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="230" uuid="7e9dc45b-a2f3-4b50-a987-4b1980636370">
+					<jr:column width="240" uuid="7e9dc45b-a2f3-4b50-a987-4b1980636370">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="230" height="30" uuid="0663be35-1938-4fab-9ab0-2a6d801cd075"/>
+								<reportElement x="0" y="0" width="240" height="30" uuid="0663be35-1938-4fab-9ab0-2a6d801cd075"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font isBold="true"/>
 								</textElement>
@@ -139,7 +139,7 @@
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="230" height="30" uuid="831542cf-fa42-4b99-83e8-31352f2ae23a"/>
+								<reportElement x="0" y="0" width="240" height="30" uuid="831542cf-fa42-4b99-83e8-31352f2ae23a"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
 								<textFieldExpression><![CDATA[$F{nombrePersona}]]></textFieldExpression>
 							</textField>

@@ -31,6 +31,7 @@ Presentacion\HistorialTramites$3.class
 Presentacion\ConsultarPersonas$8.class
 Persistencia\PersistenciaException.class
 Presentacion\GenerarReporte$1.class
+Negocio\ValidadoresTramites.class
 interfacesNegocio\IValidadoresVehiculo.class
 Utilidades\ConstantesGUI.class
 Negocio\ValidadoresPlaca.class
@@ -83,6 +84,7 @@ Presentacion\ConsultarPersonas$11.class
 Presentacion\JDRegistroPlacasNuevo.class
 Utilidades\ParametrosBusquedaPersonas.class
 Presentacion\ConsultarVehiculos$1.class
+interfacesNegocio\IValidadoresTramites.class
 Presentacion\JDRegistroPlacasUsado$1.class
 interfacesNegocio\IValidadoresLicencia.class
 Presentacion\JDRegistroPlacasNuevo$3.class

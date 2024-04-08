@@ -17,7 +17,7 @@ public class Proyecto2BDA {
     public static void main(String[] args) {
        IConexionBD conexion = new ConexionBD("com.mycompany_Proyecto2BDA_jar_1.0-SNAPSHOTPU");
        ConstantesGUI operacion = null;
-       PantallaPrincipal pp = new PantallaPrincipal(conexion,operacion);
+       PantallaPrincipal pp = new PantallaPrincipal(conexion, operacion);
        
        pp.setVisible(true);
     }

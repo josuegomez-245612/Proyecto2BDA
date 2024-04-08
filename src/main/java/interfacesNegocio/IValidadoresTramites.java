@@ -4,10 +4,17 @@
  */
 package interfacesNegocio;
 
+import Utilidades.TramitesDTO;
+import java.util.Calendar;
+import java.util.List;
+
 /**
  *
  * @author Ryzen 5
  */
-public interface IValidadoresTramites {
-    
+public interface IValidadoresTramites 
+{
+    public List<TramitesDTO> cargarTramitesByNombre(String nombreCompleto);
+    public List<TramitesDTO> cargarTramitesByNombreInPeriod(String nombreCompleto, Calendar periodoInicio, Calendar periodoFin);
+    public List<TramitesDTO> cargarTodosTramites();
 }

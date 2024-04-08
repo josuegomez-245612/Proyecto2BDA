@@ -60,6 +60,11 @@
             <type>jar</type>
         </dependency>
         <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>3.0.21</version>
+        </dependency>
+        <dependency>
     <groupId>com.github.lgooddatepicker</groupId>
     <artifactId>lgooddatepicker</artifactId>
     <version>11.2.1</version>

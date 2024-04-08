@@ -4,11 +4,20 @@
  */
 package Presentacion;
 
+import Interfaces.IConexionBD;
+import Negocio.ValidadoresTramites;
+import Utilidades.ConstantesGUI;
+import Utilidades.TramitesDTO;
+import interfacesNegocio.IValidadoresTramites;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JRException;
@@ -27,6 +36,22 @@ import net.sf.jasperreports.view.JasperViewer;
  */
 public class GenerarReporte extends javax.swing.JFrame {
 
+    IConexionBD conexion;
+    ValidadoresTramites tramitesNegocio;
+    ConstantesGUI operacion;
+
+      /** 
+     * Crea una nueva instancia de ConsultarPersonas.
+     * @param conexion Una instancia de {@code IConexionBD} para la conexión a la base de datos.
+     * @param gui Una instancia de {@code ConstantesGUI} para definir la operación a realizar.
+     */
+    public GenerarReporte(IConexionBD conexion, ConstantesGUI gui) {
+        initComponents();
+        this.conexion = conexion;
+        this.tramitesNegocio = new ValidadoresTramites(this.conexion.crearConexion(), conexion);
+        this.operacion = gui;
+
+    }
     /**
      * Creates new form GenerarReporte
      */
@@ -207,9 +232,12 @@ public class GenerarReporte extends javax.swing.JFrame {
     private void generarReporteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarReporteBtnActionPerformed
         /* Output file location to create report in pdf form */
 //        String outputFile = "C:\\Users\\amitk\\Desktop\\JASPER\\" + "JasperReportExample.pdf";
-//
-//        try
-//        {         
+        try
+        {         
+            List<TramitesDTO> dsReporteTramites = new ArrayList<TramitesDTO>();
+            Date sqlDate = Date.valueOf("2024-01-01");
+            Calendar calendar = Calendar.getInstance();
+            dsReporteTramites.add(new TramitesDTO(600, calendar, "Placa", "Laurita Galindo Soto"));
 //            /* Placas */
 //            if(tipoTramitesComboBox.getSelectedIndex() == 0)
 //            {
@@ -217,6 +245,8 @@ public class GenerarReporte extends javax.swing.JFrame {
 //                {
 //                    
 //                }
+//                
+//                
 //            }
 //
 //            /* Licencias */
@@ -224,8 +254,11 @@ public class GenerarReporte extends javax.swing.JFrame {
 //            {
 //                if(solicitanteTramitesTxtField.getText().isBlank())
 //                {
-//                    
+//                    tramites = tramitesNegocio.cargarTodosTramites();
 //                }
+//                
+//                tramites = tramitesNegocio.cargarTramitesByNombre(solicitanteTramitesTxtField.getText());
+//                
 //            }
 //
 //            /* Todos */
@@ -236,42 +269,42 @@ public class GenerarReporte extends javax.swing.JFrame {
 //                    
 //                }
 //            }
-//
-//            /* Convert List to JRBeanCollectionDataSource */
-//            JRBeanCollectionDataSource itemsJRBean = new JRBeanCollectionDataSource(listItems);
-//
-//            /* Map to hold Jasper report Parameters */
-//            Map<String, Object> parameters = new HashMap<String, Object>();
-//            parameters.put("CollectionBeanParam", itemsJRBean);
-//
-//            //read jrxml file and creating jasperdesign object
-//            InputStream input = new FileInputStream(new File("/resources/Reports/ReporteTramites.jrxml"));
-//
-//            JasperDesign jasperDesign = JRXmlLoader.load(input);
-//
-//            /*compiling jrxml with help of JasperReport class*/
-//            JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
-//
-//            /* Using jasperReport object to generate PDF */
-//            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
-//
-//            /*call jasper engine to display report in jasperviewer window*/
-//            JasperViewer.viewReport(jasperPrint);
-//
-//
-//            /* outputStream to create PDF */
-//            //OutputStream outputStream = new FileOutputStream(new File(outputFile));
-//
-//
-//            /* Write content to PDF file */
-//            //JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
-//
-//            System.out.println("File Generated");
-//        }
-//        catch(JRException | FileNotFoundException ex)
-//        {
-//            System.out.println("ex.getMessage()");
-//        }
+
+            /* Convert List to JRBeanCollectionDataSource */
+            JRBeanCollectionDataSource itemsJRBean = new JRBeanCollectionDataSource(dsReporteTramites);
+
+            /* Map to hold Jasper report Parameters */
+            Map<String, Object> parameters = new HashMap<String, Object>();
+            parameters.put("CollectionBeanParam", itemsJRBean);
+
+            //read jrxml file and creating jasperdesign object
+            InputStream input = new FileInputStream(new File("src/main/resources/Reports/ReporteTramites.jrxml"));
+
+            JasperDesign jasperDesign = JRXmlLoader.load(input);
+
+            /*compiling jrxml with help of JasperReport class*/
+            JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+
+            /* Using jasperReport object to generate PDF */
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
+
+            /*call jasper engine to display report in jasperviewer window*/
+            JasperViewer.viewReport(jasperPrint);
+
+
+            /* outputStream to create PDF */
+            //OutputStream outputStream = new FileOutputStream(new File(outputFile));
+
+
+            /* Write content to PDF file */
+            //JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
+
+            System.out.println("File Generated");
+        }
+        catch(JRException | FileNotFoundException ex)
+        {
+            System.out.println(ex.getMessage());
+        }
     }//GEN-LAST:event_generarReporteBtnActionPerformed
 
 

@@ -11,6 +11,8 @@ import Utilidades.ConstantesGUI;
 import static Utilidades.ConstantesGUI.HISTORIAL;
 import static Utilidades.ConstantesGUI.LICENCIAS;
 import static Utilidades.ConstantesGUI.PLACAS;
+import interfacesNegocio.IValidadoresTramites;
+import javax.persistence.EntityManager;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,8 +24,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     JDRenovarLicencia renovarLicencia;
     ConsultarPersonas cl;
     ValidadoresPersona pDAO;
+    IValidadoresTramites tramitesNegocio;
     IConexionBD conexion;
     ConstantesGUI operacion;
+    EntityManager em;
 
     /**
      * Creates new form PantallaPrincipal
@@ -33,7 +37,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     public PantallaPrincipal(IConexionBD conexion, ConstantesGUI gui) {
         initComponents();
         this.conexion = conexion;
-        this.pDAO = new ValidadoresPersona(conexion.crearConexion(),conexion);
+        this.em = this.conexion.crearConexion();
+        this.pDAO = new ValidadoresPersona(this.conexion.crearConexion(), conexion);
         this.operacion = gui;
     }
 
@@ -217,8 +222,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_renovarLicenciaMenuItemActionPerformed
 
     private void reporteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteMenuItemActionPerformed
-//        GenerarReporte generarReporte = new GenerarReporte();
-//        generarReporte.setVisible(true);
+        GenerarReporte generarReporte = new GenerarReporte();
+        generarReporte.setVisible(true);
     }//GEN-LAST:event_reporteMenuItemActionPerformed
 
     private void licenciaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_licenciaMenuActionPerformed
