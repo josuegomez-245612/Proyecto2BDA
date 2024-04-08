@@ -51,6 +51,7 @@ public class PersonaDAO implements IPersonaDAO {
 
         return lista.isEmpty() ? null : lista.get(0);
     }
+    
 //    @Override
 //    public void addPersona(Persona persona) throws PersistenciaException;
 //    @Override
@@ -204,5 +205,18 @@ public class PersonaDAO implements IPersonaDAO {
         TypedQuery<Persona> result = entityManager.createQuery(query, Persona.class);
         List<Persona> listPersonas = result.getResultList();
         return listPersonas;
+    }
+
+    @Override
+    public Persona getPersonaByNombre(String nombre) {
+         String jpql = "SELECT p FROM Persona p WHERE p.nombres = :nombres";
+
+        TypedQuery<Persona> query = entityManager.createQuery(jpql, Persona.class);
+        query.setParameter("nombres", nombre);
+        query.setMaxResults(1);
+
+        List<Persona> lista = query.getResultList();
+
+        return lista.isEmpty() ? null : lista.get(0);
     }
 }

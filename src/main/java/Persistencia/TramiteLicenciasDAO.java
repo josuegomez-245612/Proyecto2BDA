@@ -74,7 +74,7 @@ public class TramiteLicenciasDAO implements ITramiteLicenciasDAO {
         
         if(nombresSplit.length == 4)
         {
-            nombres = nombresSplit[0] + nombresSplit[1];
+          nombres = nombresSplit[0] + " " + nombresSplit[1];
             apellidoPaterno = nombresSplit[2];
             apellidoMaterno = nombresSplit[3];
         }
@@ -130,9 +130,10 @@ public class TramiteLicenciasDAO implements ITramiteLicenciasDAO {
         Date sqlPeriodoFin = new Date((periodoFin.getTime()).getTime());
         
         //0 - nombres  1 - apellidoPaterno  2 - costo  3 - fechaExpedicion  4 - apellidoMaterno
-        String jpql = "SELECT p.nombres, p.apellido_paterno, tl.costo, tl.fechaExpedicion, p.apellido_materno FROM TramiteLicencia tl "
-                + "INNER JOIN tl.persona p WHERE p.nombres = :nombres AND p.apellido_paterno = :apellido_paterno AND p.apellido_materno = :apellido_materno"
+       String jpql = "SELECT p.nombres, p.apellido_paterno, tl.costo, tl.fechaExpedicion, p.apellido_materno FROM TramiteLicencia tl "
+                + "INNER JOIN tl.persona p WHERE p.nombres = :nombres AND p.apellido_paterno = :apellido_paterno AND p.apellido_materno = :apellido_materno "
                 + "AND tl.fechaExpedicion >= :periodo_inicio AND tl.fechaExpedicion <= :periodo_fin";
+
 
         TypedQuery<Object[]> query = entityManager.createQuery(jpql, Object[].class);
         query.setParameter("nombres", nombres);

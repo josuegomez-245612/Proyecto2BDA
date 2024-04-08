@@ -58,7 +58,7 @@ public class Placa implements Serializable {
     private String seriePlacas;
 
     /**
-     * Este atributo representa el auto al que pertenecen estas placas.
+     * Este atributo representa el vehiculo al que pertenecen estas placas.
      */
     @ManyToOne
     @JoinColumn(name = "vehiculo_id", nullable = false)
@@ -75,7 +75,7 @@ public class Placa implements Serializable {
      * recibidos en los parámetros.
      * @param tramitePlacas Representa el trámite al que pertenece esta placa.
      * @param seriePlacas Representa la serie de placas correspondientes.
-     * @param vehiculo Representa el auto al que pertenecen estas placas.
+     * @param vehiculo Representa el vehiculo al que pertenecen estas placas.
      */
     public Placa(TramitePlacas tramitePlacas, String seriePlacas, Vehiculo vehiculo) {
         this.tramitePlacas = tramitePlacas;
@@ -95,7 +95,7 @@ public class Placa implements Serializable {
      * @param id Representa la llave primaria.
      * @param tramitePlacas Representa el trámite al que pertenece esta placa.
      * @param seriePlacas Representa la serie de placas correspondientes.
-     * @param vehiculo Representa el auto al que pertenecen estas placas.
+     * @param vehiculo Representa el vehiculo al que pertenecen estas placas.
      */
     public Placa(Long id, TramitePlacas tramitePlacas, String seriePlacas, Vehiculo vehiculo) {
         this.id = id;
@@ -142,7 +142,7 @@ public class Placa implements Serializable {
      * @param tramitePlacas Representa el trámite al que pertenece esta placa.
      * @param fechaRecepcion Representa la fecha en la que dejan de ser válidas las placas.
      * @param seriePlacas Representa la serie de placas correspondientes.
-     * @param vehiculo Representa el auto al que pertenecen estas placas.
+     * @param vehiculo Representa el vehiculo al que pertenecen estas placas.
      */
     public Placa(TramitePlacas tramitePlacas, Calendar fechaRecepcion, String seriePlacas, Vehiculo vehiculo) {
         this.tramitePlacas = tramitePlacas;
@@ -185,14 +185,14 @@ public class Placa implements Serializable {
 
     /**
      * Este método regresa el auto al que pertenecen estas placas.
-     * @return Regresa el auto al que pertenecen estas placas.
+     * @return Regresa el vehiculo al que pertenecen estas placas.
      */
     public Vehiculo getVehiculo() {
         return vehiculo;
     }
 
     /**
-     * Este método asigna el valor del atributo automovil al valor recibido en el parámetro.
+     * Este método asigna el valor del atributo vehiculo al valor recibido en el parámetro.
      * @param vehiculo
      */
     public void setVehiculo(Vehiculo vehiculo) {

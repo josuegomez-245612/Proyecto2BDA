@@ -240,8 +240,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_renovarLicenciaMenuItemActionPerformed
 
     private void reporteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteMenuItemActionPerformed
-        GenerarReporte generarReporte = new GenerarReporte();
-        generarReporte.setVisible(true);
+//        GenerarReporte generarReporte = new GenerarReporte();
+//        generarReporte.setVisible(true);
     }//GEN-LAST:event_reporteMenuItemActionPerformed
 
     private void licenciaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_licenciaMenuActionPerformed

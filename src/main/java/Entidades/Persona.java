@@ -292,12 +292,19 @@ private List<Tramite> tramites;
         this.tramites = tramites;
     }
   
+    /**
+     * Este método regresa el CURP de la persona.
+     * @return Regresa el CURP de la persona.
+     */
     public String getCurp() {
     return curp;
 }
-
-public void setCurp(String curp) {
-    this.curp = curp;
+ /**
+     * Este método asigna el valor del atributo CURP al valor recibido en el parámetro.
+     * @param CURP Representa el valor a asignar.
+     */
+public void setCurp(String CURP) {
+    this.curp = CURP;
 }
 
     

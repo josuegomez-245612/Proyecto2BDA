@@ -12,6 +12,7 @@ interfacesNegocio\IBuscarPersonaPorCurp.class
 Presentacion\JDRegistroPlacasUsado$2.class
 Presentacion\JDRegistroPlacasNuevo$2.class
 Entidades\Vehiculo.class
+Presentacion\GenerarReporte$3.class
 Negocio\NegocioException.class
 Interfaces\ITramiteLicenciasDAO.class
 Presentacion\ConsultarVehiculos$5.class
@@ -42,6 +43,8 @@ Entidades\Pruebas.class
 Negocio\ValidadoresPersona.class
 interfacesNegocio\IVerificarVigenciaPersona.class
 Presentacion\PantallaPrincipal$5.class
+interfacesNegocio\IDeshabilitarPlacasAuto.class
+interfacesNegocio\IObtenerPlacas.class
 Persistencia\AutoDAO.class
 Presentacion\ConsultarPersonas$2.class
 Presentacion\ConsultarVehiculos$6.class
@@ -55,6 +58,7 @@ Presentacion\ConsultarVehiculos$4.class
 criptografia\EncriptadorAESConverter.class
 Presentacion\PantallaPrincipal$4.class
 Entidades\Tramite.class
+interfacesNegocio\IValidarExistenciaPlaca.class
 Utilidades\ParametrosConsultaTramites.class
 Negocio\ValidadoresLicencia.class
 Presentacion\ConsultarVehiculos$7.class

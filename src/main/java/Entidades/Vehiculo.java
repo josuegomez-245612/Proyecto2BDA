@@ -23,34 +23,62 @@ import javax.persistence.Table;
 @Table(name = "Vehiculos")
 public class Vehiculo implements Serializable {
 
+    /**
+     * Identificador único del vehículo.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "vehiculo_id")
     private Long id;
 
+    /**
+     * Modelo del vehículo.
+     */
     @Column(name = "modelo", nullable = false, length = 20)
     private String modelo;
     
+    /**
+     * Tipo de vehículo (por ejemplo, coche, moto, camión, etc.).
+     */
     @Column(name = "tipoVehiculo", nullable = false, length = 20)
     private String tipoVehiculo;
     
+    /**
+     * Color del vehículo.
+     */
     @Column(name = "color", nullable = false, length = 40)
     private String color;
     
+    /**
+     * Número de serie del vehículo.
+     */
     @Column(name = "numSerie", nullable = false, length = 20)
     private String numSerie;
     
+    /**
+     * Línea del vehículo.
+     */
     @Column(name = "linea", nullable = false, length = 40)
     private String linea;
     
+    /**
+     * Marca del vehículo.
+     */
     @Column(name = "marca", nullable = false, length = 40)
     private String marca;
     
+    /**
+     * Indica si el vehículo es nuevo o no.
+     */
     @Column(name = "nuevo", nullable = false)
     private boolean nuevo;
 
+    /**
+     * Lista de placas asociadas al vehículo.
+     */
     @OneToMany(mappedBy = "vehiculo", cascade = {CascadeType.PERSIST})
     private List<Placa> placas;
+    
     
     public Vehiculo(Long id, String modelo, String tipoVehiculo, String color, String numSerie, String linea, String marca, boolean nuevo) {
         this.id = id;

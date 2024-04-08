@@ -18,5 +18,6 @@ public interface IPersonaDAO
   boolean insercionMasivaPersonas();
    boolean validarMayoriaEdadPersona(String rfc);
     public List<Persona> cargarTodasPersonas();
+    public Persona getPersonaByNombre(String nombre);
    
 }
