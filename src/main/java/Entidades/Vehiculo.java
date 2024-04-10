@@ -121,9 +121,16 @@ public class Vehiculo implements Serializable {
         this.nuevo = true;
     }
 
+    /**
+     *
+     */
     public Vehiculo() {
     }
 
+    /**
+     *
+     * @param id
+     */
     public Vehiculo(Long id) {
         this.id = id;
     }
@@ -310,7 +317,10 @@ public class Vehiculo implements Serializable {
         this.nuevo = nuevo;
     }
 
-
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 0;
@@ -318,6 +328,11 @@ public class Vehiculo implements Serializable {
         return hash;
     }
 
+    /**
+     *
+     * @param object
+     * @return
+     */
     @Override
     public boolean equals(Object object) {
         if (!(object instanceof Vehiculo)) {
@@ -327,6 +342,10 @@ public class Vehiculo implements Serializable {
         return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Auto{" + "id=" + id + ", modelo=" + modelo + ", tipoVehiculo=" + tipoVehiculo + ", color=" + color + ", numSerie=" + numSerie + ", linea=" + linea + ", marca=" + marca + ", nuevo=" + nuevo + '}';

@@ -14,5 +14,11 @@ import javax.persistence.EntityManager;
  */
 public interface ICrearLicencia {
     
+    /**
+     *
+     * @param persona
+     * @param vigenciaLicencia
+     * @param costoLicencia
+     */
     public void crearLicencia(Persona persona,Integer vigenciaLicencia,Integer costoLicencia);
 }

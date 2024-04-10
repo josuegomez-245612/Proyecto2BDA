@@ -74,10 +74,18 @@ public class TramitePlacas extends Tramite implements Serializable {
         this.placa = placa;
     }
 
+    /**
+     *
+     * @return
+     */
     public Placa getPlaca() {
         return placa;
     }
 
+    /**
+     *
+     * @param placa
+     */
     public void setPlaca(Placa placa) {
         this.placa = placa;
     }

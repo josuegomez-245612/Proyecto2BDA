@@ -13,5 +13,9 @@ import java.util.List;
  */
 public interface IConseguirTodasPersonas {
     
-     public List<Persona> cargarTodasPersonas();
+    /**
+     *
+     * @return
+     */
+    public List<Persona> cargarTodasPersonas();
 }

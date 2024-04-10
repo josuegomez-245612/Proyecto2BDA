@@ -8,6 +8,11 @@ import Persistencia.*;
  */
 public class NegocioException extends Exception
 {
+
+    /**
+     *
+     * @param ex
+     */
     public NegocioException(String ex)
     {
         super(ex);

@@ -12,6 +12,11 @@ import Entidades.Placa;
  */
 public interface IObtenerPlacas {
     
+    /**
+     *
+     * @param seriePlacas
+     * @return
+     */
     public Placa obtenerPlaca(String seriePlacas);
     
 }

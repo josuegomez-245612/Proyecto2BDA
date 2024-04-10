@@ -14,6 +14,10 @@ import Utilidades.ConstantesGUI;
  */
 public class Proyecto2BDA {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
        IConexionBD conexion = new ConexionBD("com.mycompany_Proyecto2BDA_jar_1.0-SNAPSHOTPU");
        ConstantesGUI operacion = null;

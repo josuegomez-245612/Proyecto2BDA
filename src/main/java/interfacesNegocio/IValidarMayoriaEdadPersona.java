@@ -10,5 +10,10 @@ package interfacesNegocio;
  */
 public interface IValidarMayoriaEdadPersona {
     
-     public boolean validarMayoriaEdadPersona(String CURP);
+    /**
+     *
+     * @param CURP
+     * @return
+     */
+    public boolean validarMayoriaEdadPersona(String CURP);
 }

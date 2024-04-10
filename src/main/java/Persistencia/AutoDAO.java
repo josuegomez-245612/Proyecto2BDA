@@ -20,10 +20,17 @@ public class AutoDAO implements IAutoDAO {
  
     private final EntityManager entityManager;
 
+    /**
+     *
+     * @param entityManager
+     */
     public AutoDAO(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
+    /**
+     *
+     */
     public AutoDAO() {
         this.entityManager = null;
     }

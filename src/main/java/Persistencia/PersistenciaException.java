@@ -6,6 +6,11 @@ package Persistencia;
  */
 public class PersistenciaException extends Exception
 {
+
+    /**
+     *
+     * @param ex
+     */
     public PersistenciaException(String ex)
     {
         super(ex);

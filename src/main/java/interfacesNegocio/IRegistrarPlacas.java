@@ -13,7 +13,11 @@ import Entidades.Vehiculo;
  */
 public interface IRegistrarPlacas extends IValidarExistenciaPlaca,IObtenerPlacas,IDeshabilitarPlacasAuto{
     
-    
+    /**
+     *
+     * @param p
+     * @param v
+     */
     public void RegistrarPlacaNuevo(Placa p, Vehiculo v);
     
     

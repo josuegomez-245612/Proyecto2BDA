@@ -83,6 +83,12 @@ public class Placa implements Serializable {
         this.vehiculo = vehiculo;
     }
 
+    /**
+     *
+     * @param fechaRecepcion
+     * @param seriePlacas
+     * @param vehiculo
+     */
     public Placa(Calendar fechaRecepcion, String seriePlacas, Vehiculo vehiculo) {
         this.fechaRecepcion = fechaRecepcion;
         this.seriePlacas = seriePlacas;

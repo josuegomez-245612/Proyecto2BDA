@@ -10,5 +10,10 @@ package interfacesNegocio;
  */
 public interface IVerificarVigenciaPersona {
     
-      public boolean consultarLicenciaVigentePersona(String CURP);
+    /**
+     *
+     * @param CURP
+     * @return
+     */
+    public boolean consultarLicenciaVigentePersona(String CURP);
 }

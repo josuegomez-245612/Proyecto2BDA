@@ -51,6 +51,11 @@ public class TramitesDTO {
 
     /**
      * Constructor que inicializa un TramitesDTO con ciertos atributos.
+     * @param costoTramite
+     * @param fechaExpedicion
+     * @param nombrePersona
+     * @param tipoTramite
+     * @param apellidoPersona
      */
     public TramitesDTO(Integer costoTramite, Calendar fechaExpedicion, String tipoTramite, String nombrePersona, String apellidoPersona) {
         this.costoTramite = costoTramite;
@@ -62,6 +67,10 @@ public class TramitesDTO {
 
     /**
      * Constructor que inicializa un TramitesDTO con ciertos atributos.
+     * @param costoTramite
+     * @param fechaExpedicion
+     * @param nombrePersona
+     * @param tipoTramite
      */
     public TramitesDTO(Integer costoTramite, Calendar fechaExpedicion, String tipoTramite, String nombrePersona) {
         this.costoTramite = costoTramite;
@@ -73,6 +82,12 @@ public class TramitesDTO {
 
     /**
      * Constructor que inicializa un TramitesDTO con ciertos atributos.
+     * @param id
+     * @param tipoTramite
+     * @param costoTramite
+     * @param fechaExpedicion
+     * @param nombrePersona
+     * @param apellidoPersona
      */
     public TramitesDTO(Long id, Integer costoTramite, Calendar fechaExpedicion, String tipoTramite, String nombrePersona, String apellidoPersona) {
         this.id = id;
@@ -119,10 +134,18 @@ public class TramitesDTO {
         this.fechaExpedicion = fechaExpedicion;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getSqlFechaExpedicion() {
         return sqlFechaExpedicion;
     }
 
+    /**
+     *
+     * @param sqlFechaExpedicion
+     */
     public void setSqlFechaExpedicion(Date sqlFechaExpedicion) {
         this.sqlFechaExpedicion = sqlFechaExpedicion;
     }

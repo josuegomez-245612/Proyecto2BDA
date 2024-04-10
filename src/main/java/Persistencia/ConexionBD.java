@@ -17,6 +17,10 @@ import javax.persistence.Persistence;
 public class ConexionBD implements IConexionBD{
   private final String PERSISTENCE_UNIT_NAME;
   
+    /**
+     *
+     * @param PERSISTENCE_UNIT_NAME
+     */
     public ConexionBD(String PERSISTENCE_UNIT_NAME) {
         this.PERSISTENCE_UNIT_NAME = PERSISTENCE_UNIT_NAME;
     }

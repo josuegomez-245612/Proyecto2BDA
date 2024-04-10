@@ -14,5 +14,10 @@ import java.util.List;
  */
 public interface IConsultarPersonas {
     
-     public List<Persona> consultarPersonas(ParametrosBusquedaPersonas parametros);
+    /**
+     *
+     * @param parametros
+     * @return
+     */
+    public List<Persona> consultarPersonas(ParametrosBusquedaPersonas parametros);
 }

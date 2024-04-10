@@ -12,6 +12,10 @@ import Entidades.Placa;
  */
 public interface IDeshabilitarPlacasAuto {
     
-     public void DeshabilitarPlacaAuto(Placa placa);
+    /**
+     *
+     * @param placa
+     */
+    public void DeshabilitarPlacaAuto(Placa placa);
      
 }

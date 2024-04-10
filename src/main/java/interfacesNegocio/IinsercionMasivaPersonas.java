@@ -10,6 +10,8 @@ package interfacesNegocio;
  */
 public interface IinsercionMasivaPersonas {
     
-    
-   public void insercionMasivaPersonas();
+    /**
+     *
+     */
+    public void insercionMasivaPersonas();
 }

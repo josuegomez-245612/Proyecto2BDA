@@ -18,10 +18,17 @@ import javax.persistence.TypedQuery;
 public class PlacasDAO implements IPlacasDAO{
 private final EntityManager entityManager;
 
-public PlacasDAO(EntityManager entityManager){
+    /**
+     *
+     * @param entityManager
+     */
+    public PlacasDAO(EntityManager entityManager){
     this.entityManager = entityManager;
 }
 
+    /**
+     *
+     */
     public PlacasDAO() {
     this.entityManager = null;
     }

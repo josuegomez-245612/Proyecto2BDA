@@ -10,5 +10,10 @@ package interfacesNegocio;
  */
 public interface IValidarExistenciaPlaca {
     
-     public boolean validarExistenciaPlaca(String seriePlacas);
+    /**
+     *
+     * @param seriePlacas
+     * @return
+     */
+    public boolean validarExistenciaPlaca(String seriePlacas);
 }
