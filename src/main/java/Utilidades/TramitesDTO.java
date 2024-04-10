@@ -119,6 +119,16 @@ public class TramitesDTO {
         this.fechaExpedicion = fechaExpedicion;
     }
 
+    public Date getSqlFechaExpedicion() {
+        return sqlFechaExpedicion;
+    }
+
+    public void setSqlFechaExpedicion(Date sqlFechaExpedicion) {
+        this.sqlFechaExpedicion = sqlFechaExpedicion;
+    }
+    
+    
+
     /**
      * Obtiene el tipo de trámite.
      *
