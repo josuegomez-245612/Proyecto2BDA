@@ -20,6 +20,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.swing.JOptionPane;
 import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -340,6 +341,10 @@ public class GenerarReporte extends javax.swing.JFrame {
         catch(JRException | FileNotFoundException ex)
         {
             System.out.println(ex.getMessage());
+        }
+        catch(NullPointerException ex)
+        {
+            JOptionPane.showMessageDialog(null, "No se encontro ninguna persona con el nombre proporcionado.");
         }
     }//GEN-LAST:event_generarReporteBtnActionPerformed
 
