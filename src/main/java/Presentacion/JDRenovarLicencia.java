@@ -48,6 +48,9 @@ public class JDRenovarLicencia extends javax.swing.JDialog {
         this.settearNombrePersonaElegida();
     }
 
+    /**
+     *
+     */
     public void settearNombrePersonaElegida() {
         nombreCliente2Label.setText(personaElegida.getNombres());
         nombreLabel.setText(personaElegida.getNombres());

@@ -32,6 +32,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      * Creates new form PantallaPrincipal
      *
      * @param conexion
+     * @param gui
      */
     public PantallaPrincipal(IConexionBD conexion, ConstantesGUI gui) {
         initComponents();
@@ -41,6 +42,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         this.operacion = gui;
     }
 
+    /**
+     *
+     */
     public PantallaPrincipal() {
     }
 

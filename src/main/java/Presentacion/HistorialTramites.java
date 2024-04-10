@@ -32,6 +32,11 @@ public class HistorialTramites extends javax.swing.JFrame {
 
     ConsultarPersonas consultarLicencias;
 
+    /**
+     *
+     * @param conexion
+     * @param personaSeleccionada
+     */
     public HistorialTramites(IConexionBD conexion,Persona personaSeleccionada) {
         initComponents();
         this.conexion = conexion;

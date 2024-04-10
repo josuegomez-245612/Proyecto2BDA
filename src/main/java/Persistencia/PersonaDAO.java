@@ -43,6 +43,9 @@ public class PersonaDAO implements IPersonaDAO {
         this.entityManager = entityManager;
     }
 
+    /**
+     *
+     */
     public PersonaDAO() {
         this.entityManager = null;
     }

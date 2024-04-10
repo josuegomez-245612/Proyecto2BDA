@@ -111,6 +111,7 @@ private List<Tramite> tramites;
      * @param nombres Representa los nombres de una persona.
      * @param apellido_paterno Representa el apellido paterno de una persona.
      * @param apellido_materno Representa el apellido materno de una persona.
+     * @param curp
      */
   public Persona(boolean discapacitado, Calendar fecha_nacimiento, String telefono, String rfc, String nombres, String apellido_paterno, String apellido_materno, String curp) {
     this.discapacitado = discapacitado;

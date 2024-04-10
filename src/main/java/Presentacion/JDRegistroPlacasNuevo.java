@@ -48,6 +48,9 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
          this.settearNombrePersonaElegida();
     }
 
+    /**
+     *
+     */
     public void settearNombrePersonaElegida() {
         curpTxtField.setText(personaElegida.getCurp());
 
@@ -59,7 +62,11 @@ public class JDRegistroPlacasNuevo extends javax.swing.JDialog {
         this.dispose();
     }
 
-
+    /**
+     *
+     * @param campos
+     * @return
+     */
     public static boolean validarCamposTexto(JTextField... campos) {
         for (JTextField campo : campos) {
             if (campo.getText().isEmpty()) {
