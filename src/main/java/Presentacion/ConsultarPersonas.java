@@ -8,7 +8,6 @@ import Entidades.Persona;
 import Interfaces.IConexionBD;
 import Negocio.ValidadoresPersona;
 import Persistencia.PersistenciaException;
-import Persistencia.PersonaDAO;
 import Utilidades.ConstantesGUI;
 import Utilidades.ParametrosBusquedaPersonas;
 import java.text.SimpleDateFormat;
@@ -294,9 +293,9 @@ public class ConsultarPersonas extends javax.swing.JFrame {
             }
         });
 
-        txtFieldCURP.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         txtFieldCURP.setText("Ingrese su CURP");
         txtFieldCURP.setBorder(null);
+        txtFieldCURP.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         txtFieldCURP.setForeground(new java.awt.Color(153, 153, 153));
         txtFieldCURP.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -325,9 +324,9 @@ public class ConsultarPersonas extends javax.swing.JFrame {
             }
         });
 
-        txtFieldNombre.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         txtFieldNombre.setText("Ingrese su Nombre");
         txtFieldNombre.setBorder(null);
+        txtFieldNombre.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         txtFieldNombre.setForeground(new java.awt.Color(153, 153, 153));
         txtFieldNombre.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {

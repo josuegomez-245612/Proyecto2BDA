@@ -109,7 +109,7 @@ public class JDRegistroPlacasUsado extends javax.swing.JDialog {
         headerImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/marcoPantallaPrincipal.png"))); // NOI18N
 
         tituloLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        tituloLabel.setText("Renovacion de placas");
+        tituloLabel.setText("Registro de placas");
 
         volverBtn.setText("Volver");
         volverBtn.addActionListener(new java.awt.event.ActionListener() {
