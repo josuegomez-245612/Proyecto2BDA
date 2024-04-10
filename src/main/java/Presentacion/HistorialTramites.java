@@ -137,7 +137,7 @@ public class HistorialTramites extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Vigencia", "Costo", "Discapacitado", "Fecha Expedicion"
+                "Vigencia", "Costo", "Fecha Expedicion", "Nombre solicitante"
             }
         ) {
             Class[] types = new Class [] {
@@ -219,13 +219,7 @@ public class HistorialTramites extends javax.swing.JFrame {
     private javax.swing.JLabel descClienteLabel;
     private javax.swing.JLabel headerImgLabel;
     private javax.swing.JTable historialTable;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

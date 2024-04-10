@@ -7,6 +7,7 @@ package Negocio;
 import Interfaces.IConexionBD;
 import Persistencia.TramiteLicenciasDAO;
 import Utilidades.TramitesDTO;
+import criptografia.EncriptadorAESConverter;
 import interfacesNegocio.IValidadoresTramites;
 import java.util.Calendar;
 import java.util.List;
@@ -33,6 +34,9 @@ public class ValidadoresTramitesLicencia implements IValidadoresTramites
      * El objeto DAO para manejar las operaciones de TramiteLicencia en la base de datos.
      */
     TramiteLicenciasDAO tlDAO;
+            
+            
+           
     
     /**
      * Construye un nuevo ValidadoresTramitesLicencia con el EntityManager y la conexión especificados.
@@ -56,6 +60,7 @@ public class ValidadoresTramitesLicencia implements IValidadoresTramites
     @Override
     public List<TramitesDTO> cargarTramitesByNombre(String nombreCompleto)
     {
+       
         if(tlDAO.cargarTramitesByNombre(nombreCompleto) == null)
             JOptionPane.showMessageDialog(null, "No existen tramites asociados con esta persona.");
         else
@@ -93,6 +98,7 @@ public class ValidadoresTramitesLicencia implements IValidadoresTramites
     @Override
     public List<TramitesDTO> cargarTramitesByNombreInPeriod(String nombreCompleto, Calendar periodoInicio, Calendar periodoFin)
     {
+        
         if(tlDAO.cargarTramitesByNombreInPeriod(nombreCompleto, periodoInicio, periodoFin) == null)
             JOptionPane.showMessageDialog(null, "No existen tramites asociados con esta persona o no hay tramites registrados en este periodo de tiempo.");
         else

@@ -55,7 +55,8 @@ public class Persona implements Serializable {
     /**
      * Este atributo representa el teléfono de una persona.
      */
-    @Column(name = "telefono", nullable = false, length = 20)
+
+    @Column(name = "telefono", nullable = false, length = 128)
     private String telefono;
     
     /**
@@ -67,21 +68,21 @@ public class Persona implements Serializable {
     /**
      * Este atributo representa los nombres de una persona.
      */
-//    @Convert(converter = EncriptadorAESConverter.class)
+   
     @Column(name = "nombres", nullable = false, length = 128)
     private String nombres;
     
     /**
      * Este atributo representa el apellido paterno de una persona.
      */
-//    @Convert(converter = EncriptadorAESConverter.class)
+ 
     @Column(name = "apellido_paterno", nullable = false, length = 128)
     private String apellido_paterno;
     
     /**
      * Este atributo representa el apellido materno de una persona.
      */
-//    @Convert(converter = EncriptadorAESConverter.class)
+ 
     @Column(name = "apellido_materno", nullable = false, length = 128)
     private String apellido_materno;
     

@@ -92,14 +92,14 @@ public class GenerarReporte extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(227, 227, 217));
 
-        tipoTramitesLabel.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         tipoTramitesLabel.setText("Tipo de Tramites");
+        tipoTramitesLabel.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
 
+        solicitanteTramitesLabel.setText("Nombre completo del solicitante");
         solicitanteTramitesLabel.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        solicitanteTramitesLabel.setText("Solicitante de Tramites");
 
-        periodoTramitesLabel.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         periodoTramitesLabel.setText("Periodo de Tramites");
+        periodoTramitesLabel.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
 
         tipoTramitesComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Placa", "Licencia", "Todos" }));
         tipoTramitesComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -142,20 +142,23 @@ public class GenerarReporte extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(tipoTramitesComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(tipoTramitesLabel))
-                                .addGap(32, 32, 32)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(solicitanteTramitesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(solicitanteTramitesTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                                        .addComponent(fechaInicioDatePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(32, 32, 32)
-                                        .addComponent(fechaFinDatePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(solicitanteTramitesLabel))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(148, 148, 148)
+                                        .addGap(43, 43, 43)
+                                        .addComponent(solicitanteTramitesTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(107, 107, 107)
                                         .addComponent(periodoTramitesLabel)
-                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(fechaInicioDatePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                                        .addComponent(fechaFinDatePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(327, 327, 327)
                         .addComponent(generarReporteBtn)))
@@ -179,7 +182,7 @@ public class GenerarReporte extends javax.swing.JFrame {
                 .addComponent(generarReporteBtn)
                 .addGap(95, 95, 95)
                 .addComponent(cancelarBtn)
-                .addContainerGap(436, Short.MAX_VALUE))
+                .addContainerGap(454, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 800, 770));

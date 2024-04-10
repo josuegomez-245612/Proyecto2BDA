@@ -58,22 +58,27 @@
                                       <Component id="tipoTramitesComboBox" max="32767" attributes="0"/>
                                       <Component id="tipoTramitesLabel" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="solicitanteTramitesLabel" max="32767" attributes="0"/>
-                                      <Component id="solicitanteTramitesTxtField" min="-2" pref="160" max="-2" attributes="0"/>
-                                  </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <EmptySpace pref="45" max="32767" attributes="0"/>
-                                          <Component id="fechaInicioDatePicker" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                          <Component id="fechaFinDatePicker" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="solicitanteTramitesLabel" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                          <Component id="solicitanteTramitesTxtField" min="-2" pref="160" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
                                           <Component id="periodoTramitesLabel" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="fechaInicioDatePicker" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace pref="10" max="32767" attributes="0"/>
+                                          <Component id="fechaFinDatePicker" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -108,7 +113,7 @@
                   <Component id="generarReporteBtn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
                   <Component id="cancelarBtn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="436" max="32767" attributes="0"/>
+                  <EmptySpace pref="454" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -116,26 +121,26 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="tipoTramitesLabel">
           <Properties>
+            <Property name="text" type="java.lang.String" value="Tipo de Tramites"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="sansserif" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Tipo de Tramites"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="solicitanteTramitesLabel">
           <Properties>
+            <Property name="text" type="java.lang.String" value="Nombre completo del solicitante"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="sansserif" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Solicitante de Tramites"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="periodoTramitesLabel">
           <Properties>
+            <Property name="text" type="java.lang.String" value="Periodo de Tramites"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="sansserif" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Periodo de Tramites"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="tipoTramitesComboBox">

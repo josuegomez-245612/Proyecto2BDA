@@ -96,7 +96,7 @@ public class ConsultarPersonas extends javax.swing.JFrame {
         } else if (!vigencia && mayoriaEdad) {
             JOptionPane.showMessageDialog(null, "Cumple con los requisitos para seguir con el trámite");
             Persona personaElegida = this.pDAO.encontrarPersonaPorCurp((String) this.listaPersonasJT.getValueAt(this.listaPersonasJT.getSelectedRow(), 4));
-            this.setVisible(false);
+            
             new JDRenovarLicencia(conexion, personaElegida, this, true).setVisible(true);
             
         } else if (!vigencia && !mayoriaEdad) {
@@ -117,7 +117,7 @@ public class ConsultarPersonas extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Cumple con los requisitos para seguir con el trámite");
        Persona personaElegida = this.pDAO.encontrarPersonaPorCurp((String) this.listaPersonasJT.getValueAt(this.listaPersonasJT.getSelectedRow(), 4));
             new ConsultarVehiculos(conexion, personaElegida).setVisible(true);
-            this.setVisible(false);
+           
     } else if (!vigencia && mayoriaEdad) {
         JOptionPane.showMessageDialog(null, "No se puede seguir con el trámite debido a que no cuenta con una licencia vigente");
     } else if (!vigencia && !mayoriaEdad) {
@@ -146,10 +146,12 @@ public class ConsultarPersonas extends javax.swing.JFrame {
      * @throws PersistenciaException Si ocurre un error durante la consulta en la base de datos.
      */
     public void Consultar() throws PersistenciaException {
-        Integer indiceRenglonInicial = 0, indiceColumnaCURP = 4;
-        if (this.listaPersonasJT.getSelectedRow() >= indiceRenglonInicial) {
-            String CURPPersonaSeleccionada = (String) this.listaPersonasJT.getModel().getValueAt(this.listaPersonasJT.getSelectedRow(), indiceColumnaCURP);
-            if (null != this.operacion) switch (this.operacion) {
+    Integer indiceRenglonInicial = 0, indiceColumnaCURP = 4;
+    int selectedRow = this.listaPersonasJT.getSelectedRow();
+    if (selectedRow >= indiceRenglonInicial) {
+        String CURPPersonaSeleccionada = (String) this.listaPersonasJT.getModel().getValueAt(selectedRow, indiceColumnaCURP);
+        if (null != this.operacion) {
+            switch (this.operacion) {
                 case LICENCIAS:
                     this.operacionLicencia(CURPPersonaSeleccionada);
                     break;
@@ -157,15 +159,16 @@ public class ConsultarPersonas extends javax.swing.JFrame {
                     this.operacionPlacas(CURPPersonaSeleccionada);
                     break;
                 case HISTORIAL:
-         this.operacionHistorial(CURPPersonaSeleccionada);
+                    this.operacionHistorial(CURPPersonaSeleccionada);
                     break;
                 default:
                     break;
             }
-        } else {
-            JOptionPane.showMessageDialog(null, this, "Seleccione a una persona.", JOptionPane.INFORMATION_MESSAGE);
         }
+    } else {
+        JOptionPane.showMessageDialog(null, "Seleccione a una persona.", "Información", JOptionPane.INFORMATION_MESSAGE);
     }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -222,7 +225,7 @@ public class ConsultarPersonas extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(227, 227, 217));
 
-        jLabel1.setText("Seleccione a la persona a la cual se quiere tramitar la licencia");
+        jLabel1.setText("Seleccione a la persona a la cual se quiere realizar el tramite");
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
 
         listaPersonasJT.setModel(new javax.swing.table.DefaultTableModel(
@@ -291,9 +294,9 @@ public class ConsultarPersonas extends javax.swing.JFrame {
             }
         });
 
+        txtFieldCURP.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         txtFieldCURP.setText("Ingrese su CURP");
         txtFieldCURP.setBorder(null);
-        txtFieldCURP.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         txtFieldCURP.setForeground(new java.awt.Color(153, 153, 153));
         txtFieldCURP.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -322,9 +325,9 @@ public class ConsultarPersonas extends javax.swing.JFrame {
             }
         });
 
+        txtFieldNombre.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         txtFieldNombre.setText("Ingrese su Nombre");
         txtFieldNombre.setBorder(null);
-        txtFieldNombre.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         txtFieldNombre.setForeground(new java.awt.Color(153, 153, 153));
         txtFieldNombre.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {

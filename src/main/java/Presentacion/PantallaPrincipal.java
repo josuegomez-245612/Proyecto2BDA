@@ -64,7 +64,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         tramitesMenu = new javax.swing.JMenu();
         licenciaMenu = new javax.swing.JMenu();
         tramitarLicenciaMenuItem = new javax.swing.JMenuItem();
-        renovarLicenciaMenuItem = new javax.swing.JMenuItem();
         tramitarPlacasMenuItem = new javax.swing.JMenuItem();
         operacionesMenu = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -126,14 +125,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
         licenciaMenu.add(tramitarLicenciaMenuItem);
-
-        renovarLicenciaMenuItem.setText("Renovar Licencia");
-        renovarLicenciaMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                renovarLicenciaMenuItemActionPerformed(evt);
-            }
-        });
-        licenciaMenu.add(renovarLicenciaMenuItem);
 
         tramitesMenu.add(licenciaMenu);
 
@@ -216,10 +207,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
        
     }//GEN-LAST:event_insercionMasivaBtnActionPerformed
 
-    private void renovarLicenciaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_renovarLicenciaMenuItemActionPerformed
-
-    }//GEN-LAST:event_renovarLicenciaMenuItemActionPerformed
-
     private void reporteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteMenuItemActionPerformed
         operacion = REPORTE;
         gr = new GenerarReporte(conexion, operacion);
@@ -251,7 +238,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu licenciaMenu;
     private javax.swing.JMenu operacionesMenu;
-    private javax.swing.JMenuItem renovarLicenciaMenuItem;
     private javax.swing.JMenuItem reporteMenuItem;
     private javax.swing.JMenuItem tramitarLicenciaMenuItem;
     private javax.swing.JMenuItem tramitarPlacasMenuItem;

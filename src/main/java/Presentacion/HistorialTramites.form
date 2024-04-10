@@ -96,13 +96,13 @@
                       <Data value="null"/>
                       <Data value="null"/>
                     </Column>
-                    <Column editable="true" title="Discapacitado" type="java.lang.String">
+                    <Column editable="true" title="Fecha Expedicion" type="java.lang.String">
                       <Data value="Si"/>
                       <Data value="null"/>
                       <Data value="null"/>
                       <Data value="null"/>
                     </Column>
-                    <Column editable="true" title="Fecha Expedicion" type="java.lang.String">
+                    <Column editable="true" title="Nombre solicitante" type="java.lang.String">
                       <Data value="2008"/>
                       <Data value="null"/>
                       <Data value="null"/>

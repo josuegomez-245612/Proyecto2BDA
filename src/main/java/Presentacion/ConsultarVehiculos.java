@@ -115,8 +115,8 @@ public class ConsultarVehiculos extends javax.swing.JFrame {
 
         addImgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/6325028.png"))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel1.setText("Seleccione al vehiculo al cual se quiere tramitar la placa");
+        jLabel1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
 
         tblAutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -145,11 +145,11 @@ public class ConsultarVehiculos extends javax.swing.JFrame {
         tblAutos.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblAutos);
 
-        jLabel2.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel2.setText("Serie de placa");
+        jLabel2.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel5.setText("Buscar por: ");
+        jLabel5.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
 
         jButton2.setText("Consultar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -158,7 +158,7 @@ public class ConsultarVehiculos extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Volver");
+        jButton3.setText("Cancelar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -173,9 +173,9 @@ public class ConsultarVehiculos extends javax.swing.JFrame {
         });
 
         txtFieldNumSerie.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        txtFieldNumSerie.setForeground(new java.awt.Color(153, 153, 153));
         txtFieldNumSerie.setText("Ingrese su Serie de Placas");
         txtFieldNumSerie.setBorder(null);
+        txtFieldNumSerie.setForeground(new java.awt.Color(153, 153, 153));
         txtFieldNumSerie.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtFieldNumSerieFocusLost(evt);
@@ -203,9 +203,9 @@ public class ConsultarVehiculos extends javax.swing.JFrame {
             }
         });
 
+        agregarVehiculoBtn.setText("Agregar Vehiculo");
         agregarVehiculoBtn.setBackground(new java.awt.Color(238, 228, 187));
         agregarVehiculoBtn.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        agregarVehiculoBtn.setText("Agregar Vehiculo");
         agregarVehiculoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 agregarVehiculoBtnActionPerformed(evt);
@@ -243,7 +243,7 @@ public class ConsultarVehiculos extends javax.swing.JFrame {
                                     .addComponent(agregarVehiculoBtn))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(addImgLabel)))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -284,10 +284,9 @@ public class ConsultarVehiculos extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 813, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -370,6 +369,7 @@ public class ConsultarVehiculos extends javax.swing.JFrame {
 
     private void agregarVehiculoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarVehiculoBtnActionPerformed
         new JDRegistroPlacasNuevo(this.conexion, this.persona).setVisible(true);
+        dispose();
     }//GEN-LAST:event_agregarVehiculoBtnActionPerformed
 
 

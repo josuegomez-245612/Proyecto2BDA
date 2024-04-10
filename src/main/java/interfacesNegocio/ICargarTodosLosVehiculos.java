@@ -12,6 +12,10 @@ import java.util.List;
  * @author JOSUE GOMEZ
  */
 public interface ICargarTodosLosVehiculos {
-    
+       /**
+     * Carga la información de todos los vehículos disponibles.
+     * 
+     * @return Una lista de objetos VehiculosPlacasDTO que representan la información de todos los vehículos cargados.
+     */
       public List<VehiculosPlacasDTO> cargarTodosLosVehiculos();
 }

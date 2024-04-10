@@ -233,7 +233,7 @@ public class JDRegistroPlacasUsado extends javax.swing.JDialog {
         this.tramitePlacasDAO.nuevoTramite(new Placa(new TramitePlacas(costo, new GregorianCalendar(), persona), this.placaNueva, auto.getAutomovil()));
         JOptionPane.showMessageDialog(null,"Se ha realizado el trámite de las placas");
         dispose();
-       
+       new ConsultarVehiculos(conexion,persona).setVisible(true);
     }//GEN-LAST:event_aceptarBtnActionPerformed
 
 

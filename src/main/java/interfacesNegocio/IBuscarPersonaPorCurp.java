@@ -11,5 +11,11 @@ import Entidades.Persona;
  * @author JOSUE GOMEZ
  */
 public interface IBuscarPersonaPorCurp {
+     /**
+     * Busca una persona por su CURP (Clave Única de Registro de Población).
+     * 
+     * @param CURP El CURP de la persona a buscar.
+     * @return La persona que corresponde al CURP especificado, o null si no se encuentra ninguna persona con ese CURP.
+     */
       public Persona encontrarPersonaPorCurp(String CURP);
 }

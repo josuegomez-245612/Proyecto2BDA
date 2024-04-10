@@ -7,6 +7,7 @@ package Negocio;
 import Interfaces.IConexionBD;
 import Persistencia.TramitePlacasDAO;
 import Utilidades.TramitesDTO;
+import criptografia.EncriptadorAESConverter;
 import interfacesNegocio.IValidadoresTramites;
 import java.util.Calendar;
 import java.util.List;
@@ -34,7 +35,7 @@ public class ValidadoresTramitesPlaca implements IValidadoresTramites {
      * trámites de placas.
      */
     TramitePlacasDAO pDAO;
-
+ 
     /**
      * Constructor que inicializa los ValidadoresTramitesPlaca con un
      * EntityManager y una instancia de IConexionBD.
@@ -60,9 +61,11 @@ public class ValidadoresTramitesPlaca implements IValidadoresTramites {
      */
     @Override
     public List<TramitesDTO> cargarTramitesByNombre(String nombreCompleto) {
+         
         if (pDAO.cargarTramitesByNombre(nombreCompleto) == null) {
             JOptionPane.showMessageDialog(null, "No existen tramites asociados con esta persona.");
         } else {
+            
             return pDAO.cargarTramitesByNombre(nombreCompleto);
         }
 
@@ -102,6 +105,7 @@ public class ValidadoresTramitesPlaca implements IValidadoresTramites {
      */
     @Override
     public List<TramitesDTO> cargarTramitesByNombreInPeriod(String nombreCompleto, Calendar periodoInicio, Calendar periodoFin) {
+     
         if (pDAO.cargarTramitesByNombreInPeriod(nombreCompleto, periodoInicio, periodoFin) == null) {
             JOptionPane.showMessageDialog(null, "No existen tramites asociados con esta persona o no hay tramites registrados en este periodo de tiempo.");
         } else {
